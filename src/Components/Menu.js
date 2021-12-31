@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import GitHub from '@material-ui/icons/GitHub';
-import Pinterest from '@material-ui/icons/Pinterest';
+import PrimaryButton from './PrimaryButton';
 
 function Menu({menuItem}) {
     return (
@@ -13,14 +13,14 @@ function Menu({menuItem}) {
                             <div className="portfolio-image">
                                 <img src={item.image} alt=""/>
                                 <ul>
-                                    <li>
+                                    {/* <li>
                                         <a href={item.link1}>
                                             <GitHub />
                                         </a>
-                                    </li>
+                                    </li> */}
                                     <li>
-                                        <a href={item.link2}>
-                                            <Pinterest />
+                                        <a href={item.link1} target='_blank' rel='noreferrer'>
+                                            <PrimaryButton title={'Live'}  />
                                         </a>
                                     </li>
                                 </ul>

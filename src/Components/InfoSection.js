@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import PrimaryButton from './PrimaryButton';
+import resume from '../data/janResume.pdf';
 
 function InfoSection() {
     return (
@@ -12,7 +13,7 @@ function InfoSection() {
                     
                 </p>              
                 <br />
-                <PrimaryButton title={'Download Resume'} />
+                <a href={resume} download="Gargi_Resume.pdf"><PrimaryButton title={'Download Resume'} /></a> 
             </div>
         </InfoSectionStyled>
     )

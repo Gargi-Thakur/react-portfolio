@@ -16,19 +16,19 @@ function SkillsSection() {
                     <SkillCard
                         image={htmlCssJs}
                         title={'HTML / CSS / JS'}
-                        paragraph={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.'}
+                        paragraph={"They are the building blocks of websites and I've been working on it since the past 2 years."}
                     />
                     <div className="mid-card">
                         <SkillCard 
                             image={mernStack} 
                             title={'MERN Stack'} 
-                            paragraph={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.'}
+                            paragraph={"It is currently the most popular stack being used for web development which allows me to make websites' frontend and backend in a short period of time."}
                         />
                     </div>
                     <SkillCard
                         image={webDesign}
                         title={'Web Design'}
-                        paragraph={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.'}
+                        paragraph={"Adobe's products are used professionally industry-wide and is an important asset for a web developer."}
                     />
                 </div>
             </SkillsSectionStyled>
