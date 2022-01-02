@@ -14,7 +14,7 @@ function HomePage() {
             <div className="typography">
                 <h1>Hi, I'm <span>Gargi Thakur</span></h1>
                 <p>
-                    A Web Developer based in Coquitlam, BC, Canada.
+                    A Web Developer based in Vancouver, BC, Canada.
 
                     I create custom websites to help people go further online.
                 </p>
