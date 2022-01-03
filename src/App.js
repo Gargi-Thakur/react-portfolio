@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="App">
-        <Sidebar navToggle={navToggle} />
+      <Sidebar navToggle={navToggle} setNavToggle={setNavToggle} />
 
         <div className="theme">
           <div className="light-dark-mode">
@@ -66,16 +66,16 @@ function App() {
 
           <Switching>
             <Route path="/" exact>
-              <HomePage />
+            <HomePage />
             </Route>
             <Route path="/about" exact>
-              <AboutPage />
+            <AboutPage/>
             </Route>
             <Route path="/projects" exact>
             <ProjectsPage />
             </Route>
             <Route path="/contact" exact>
-              <ContactPage />
+            <ContactPage />
             </Route>
           </Switching>
 

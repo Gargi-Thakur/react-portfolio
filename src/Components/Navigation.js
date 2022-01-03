@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 
-function Navigation() {
+function Navigation({ navToggle, setNavToggle }) {
     return (
         <NavigationStyled>
             <div className="logo">
@@ -10,16 +10,16 @@ function Navigation() {
             </div>
             <ul className="nav-items">
                 <li className="nav-item">
-                    <NavLink to="/" activeClassName="active-class" exact>Home</NavLink>
+                    <NavLink to="/" activeClassName="active-class" exact onClick={() => setNavToggle(!navToggle)}>Home</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/about" activeClassName="active-class" exact>About</NavLink>
+                    <NavLink to="/about" activeClassName="active-class" exact onClick={() => setNavToggle(!navToggle)}>About</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/projects" activeClassName="active-class" exact>Projects</NavLink>
+                    <NavLink to="/projects" activeClassName="active-class" exact onClick={() => setNavToggle(!navToggle)}>Projects</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/contact" activeClassName="active-class" exact>Contact</NavLink>
+                    <NavLink to="/contact" activeClassName="active-class" exact onClick={() => setNavToggle(!navToggle)}>Contact</NavLink>
                 </li>
             </ul>
             <footer className="footer">
