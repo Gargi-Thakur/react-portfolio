@@ -9,6 +9,7 @@ import ProjectsPage from './Pages/ProjectsPage';
 import ContactPage from './Pages/ContactPage';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
 import { Route, Switch as Switching } from "react-router";
 import Switch from '@material-ui/core/Switch'
 import { IconButton } from "@material-ui/core";
@@ -57,7 +58,7 @@ function App() {
 
         <div className="ham-burger-menu">
           <IconButton onClick={() => setNavToggle(!navToggle)}>
-              <MenuIcon />
+          {navToggle ? <CloseIcon /> : <MenuIcon />}
           </IconButton>
         </div>
 

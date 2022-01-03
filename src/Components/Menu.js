@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import GitHub from '@material-ui/icons/GitHub';
+// import GitHub from '@material-ui/icons/GitHub';
 import PrimaryButton from './PrimaryButton';
 
 function Menu({menuItem}) {

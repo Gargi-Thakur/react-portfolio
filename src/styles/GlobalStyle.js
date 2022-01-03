@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 .light-theme{
     --primary-color: #007bff;
     --primary-color-light: #057FFF;
-    --secondary-color: #ff7675;
+    --secondary-color: #F1F1F1;
     --background-dark-color: #F1F1F1;
     --background-dark-grey: #e4e4e4;
     --border-color: #cbced8;
@@ -132,7 +132,7 @@ h6{
 .light-dark-mode{
     position: fixed;
     right: 0;
-    top: 50%;
+    top: 25%;
     background-color: var(--background-light-color-2);
     width: 6.5rem;
     height: 2.5rem;
