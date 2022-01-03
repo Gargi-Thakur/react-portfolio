@@ -55,7 +55,7 @@ const projects = [
         id: 6,
         category: 'ReactJS',
         image: portfolio,
-        link1: 'https://soundpath.netlify.app/',
+        link1: 'https://gargithakur.com/',
         // link2: 'https://www.google.com',
         title: 'A portfolio website',
         text: 'Created using ReactJS, styled-components/CSS and Google Form. '
