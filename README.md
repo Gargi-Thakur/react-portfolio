@@ -2,6 +2,7 @@
 
 ## Dependencies used
 - Create React App
+- Deployment using Heroku on https://gargithakur.herokuapp.com/
 - react-router-dom
 - styled-components
 - material ui and material icons (npm install @material-ui/core @material-ui/icons)
