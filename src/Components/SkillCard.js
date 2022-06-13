@@ -33,7 +33,7 @@ const SkillCardStyled = styled.div`
             position: relative;
             &::after{
                 content: "";
-                width: 4rem;
+                width: 5rem;
                 background-color: var(--border-color);
                 height: 3px;
                 position: absolute;;
@@ -49,6 +49,10 @@ const SkillCardStyled = styled.div`
 
         img {
             height: 85px;
+            width: 200px;
+            object-fit: contain;
+
+            
         }
     }
 `;

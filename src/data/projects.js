@@ -59,6 +59,15 @@ const projects = [
         // link2: 'https://www.google.com',
         title: 'A portfolio website',
         text: 'Created using ReactJS, styled-components/CSS and Google Form. '
+    },
+    {
+        id: 7,
+        category: 'MERN Stack',
+        image: portfolio,
+        link1: 'https://gargithakur.com/',
+        // link2: 'https://www.google.com',
+        title: 'A restaurant table booking app',
+        text: 'Created using React-native, Native-base, MongoDB, NodeJS, Express, Google APIs.'
     }
 ]
 

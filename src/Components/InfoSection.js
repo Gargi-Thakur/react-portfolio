@@ -9,7 +9,7 @@ function InfoSection() {
             <div className="content">
                 <h4>Hi, I am <span>Gargi</span></h4>
                 <p className="paragraph">
-                    I’m a web developer based in Vancouver. I have background in Life Sciences. And while working as a Microbiologist in the family-owned pharmaceutical consultancy company in India, I found interest in building the company website on my own. This led me to pursue Web and Mobile App Development program in Vancouver, Canada which helped me to understand not only the concepts of web development but also the UI/UX design concepts. I want to keep learning and continue to challenge myself and do things that matter. I am looking forward to working with a team of talented people to create something that will help people go further online.
+                    I’m a front-end developer based in Vancouver. I have background in Life Sciences. And while working as a Microbiologist in the family-owned pharmaceutical consultancy company in India, I found interest in building the company website on my own. This led me to pursue Web and Mobile App Development program in Vancouver, Canada which helped me to understand not only the concepts of web development but also the UI/UX design concepts. I want to keep learning and continue to challenge myself and do things that matter. I am looking forward to working with a team of talented people to create something that will help people go further online.
                     
                 </p>              
                 <br />

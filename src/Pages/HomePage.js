@@ -14,9 +14,9 @@ function HomePage() {
             <div className="typography">
                 <h1>Hi, I'm <span>Gargi Thakur</span></h1>
                 <p>
-                    A Web Developer based in Vancouver, BC, Canada.
+                    A Front-end Developer based in Vancouver, BC, Canada.
 
-                    I create custom websites to help people go further online.
+                    I create custom websites and apps to help people go further online.
                 </p>
                 <div className="icons">
                     <a href="https://www.linkedin.com/in/gargithakur94/" className="icon i-linkedin" target="_blank" rel="noreferrer" >
