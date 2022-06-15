@@ -1,12 +1,8 @@
 # React Portfolio
+This is the v2 of my portfolio because many dependencies I used earlier were deprecated and because I wanted to start something new.
 
 ## Dependencies used
-- Create React App
-- Deployment using Heroku on https://gargithakur.herokuapp.com/
-- react-router-dom
-- styled-components
-- material ui and material icons (npm install @material-ui/core @material-ui/icons)
-- react-tsparticles - particlejs
+
 
 ## Available Scripts
 
