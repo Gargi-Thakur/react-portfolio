@@ -1,33 +1,57 @@
-# React Portfolio
-This is the v2 of my portfolio because many dependencies I used earlier were deprecated and because I wanted to start something new.
+<h1 align="center">Gargi's Portfolio v2</h1>
 
-## Dependencies used
+<div align="center">
+  <h3>
+    <a href="https://{your-demo-link.your-domain}">
+      Demo
+    </a>
+    <!-- <span> | </span>
+    <a href="https://devchallenges.io/challenges/wBunSb7FPrIepJZAg0sY">
+      Challenge
+    </a> -->
+  </h3>
+</div>
 
+<!-- TABLE OF CONTENTS -->
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+- [Built With](#built-with)
+- [Features](#features)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
 
-### `npm start`
+<!-- OVERVIEW -->
 
-Runs the app in the development mode.\
-Open (http://localhost:3000) to view it in the browser.
+## Overview
 
+![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
 
-### `npm test`
+Introduction to this project will be updated along with a screenshot or a gif. And I will also be answering the follwing questions as I update my project:
 
-Launches the test runner in the interactive watch mode.\
+- Where can you see my demo?
+- What was my experience building this project?
+- What have I learned/improved?
 
-### `npm run build`
+### Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
-The build is minified and the filenames include the hashes.\
+- reactJS
+- styled-components
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- List the features of your application -->
+(will be updated) 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Acknowledgements
+
+- Inspired by multiple Awwwards websites 
+
+## Contact
+
+- Website [gargithakur.com](https://{web-site-link})
+- GitHub [@Gargi-Thakur](https://{github.com/Gargi-Thakur})
+- Twitter [@GargiGingerly](https://{twitter.com/GargiGingerly})
