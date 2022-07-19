@@ -9447,13 +9447,6 @@ react-is@^16.13.1, react-is@^16.6.0, react-is@^16.7.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
-react-particles-js@^3.6.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/react-particles-js/-/react-particles-js-3.6.0.tgz#3c9c22fbf93150d1fd1a190cd060ec1d6dcaa373"
-  integrity sha512-gQzUKZgPpjdplhAtskLnn9frLyei6uGuWabNtBGWnr3eZpHXfXJO1F8sedPhO29xfpKixE3HEejwGQAld8K16Q==
-  dependencies:
-    lodash "^4.17.11"
-
 react-refresh@^0.8.3:
   version "0.8.3"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.8.3.tgz"
@@ -9563,6 +9556,14 @@ react-transition-group@^4.4.0:
     dom-helpers "^5.0.1"
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
+
+react-tsparticles@^2.1.3:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/react-tsparticles/-/react-tsparticles-2.1.3.tgz#45e570d869c3b26760525d8dcc52ea5cc8095f0c"
+  integrity sha512-1Jc0Z8umkCHzY3qebs7nBLUXfeygEBAdubfWg7PjeYuYmjUHymneUXzXGiPLbqIMN+QQNM69485O3QLWks9lng==
+  dependencies:
+    fast-deep-equal "^3.1.3"
+    tsparticles-engine "^2.0.6"
 
 react@>=16.0.0:
   version "18.2.0"
@@ -11052,6 +11053,11 @@ tslib@^2.0.3:
   version "2.4.0"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
+
+tsparticles-engine@^2.0.6:
+  version "2.1.3"
+  resolved "https://registry.yarnpkg.com/tsparticles-engine/-/tsparticles-engine-2.1.3.tgz#d8922cf7811c40e5e9b87b18f9cc86043af8e900"
+  integrity sha512-BmCo534tF5yRQofUczGSfCFrdeMYO6e7FXHv6AdRxL+j9NNPH3zF4HX6k24tbO4kmTH8tGX/+F9mugEQVo9AEg==
 
 tsutils@^3.17.1, tsutils@^3.21.0:
   version "3.21.0"
