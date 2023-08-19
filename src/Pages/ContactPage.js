@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import {MainLayout, InnerLayout} from '../styles/Layouts';
+import { MainLayout, InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
 import SubmitButton from '../Components/SubmitButton';
 import axios from 'axios';
 
-function ContactPage() {
+const ContactPage = () => {
     const [contactForm, setContactForm] = useState({
         name: '',
         email: '',

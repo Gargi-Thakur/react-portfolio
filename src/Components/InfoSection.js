@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PrimaryButton from './PrimaryButton';
 import resume from '../data/janResume.pdf';
 
-function InfoSection() {
+const InfoSection = () => {
     return (
         <InfoSectionStyled>
             <div className="content">
@@ -18,7 +18,6 @@ function InfoSection() {
         </InfoSectionStyled>
     )
 }
-
 
 const InfoSectionStyled = styled.div`
     margin-top: 5rem;
@@ -50,4 +49,5 @@ const InfoSectionStyled = styled.div`
         }
     }
 `;
+
 export default InfoSection;

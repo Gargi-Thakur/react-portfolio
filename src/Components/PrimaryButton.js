@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-function PrimaryButton({title}) {
+const PrimaryButton = ({ title }) => {
     return (
         <PrimaryButtonStyled>
             {title}
@@ -34,4 +34,5 @@ const PrimaryButtonStyled = styled.a`
         background-color: var(--white-color);
     }
 `;
+
 export default PrimaryButton;

@@ -1,5 +1,5 @@
 // import React, { useState } from 'react';
-// import {MainLayout, InnerLayout} from '../styles/Layouts';
+// import { MainLayout, InnerLayout } from '../styles/Layouts';
 // import Title from '../Components/Title';
 // import projects from '../data/projects';
 // import Menu from '../Components/Menu';
@@ -7,7 +7,7 @@
 
 // const allButtons = ['All', ...new Set(projects.map(item => item.category))]
 
-// function ProjectsPage() {
+// const ProjectsPage = () => {
 //     const [menuItem, setMenuItems] = useState(projects);
 //     const [button, setButtons] = useState(allButtons);
 

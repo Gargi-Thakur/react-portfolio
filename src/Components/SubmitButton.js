@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-function SubmitButton({ title }) {
+const SubmitButton = ({ title }) => {
     return (
         <SubmitButtonStyled>
             {title}

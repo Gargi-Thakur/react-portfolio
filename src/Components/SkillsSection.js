@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import {InnerLayout} from '../styles/Layouts';
+import { InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
 import SkillCard from '../Components/SkillCard';
 import htmlCssJs from '../img/html-css-js.png';
 import mernStack from '../img/MERN-logo.png';
 import webDesign from '../img/web-design.png';
 
-function SkillsSection() {
+const SkillsSection = () => {
     return (
         <InnerLayout>
             <SkillsSectionStyled>

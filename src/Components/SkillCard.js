@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 
-function SkillCard({image, title, paragraph}) {
+const SkillCard = ({ image, title, paragraph }) => {
     return (
         <SkillCardStyled>
             <div className="container">
