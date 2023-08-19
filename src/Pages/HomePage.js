@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedinIcon from '@material-ui/icons/LinkedIn';
 import GithubIcon from '@material-ui/icons/GitHub';
-import Particle from '../Components/Particle';
+// import Particle from '../Components/Particle';
 
 function HomePage() {
     return (
         <HomePageStyled>
             <div className="particle-con">
-                <Particle />
+                {/* <Particle /> */}
             </div>
             <div className="typography">
                 <h1>Hi, I'm <span>Gargi Thakur</span></h1>

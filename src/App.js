@@ -5,7 +5,7 @@ import Sidebar from "./Components/Sidebar";
 import styled from 'styled-components';
 import HomePage from "./Pages/HomePage";
 import AboutPage from './Pages/AboutPage';
-import ProjectsPage from './Pages/ProjectsPage';
+// import ProjectsPage from './Pages/ProjectsPage';
 import ContactPage from './Pages/ContactPage';
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -72,7 +72,7 @@ function App() {
             <AboutPage/>
             </Route>
             <Route path="/projects" exact>
-            <ProjectsPage />
+            {/* <ProjectsPage /> */}
             </Route>
             <Route path="/contact" exact>
             <ContactPage />
