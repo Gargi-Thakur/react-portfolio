@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components';
 import InfoSection from '../Components/InfoSection';
 import Title from '../Components/Title';
-import {MainLayout} from '../styles/Layouts';
+import { MainLayout } from '../styles/Layouts';
 import SkillsSection from '../Components/SkillsSection';
 
-function AboutPage() {
+const AboutPage = () => {
     return (
         <MainLayout>
             <AboutStyled >
