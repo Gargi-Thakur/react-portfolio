@@ -15,15 +15,15 @@ function Navigation({ navToggle, setNavToggle }) {
                 <li className="nav-item">
                     <NavLink to="/about" activeClassName="active-class" exact onClick={() => setNavToggle(!navToggle)}>About</NavLink>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                     <NavLink to="/projects" activeClassName="active-class" exact onClick={() => setNavToggle(!navToggle)}>Projects</NavLink>
-                </li>
+                </li> */}
                 <li className="nav-item">
                     <NavLink to="/contact" activeClassName="active-class" exact onClick={() => setNavToggle(!navToggle)}>Contact</NavLink>
                 </li>
             </ul>
             <footer className="footer">
-                <p>@2022 <b>Gargi Thakur</b></p>
+                <p>@2023 <b>Gargi Thakur</b></p>
             </footer>
         </NavigationStyled>
     )
