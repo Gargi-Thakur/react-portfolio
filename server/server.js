@@ -1,13 +1,19 @@
-const path = require('path');
-const express = require('express');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import express from 'express';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const port = process.env.PORT || 3000;
-const publicPath = path.join(__dirname, '..', 'public'); app.use(express.static(publicPath)); app.listen(port, () => {
-    console.log(`Server is up on port ${port}!`);
+const distPath = path.join(__dirname, '..', 'dist');
+
+app.use(express.static(distPath));
+
+// SPA fallback: send index.html for any unmatched route
+app.use((req, res) => {
+    res.sendFile(path.join(distPath, 'index.html'));
 });
 
-app.use(express.static(publicPath)); app.get('*', (req, res) => {
-    res.sendFile(path.join(publicPath, 'index.html'));
-}); app.listen(port, () => {
-    console.log('Server is up!');
+app.listen(port, () => {
+    console.log(`Server is up on port ${port}!`);
 });

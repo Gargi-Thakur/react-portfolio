@@ -9,7 +9,9 @@ const PrimaryButton = ({ title }) => {
     )
 }
 
-const PrimaryButtonStyled = styled.a`
+// Rendered as a span because this component is always wrapped in a link;
+// nesting <a> inside <a> is invalid HTML.
+const PrimaryButtonStyled = styled.span`
     background-color: var(--primary-color);
     padding: .8rem 2.5rem;
     color: white;

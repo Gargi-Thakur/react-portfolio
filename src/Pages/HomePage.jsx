@@ -1,11 +1,18 @@
 import React from 'react'
 import styled from 'styled-components';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import LinkedinIcon from '@material-ui/icons/LinkedIn';
-import GithubIcon from '@material-ui/icons/GitHub';
+import { NavLink } from 'react-router-dom';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedinIcon from '@mui/icons-material/LinkedIn';
+import GithubIcon from '@mui/icons-material/GitHub';
+import PrimaryButton from '../Components/PrimaryButton';
+import useDocumentMeta from '../hooks/useDocumentMeta';
 // import Particle from '../Components/Particle';
 
 function HomePage() {
+    useDocumentMeta(
+        'Gargi Thakur | AI Automation for Small Businesses in Vancouver, BC',
+        'I help small businesses save time with practical AI automation — email automation, lead follow-up, and scheduling. Full-stack developer based in Vancouver, BC.'
+    );
     return (
         <HomePageStyled>
             <div className="particle-con">
@@ -14,10 +21,17 @@ function HomePage() {
             <div className="typography">
                 <h1>Hi, I'm <span>Gargi Thakur</span></h1>
                 <p>
-                    A Front-end Developer based in Vancouver, BC, Canada.
-
-                    I create custom websites and apps to help people go further online.
+                    I help small businesses save time with practical AI automation —
+                    email handling, lead follow-up, and scheduling that runs itself.
                 </p>
+                <p className="credibility">
+                    Full-stack developer (React, TypeScript/Next.js, Python/Django) based in Vancouver, BC, Canada.
+                </p>
+                <div className="cta">
+                    <NavLink to="/contact">
+                        <PrimaryButton title={'Book a Free Consultation'} />
+                    </NavLink>
+                </div>
                 <div className="icons">
                     <a href="https://www.linkedin.com/in/gargithakur94/" className="icon i-linkedin" target="_blank" rel="noreferrer" >
                         <LinkedinIcon />
@@ -46,6 +60,16 @@ const HomePageStyled = styled.header`
         transform: translate(-50%, -50%);
         text-align: center;
         width: 80%;
+
+        .credibility{
+            margin-top: .8rem;
+            font-size: .95rem;
+            opacity: .8;
+        }
+
+        .cta{
+            margin-top: 1.5rem;
+        }
 
         .icons{
             display: flex;

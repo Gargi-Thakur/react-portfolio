@@ -10,16 +10,13 @@ function Navigation({ navToggle, setNavToggle }) {
             </div>
             <ul className="nav-items">
                 <li className="nav-item">
-                    <NavLink to="/" activeClassName="active-class" exact onClick={() => setNavToggle(!navToggle)}>Home</NavLink>
+                    <NavLink to="/" end className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>Home</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/about" activeClassName="active-class" exact onClick={() => setNavToggle(!navToggle)}>About</NavLink>
+                    <NavLink to="/about" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>About</NavLink>
                 </li>
-                {/* <li className="nav-item">
-                    <NavLink to="/projects" activeClassName="active-class" exact onClick={() => setNavToggle(!navToggle)}>Projects</NavLink>
-                </li> */}
                 <li className="nav-item">
-                    <NavLink to="/contact" activeClassName="active-class" exact onClick={() => setNavToggle(!navToggle)}>Contact</NavLink>
+                    <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>Contact</NavLink>
                 </li>
             </ul>
             <footer className="footer">

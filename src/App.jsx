@@ -7,12 +7,12 @@ import HomePage from "./Pages/HomePage";
 import AboutPage from './Pages/AboutPage';
 // import ProjectsPage from './Pages/ProjectsPage';
 import ContactPage from './Pages/ContactPage';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
-import MenuIcon from '@material-ui/icons/Menu';
-import CloseIcon from '@material-ui/icons/Close';
-import { Route, Switch as Switching } from "react-router";
-import Switch from '@material-ui/core/Switch'
-import { IconButton } from "@material-ui/core";
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import { Routes, Route } from 'react-router-dom';
+import Switch from '@mui/material/Switch';
+import IconButton from '@mui/material/IconButton';
 
 
 function App() {
@@ -64,20 +64,11 @@ function App() {
 
         <MainContentStyled>
 
-          <Switching>
-            <Route path="/" exact>
-            <HomePage />
-            </Route>
-            <Route path="/about" exact>
-            <AboutPage/>
-            </Route>
-            <Route path="/projects" exact>
-            {/* <ProjectsPage /> */}
-            </Route>
-            <Route path="/contact" exact>
-            <ContactPage />
-            </Route>
-          </Switching>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
 
         </MainContentStyled>
     </div>

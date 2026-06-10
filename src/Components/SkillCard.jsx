@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const SkillCard = ({ image, title, paragraph }) => {
+const SkillCard = ({ image, icon, title, paragraph }) => {
     return (
         <SkillCardStyled>
             <div className="container">
-                <img src={image} alt=""/>
+                {image && <img src={image} alt={title} />}
+                {!image && icon && <div className="card-icon">{icon}</div>}
                 <h4>{title}</h4>
                 <p>{paragraph}</p>
             </div>
@@ -53,6 +54,16 @@ const SkillCardStyled = styled.div`
             object-fit: contain;
 
             
+        }
+
+        .card-icon {
+            height: 85px;
+            display: flex;
+            align-items: center;
+            svg {
+                font-size: 3.5rem;
+                color: var(--primary-color);
+            }
         }
     }
 `;
