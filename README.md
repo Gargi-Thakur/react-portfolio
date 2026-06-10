@@ -55,6 +55,7 @@ The dev server starts at [http://localhost:3000](http://localhost:3000) with hot
 ```
 .
 ├── index.html              # Vite entry — SEO meta tags, Open Graph, JSON-LD
+├── netlify.toml            # Netlify build config (Node 22, dist, SPA redirect)
 ├── vite.config.js          # Vite config (React plugin, dev port 3000)
 ├── public/
 │   └── robots.txt
@@ -103,15 +104,18 @@ The contact form on `/contact` submits to a **Google Form** via its `formRespons
 
 ## Deployment
 
-Any static host works (Netlify, Vercel, Cloudflare Pages, GitHub Pages):
+The site is deployed on **Netlify** at [gargithakur.com](https://gargithakur.com). The Netlify site is linked to this GitHub repo — every push to `main` triggers a build and deploy.
 
-1. Build command: `npm run build`
-2. Publish directory: `dist`
-3. Add an SPA rewrite rule (all routes → `/index.html`)
+All build configuration lives in [`netlify.toml`](netlify.toml) (it overrides any settings in the Netlify UI):
 
-For Node hosting (Render, Railway, a VPS), build first and run `npm run start-server`; it serves `dist/` on `PORT` (default 3000).
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Node version: 22
+- SPA redirect: all routes → `/index.html` so React Router deep links work
 
-> The old Heroku deployment (`gargithakur.herokuapp.com`) predates Heroku's free-tier shutdown and the Vite migration; redeploy using one of the options above.
+DNS for `gargithakur.com` is managed by Netlify (the domain is registered at GoDaddy, with nameservers delegated to Netlify).
+
+To deploy elsewhere, any static host works with the same build command/publish directory plus an SPA rewrite rule. For Node hosting, build first and run `npm run start-server`; it serves `dist/` on `PORT` (default 3000).
 
 ## Maintenance
 
