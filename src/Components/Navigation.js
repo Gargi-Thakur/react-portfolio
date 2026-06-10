@@ -23,7 +23,7 @@ function Navigation({ navToggle, setNavToggle }) {
                 </li>
             </ul>
             <footer className="footer">
-                <p>@2023 <b>Gargi Thakur</b></p>
+                <p>© 2026 <b>Gargi Thakur</b></p>
             </footer>
         </NavigationStyled>
     )
