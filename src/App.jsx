@@ -5,7 +5,6 @@ import Sidebar from "./Components/Sidebar";
 import styled from 'styled-components';
 import HomePage from "./Pages/HomePage";
 import AboutPage from './Pages/AboutPage';
-// import ProjectsPage from './Pages/ProjectsPage';
 import ContactPage from './Pages/ContactPage';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import MenuIcon from '@mui/icons-material/Menu';

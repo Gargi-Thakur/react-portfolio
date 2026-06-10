@@ -13,8 +13,6 @@ Single-page React application with client-side routing, a dark/light theme toggl
 | Routing | [React Router](https://reactrouter.com) (`react-router-dom`) | ^7 |
 | Styling | [styled-components](https://styled-components.com) | ^6 |
 | Component library | [MUI](https://mui.com) (`@mui/material`, `@mui/icons-material`) | ^9 |
-| HTTP client | [axios](https://axios-http.com) | ^1 |
-| Static prod server (optional) | [Express](https://expressjs.com) | ^5 |
 | Runtime | Node.js | 22 (see `.nvmrc`) |
 
 > The project was migrated from Create React App / React 17 / Material-UI v4 to the stack above in June 2026.
@@ -48,7 +46,6 @@ The dev server starts at [http://localhost:3000](http://localhost:3000) with hot
 | `npm run dev` (or `npm start`) | Start the Vite dev server on port 3000 with HMR |
 | `npm run build` | Production build to `dist/` (minified, hashed filenames) |
 | `npm run preview` | Serve the production build locally for a final check |
-| `npm run start-server` | Serve `dist/` with the Express server (`server/server.js`) — used for Node-based hosting |
 
 ## Project Structure
 
@@ -59,16 +56,13 @@ The dev server starts at [http://localhost:3000](http://localhost:3000) with hot
 ├── vite.config.js          # Vite config (React plugin, dev port 3000)
 ├── public/
 │   └── robots.txt
-├── server/
-│   └── server.js           # Express 5 static server with SPA fallback (optional)
 └── src/
     ├── main.jsx            # React 19 createRoot entry, BrowserRouter, global styles
     ├── App.jsx             # Routes, theme toggle, sidebar/hamburger layout
     ├── Pages/
     │   ├── HomePage.jsx    # Hero: value proposition + CTA
     │   ├── AboutPage.jsx   # Bio + services (skills) section
-    │   ├── ContactPage.jsx # Contact form (posts to Google Forms)
-    │   └── ProjectsPage.js # Currently disabled (commented out)
+    │   └── ContactPage.jsx # Contact form (posts to Google Forms)
     ├── Components/         # Navigation, SkillCard, buttons, titles, etc.
     ├── hooks/
     │   └── useDocumentMeta.js  # Per-route <title> / meta description
@@ -83,7 +77,7 @@ The dev server starts at [http://localhost:3000](http://localhost:3000) with hot
 
 Client-side routing via React Router v7 (`<Routes>` / `element` API). Three active routes: `/`, `/about`, `/contact`. The Projects page exists but is currently disabled.
 
-When deploying to a static host, configure an SPA fallback so deep links like `/about` rewrite to `index.html`. The included Express server (`npm run start-server`) already does this.
+When deploying to a static host, configure an SPA fallback so deep links like `/about` rewrite to `index.html` (handled by the redirect rule in `netlify.toml`).
 
 ### Styling & Theming
 
@@ -100,7 +94,7 @@ When deploying to a static host, configure an SPA fallback so deep links like `/
 
 ### Contact Form
 
-The contact form on `/contact` submits to a **Google Form** via its `formResponse` endpoint (see the `action` URL in `ContactPage.jsx`); responses land in the linked Google Sheet. There is also a legacy axios POST to `/send` which has no backend — it is harmless but vestigial.
+The contact form on `/contact` submits to a **Google Form** via its `formResponse` endpoint (see the `action` URL in `ContactPage.jsx`); responses land in the linked Google Sheet.
 
 ## Deployment
 
@@ -115,7 +109,7 @@ All build configuration lives in [`netlify.toml`](netlify.toml) (it overrides an
 
 DNS for `gargithakur.com` is managed by Netlify (the domain is registered at GoDaddy, with nameservers delegated to Netlify).
 
-To deploy elsewhere, any static host works with the same build command/publish directory plus an SPA rewrite rule. For Node hosting, build first and run `npm run start-server`; it serves `dist/` on `PORT` (default 3000).
+To deploy elsewhere, any static host works with the same build command/publish directory plus an SPA rewrite rule.
 
 ## Maintenance
 

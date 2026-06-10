@@ -5,9 +5,7 @@ import {NavLink} from 'react-router-dom';
 function Navigation({ navToggle, setNavToggle }) {
     return (
         <NavigationStyled>
-            <div className="logo">
-                {/* <img src={logo} alt=""/> */}
-            </div>
+            <div className="logo"></div>
             <ul className="nav-items">
                 <li className="nav-item">
                     <NavLink to="/" end className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>Home</NavLink>

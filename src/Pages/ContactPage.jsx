@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { MainLayout, InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
 import SubmitButton from '../Components/SubmitButton';
-import axios from 'axios';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 
 const ContactPage = () => {
@@ -11,48 +10,11 @@ const ContactPage = () => {
         'Contact | Gargi Thakur — AI Automation for Small Businesses',
         'Book a free consultation to find out what AI automation can do for your small business — email automation, lead follow-up, and scheduling.'
     );
-    const [contactForm, setContactForm] = useState({
-        name: '',
-        email: '',
-        subject: '',
-        textarea: ''
-    });
-    const [result, setResult] = useState(null);
-
-    const sendEmail = (e) => {
-        e.preventDefault();
-        console.log(contactForm);
-        console.log('Email sent');
-        axios
-            .post('/send', { ...contactForm })
-            .then(response => {
-                setResult(response.data);
-                setContactForm({ name: '', email: '', subject: '', message: '' });
-            })
-            .catch(() => {
-                setResult({ success: false, message: 'Something went wrong. Try again later' });
-            });
-    }
-
-    const onInputChange = event => {
-        const { name, value } = event.target;
-
-        setContactForm({
-            ...contactForm,
-            [name]: value
-        });
-    };
-
 
     return (
         <MainLayout>
             <Title title={'Contact'} span={'Contact'} />
             <ContactPageStyled >
-                {result && (
-                    <p className={`${result.success ? 'success' : 'error'}`}>
-                        {result.message}
-                    </p>
-                )}
             <InnerLayout className={'contact-section'}>
                 <div className="content">
                     <div className="contact-title">
@@ -64,23 +26,22 @@ const ContactPage = () => {
                         <form className="form" id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdBDwt5jPc00ipcqlMnPS9ulBjGSyCycdaRWayEM_InehfKZQ/formResponse" target="_blank" >
                         <div className="form-field">
                             <label htmlFor="userName" >Name*</label>
-                                <input type="text" id="userName" onChange={onInputChange} name="entry.1440995342" required />
+                                <input type="text" id="userName" name="entry.1440995342" required />
                         </div>
                         <div className="form-field">
                             <label htmlFor="email"  >Your email*</label>
-                                <input type="email" id="email" onChange={onInputChange} name="emailAddress" required />
+                                <input type="email" id="email" name="emailAddress" required />
                         </div>
                         <div className="form-field">
                             <label htmlFor="subject"  >Subject*</label>
-                                <input type="text" id="subject" onChange={onInputChange} name="entry.141461250" required />
+                                <input type="text" id="subject" name="entry.141461250" required />
                         </div>
                         <div className="form-field">
                             <label htmlFor="textarea">Message*</label>
-                                <textarea id="textarea" cols="30" rows="10" onChange={onInputChange} name="entry.850096426" required ></textarea>
-                                {/* <input id="textarea" onChange={onInputChange} name="entry.850096426" required ></input> */}
+                                <textarea id="textarea" cols="30" rows="10" name="entry.850096426" required ></textarea>
                         </div>
                         <div className="form-field f-button">
-                                <SubmitButton title={'Send Email'} type="submit" onChange={sendEmail} />
+                                <SubmitButton title={'Send Email'} type="submit" />
                         </div>
                     </form> 
                 </div>

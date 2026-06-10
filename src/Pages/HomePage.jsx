@@ -6,7 +6,6 @@ import LinkedinIcon from '@mui/icons-material/LinkedIn';
 import GithubIcon from '@mui/icons-material/GitHub';
 import PrimaryButton from '../Components/PrimaryButton';
 import useDocumentMeta from '../hooks/useDocumentMeta';
-// import Particle from '../Components/Particle';
 
 function HomePage() {
     useDocumentMeta(
@@ -15,9 +14,6 @@ function HomePage() {
     );
     return (
         <HomePageStyled>
-            <div className="particle-con">
-                {/* <Particle /> */}
-            </div>
             <div className="typography">
                 <h1>Hi, I'm <span>Gargi Thakur</span></h1>
                 <p>
