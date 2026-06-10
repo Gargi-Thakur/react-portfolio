@@ -10,13 +10,13 @@ const InfoSection = () => {
             <div className="content">
                 <h4>Hi, I am <span>Gargi</span></h4>
                 <p className="paragraph">
-                    I help small businesses save time with practical AI automation. If your team is buried in repetitive work — answering the same emails, chasing leads, juggling appointment bookings — I build systems that handle it for you, so you can focus on the work that actually grows your business.
+                    I help small businesses make better decisions and save time with practical AI. My lead offer is a custom AI insights dashboard that reads your sales data and tells you in plain language what's selling, what's slowing, and what to reorder. And if your team is buried in repetitive work (answering the same emails, chasing leads, juggling bookings), I build automation that handles it for you.
                 </p>
                 <p className="paragraph">
-                    I come at this as a full-stack developer (React, TypeScript/Next.js, Python/Django), which means your automations aren't held together with duct tape — they're built to integrate properly with the tools you already use and to keep working as your business grows. My background in Life Sciences taught me to think in processes: before I automate anything, I map out how the work actually flows, then remove the bottlenecks.
+                    I come at this as a full-stack developer (React, TypeScript/Next.js, Python/Django), which means your automations aren't held together with duct tape. They're built to integrate properly with the tools you already use and to keep working as your business grows. My background in Life Sciences taught me to think in processes: before I automate anything, I map out how the work actually flows, then remove the bottlenecks.
                 </p>
                 <p className="paragraph">
-                    Based in Vancouver, BC, working with small businesses everywhere. If you're curious whether something in your day-to-day can be automated, the answer is probably yes — let's talk.
+                    Based in Vancouver, BC, working with small businesses everywhere. If you're curious whether something in your day-to-day can be automated, the answer is probably yes. Let's talk.
                 </p>
                 <br />
                 <div className="buttons">

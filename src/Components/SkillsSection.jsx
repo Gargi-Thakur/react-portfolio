@@ -1,38 +1,41 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import { InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
 import SkillCard from '../Components/SkillCard';
+import InsightsIcon from '@mui/icons-material/Insights';
 import MailOutlineIcon from '@mui/icons-material/MailOutlined';
-import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import EventAvailableIcon from '@mui/icons-material/EventAvailable';
+import StorefrontIcon from '@mui/icons-material/Storefront';
 
 const SkillsSection = () => {
     return (
         <InnerLayout>
             <SkillsSectionStyled>
-                <Title title={'Services'} span={'Services'} />
+                <Title title={'What I Do'} span={'What I Do'} />
                 <div className="skills">
                     <SkillCard
-                        icon={<MailOutlineIcon />}
-                        title={'Email Automation'}
-                        paragraph={"Stop spending hours in your inbox. I build systems that sort incoming email, draft replies in your voice, and route what matters to the right person — so routine messages handle themselves."}
+                        icon={<InsightsIcon />}
+                        title={'AI Insights Dashboard'}
+                        paragraph={"A custom dashboard wired to your sales and ecommerce data that tells you, in plain language, what's selling, what's slowing, and what stock or raw materials to reorder, and when. No spreadsheets to decode."}
                     />
                     <div className="mid-card">
                         <SkillCard
-                            icon={<TrendingUpIcon />}
-                            title={'Lead Follow-up'}
-                            paragraph={"Leads go cold fast. I set up automated follow-up that responds to every enquiry within minutes, nurtures prospects over time, and tells you exactly who's ready to buy — no one slips through the cracks."}
+                            icon={<MailOutlineIcon />}
+                            title={'Email & Workflow Automation'}
+                            paragraph={"Routine email handling, lead follow-up, and client scheduling, with replies drafted for your review. Every enquiry gets answered within minutes, nothing slips through, and the phone tag stops."}
                         />
                     </div>
                     <SkillCard
-                        icon={<EventAvailableIcon />}
-                        title={'Smart Scheduling'}
-                        paragraph={"Bookings, reminders, rescheduling, and no-show reduction on autopilot. Your clients book themselves in, your calendar stays organized, and you stop playing phone tag."}
+                        icon={<StorefrontIcon />}
+                        title={'Web & Ecommerce Development'}
+                        paragraph={"Clean, fast online stores and websites built on a real engineering foundation (React, TypeScript/Next.js, Python/Django), so they integrate properly with your tools and keep working as you grow."}
                     />
                 </div>
                 <p className="stack-note">
-                    Every automation is built on a real engineering foundation — React, TypeScript/Next.js, and Python/Django — so it integrates cleanly with your existing tools and keeps working as you grow.
+                    Pricing for every service is published openly on the{' '}
+                    <NavLink to="/services" className="services-link">Services page</NavLink>
+                    , including discounted founding-client rates for my first few clients.
                 </p>
             </SkillsSectionStyled>
         </InnerLayout>
@@ -61,6 +64,10 @@ const SkillsSectionStyled = styled.section`
         margin-top: 2rem;
         font-size: .95rem;
         opacity: .8;
+        .services-link{
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
     }
 `;
 

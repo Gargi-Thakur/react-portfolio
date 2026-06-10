@@ -5,6 +5,7 @@ import Sidebar from "./Components/Sidebar";
 import styled from 'styled-components';
 import HomePage from "./Pages/HomePage";
 import AboutPage from './Pages/AboutPage';
+import ServicesPage from './Pages/ServicesPage';
 import ContactPage from './Pages/ContactPage';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -66,6 +67,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
 

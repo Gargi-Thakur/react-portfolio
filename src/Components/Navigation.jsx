@@ -14,6 +14,9 @@ function Navigation({ navToggle, setNavToggle }) {
                     <NavLink to="/about" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>About</NavLink>
                 </li>
                 <li className="nav-item">
+                    <NavLink to="/services" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>Services</NavLink>
+                </li>
+                <li className="nav-item">
                     <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>Contact</NavLink>
                 </li>
             </ul>

@@ -7,8 +7,8 @@ import useDocumentMeta from '../hooks/useDocumentMeta';
 
 const ContactPage = () => {
     useDocumentMeta(
-        'Contact | Gargi Thakur — AI Automation for Small Businesses',
-        'Book a free consultation to find out what AI automation can do for your small business — email automation, lead follow-up, and scheduling.'
+        'Contact | Gargi Thakur - AI Automation for Small Businesses',
+        'Book a free consultation to find out what AI automation can do for your small business: email automation, lead follow-up, and scheduling.'
     );
 
     return (
@@ -20,7 +20,7 @@ const ContactPage = () => {
                     <div className="contact-title">
                         <h4>Get In Touch</h4>
                         <p>
-                            Tell me what's eating up your time — repetitive emails, leads going cold, scheduling back-and-forth — and I'll tell you honestly whether automation can fix it. No jargon, no obligation.
+                            Tell me what's eating up your time (repetitive emails, leads going cold, scheduling back-and-forth), and I'll tell you honestly whether automation can fix it. No jargon, no obligation.
                         </p>
                     </div>
                         <form className="form" id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdBDwt5jPc00ipcqlMnPS9ulBjGSyCycdaRWayEM_InehfKZQ/formResponse" target="_blank" >

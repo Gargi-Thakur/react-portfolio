@@ -8,7 +8,7 @@ import useDocumentMeta from '../hooks/useDocumentMeta';
 
 const AboutPage = () => {
     useDocumentMeta(
-        'About | Gargi Thakur — AI Automation for Small Businesses',
+        'About | Gargi Thakur - AI Automation for Small Businesses',
         'Full-stack developer in Vancouver, BC helping small businesses automate email, lead follow-up, and scheduling with practical AI systems.'
     );
     return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import XIcon from '@mui/icons-material/X';
 import LinkedinIcon from '@mui/icons-material/LinkedIn';
 import GithubIcon from '@mui/icons-material/GitHub';
 import PrimaryButton from '../Components/PrimaryButton';
@@ -9,23 +9,26 @@ import useDocumentMeta from '../hooks/useDocumentMeta';
 
 function HomePage() {
     useDocumentMeta(
-        'Gargi Thakur | AI Automation for Small Businesses in Vancouver, BC',
-        'I help small businesses save time with practical AI automation — email automation, lead follow-up, and scheduling. Full-stack developer based in Vancouver, BC.'
+        'Gargi Thakur | AI Insights Dashboards & Automation for Small Businesses',
+        'Custom AI insights dashboards and email & workflow automation for small businesses. Know what\'s selling, what\'s slowing, and what to reorder. Full-stack developer in Vancouver, BC.'
     );
     return (
         <HomePageStyled>
             <div className="typography">
                 <h1>Hi, I'm <span>Gargi Thakur</span></h1>
-                <p>
-                    I help small businesses save time with practical AI automation —
-                    email handling, lead follow-up, and scheduling that runs itself.
+                <p className="lead">
+                    I help small businesses save time with practical AI: sales dashboards
+                    that tell you what to reorder, and automation for email, leads, and scheduling.
                 </p>
                 <p className="credibility">
-                    Full-stack developer (React, TypeScript/Next.js, Python/Django) based in Vancouver, BC, Canada.
+                    Full-stack developer · Vancouver, BC
                 </p>
                 <div className="cta">
                     <NavLink to="/contact">
                         <PrimaryButton title={'Book a Free Consultation'} />
+                    </NavLink>
+                    <NavLink to="/services">
+                        <PrimaryButton title={'Services & Pricing'} />
                     </NavLink>
                 </div>
                 <div className="icons">
@@ -35,8 +38,8 @@ function HomePage() {
                     <a href="https://github.com/Gargi-Thakur" className="icon i-github" target="_blank" rel="noreferrer" >
                         <GithubIcon />
                     </a>
-                    <a href="https://twitter.com/GargiGingerly" className="icon i-twitter" target="_blank" rel="noreferrer" >
-                        <TwitterIcon />
+                    <a href="https://x.com/GargiGingerly" className="icon i-x" target="_blank" rel="noreferrer" >
+                        <XIcon />
                     </a>
                 </div>
             </div>
@@ -56,15 +59,32 @@ const HomePageStyled = styled.header`
         transform: translate(-50%, -50%);
         text-align: center;
         width: 80%;
+        max-width: 42rem;
+
+        h1{
+            margin-bottom: 1.25rem;
+        }
+
+        .lead{
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin: 0 auto;
+            max-width: 36rem;
+        }
 
         .credibility{
-            margin-top: .8rem;
-            font-size: .95rem;
-            opacity: .8;
+            margin-top: 1rem;
+            font-size: .9rem;
+            opacity: .7;
+            letter-spacing: 0.02em;
         }
 
         .cta{
-            margin-top: 1.5rem;
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
         .icons{
