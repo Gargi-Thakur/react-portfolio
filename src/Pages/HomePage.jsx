@@ -5,6 +5,7 @@ import XIcon from '@mui/icons-material/X';
 import LinkedinIcon from '@mui/icons-material/LinkedIn';
 import GithubIcon from '@mui/icons-material/GitHub';
 import PrimaryButton from '../Components/PrimaryButton';
+import OutlineButton from '../Components/OutlineButton';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 
 function HomePage() {
@@ -29,6 +30,9 @@ function HomePage() {
                     </NavLink>
                     <NavLink to="/services">
                         <PrimaryButton title={'Services & Pricing'} />
+                    </NavLink>
+                    <NavLink to="/demo">
+                        <OutlineButton title={'View Live Demo'} />
                     </NavLink>
                 </div>
                 <div className="icons">

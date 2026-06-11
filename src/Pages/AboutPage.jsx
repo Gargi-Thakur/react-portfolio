@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import InfoSection from '../Components/InfoSection';
+import DemoShowcase from '../Components/DemoShowcase';
 import Title from '../Components/Title';
 import { MainLayout } from '../styles/Layouts';
 import SkillsSection from '../Components/SkillsSection';
@@ -16,6 +17,7 @@ const AboutPage = () => {
             <AboutStyled >
                 <Title title={'About'} span={'About'} />
                 <InfoSection />
+                <DemoShowcase />
                 <SkillsSection />
             </AboutStyled>
         </MainLayout>

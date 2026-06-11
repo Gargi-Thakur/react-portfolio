@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { MainLayout, InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
 import PrimaryButton from '../Components/PrimaryButton';
+import DemoShowcase from '../Components/DemoShowcase';
 import InsightsIcon from '@mui/icons-material/Insights';
 import MailOutlineIcon from '@mui/icons-material/MailOutlined';
 import StorefrontIcon from '@mui/icons-material/Storefront';
@@ -47,6 +48,7 @@ const ServicesPage = () => {
                             <li><CheckIcon /> Reorder alerts for stock and raw materials</li>
                             <li><CheckIcon /> Monitored, maintained, and lightly improved every month</li>
                         </ul>
+                        <DemoShowcase compact />
                         <div className="pricing">
                             <div className="price-row">
                                 <span className="price-label">Build</span>

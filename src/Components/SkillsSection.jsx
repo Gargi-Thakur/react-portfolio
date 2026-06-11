@@ -33,9 +33,12 @@ const SkillsSection = () => {
                     />
                 </div>
                 <p className="stack-note">
-                    Pricing for every service is published openly on the{' '}
+                    <NavLink to="/demo" className="services-link">
+                        View the live inventory dashboard walkthrough
+                    </NavLink>
+                    {' '}to see what a custom build looks like. Pricing is on the{' '}
                     <NavLink to="/services" className="services-link">Services page</NavLink>
-                    , including discounted founding-client rates for my first few clients.
+                    , including founding-client rates for my first few clients.
                 </p>
             </SkillsSectionStyled>
         </InnerLayout>
