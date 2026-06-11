@@ -10,17 +10,20 @@ const OutlineButton = ({ title }) => {
 }
 
 const OutlineButtonStyled = styled.span`
-    border: 2px solid var(--primary-color);
-    padding: .75rem 2.3rem;
-    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    padding: .72rem 1.3rem;
+    color: var(--heading-color);
+    background: var(--surface-color);
     cursor: pointer;
     display: inline-block;
-    font-size: inherit;
-    text-transform: uppercase;
-    transition: all .4s ease-in-out;
+    font-size: .9rem;
+    font-weight: 700;
+    border-radius: .45rem;
+    transition: border-color .2s ease, color .2s ease, background-color .2s ease;
     &:hover{
-        background-color: var(--primary-color);
-        color: white;
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        background-color: var(--primary-soft);
     }
 `;
 

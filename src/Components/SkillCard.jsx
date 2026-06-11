@@ -15,37 +15,29 @@ const SkillCard = ({ image, icon, title, paragraph }) => {
 }
 
 const SkillCardStyled = styled.div`
-    background-color: var(--background-dark-grey);
-    border-left: 1px solid var(--border-color);
-    border-top: 8px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    transition: all .4s ease-in-out;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: .75rem;
+    box-shadow: var(--shadow-lg);
+    transition: border-color .2s ease, transform .2s ease;
     &:hover{
-        border-top: 8px solid var(--primary-color);
-        transform: translateY(3px);
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
     }
     .container{
-        padding: 1.2rem;
+        padding: 1.35rem;
         h4{
-            color: var(--white-color);
-            font-size: 1.6rem;
-            padding: 1rem 0;
-            position: relative;
-            &::after{
-                content: "";
-                width: 5rem;
-                background-color: var(--border-color);
-                height: 3px;
-                position: absolute;;
-                left: 0;
-                bottom: 0;
-                border-radius: 10px;
-            }
+            color: var(--heading-color);
+            font-size: 1.2rem;
+            padding: .75rem 0 .5rem;
+            font-weight: 700;
         }
 
         p{
-            padding: .8rem 0;
+            padding: .25rem 0 0;
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.55;
         }
 
         img {

@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import XIcon from '@mui/icons-material/X';
 import LinkedinIcon from '@mui/icons-material/LinkedIn';
-import GithubIcon from '@mui/icons-material/GitHub';
 import PrimaryButton from '../Components/PrimaryButton';
 import OutlineButton from '../Components/OutlineButton';
+import TextLink from '../Components/TextLink';
+import DashboardPreview from '../Components/DashboardPreview';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 
 function HomePage() {
@@ -15,107 +15,115 @@ function HomePage() {
     );
     return (
         <HomePageStyled>
-            <div className="typography">
-                <h1>Hi, I'm <span>Gargi Thakur</span></h1>
-                <p className="lead">
-                    I help small businesses save time with practical AI: sales dashboards
-                    that tell you what to reorder, and automation for email, leads, and scheduling.
-                </p>
-                <p className="credibility">
-                    Full-stack developer · Vancouver, BC
-                </p>
-                <div className="cta">
-                    <NavLink to="/contact">
-                        <PrimaryButton title={'Book a Free Consultation'} />
-                    </NavLink>
-                    <NavLink to="/services">
-                        <PrimaryButton title={'Services & Pricing'} />
-                    </NavLink>
-                    <NavLink to="/demo">
-                        <OutlineButton title={'View Live Demo'} />
-                    </NavLink>
+            <section className="hero">
+                <div className="hero-copy">
+                    <p className="eyebrow">Vancouver, BC · Full-stack developer</p>
+                    <h1>Practical AI dashboards and automation for <span>small businesses</span></h1>
+                    <p className="lead">
+                        I build custom insights dashboards and workflow automation so you
+                        can see what to reorder, follow up faster, and spend less time in
+                        spreadsheets.
+                    </p>
+                    <div className="cta">
+                        <NavLink to="/contact">
+                            <PrimaryButton title={'Book a Free Consultation'} />
+                        </NavLink>
+                        <NavLink to="/demo">
+                            <OutlineButton title={'View Live Demo'} />
+                        </NavLink>
+                    </div>
+                    <div className="secondary-links">
+                        <NavLink to="/services"><TextLink title={'Services & pricing'} /></NavLink>
+                        <a href="https://www.linkedin.com/in/gargithakur94/" target="_blank" rel="noreferrer" className="linkedin-link">
+                            <LinkedinIcon />
+                            LinkedIn
+                        </a>
+                    </div>
                 </div>
-                <div className="icons">
-                    <a href="https://www.linkedin.com/in/gargithakur94/" className="icon i-linkedin" target="_blank" rel="noreferrer" >
-                        <LinkedinIcon />
-                    </a>
-                    <a href="https://github.com/Gargi-Thakur" className="icon i-github" target="_blank" rel="noreferrer" >
-                        <GithubIcon />
-                    </a>
-                    <a href="https://x.com/GargiGingerly" className="icon i-x" target="_blank" rel="noreferrer" >
-                        <XIcon />
-                    </a>
+                <div className="hero-visual">
+                    <DashboardPreview />
+                    <p className="visual-caption">Sample dashboard preview from NovaFit AI Inventory Hub</p>
                 </div>
-            </div>
+            </section>
         </HomePageStyled>
     )
 }
 
-const HomePageStyled = styled.header`
+const HomePageStyled = styled.div`
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 3rem;
     width: 100%;
-    height: 100vh;
-    position: relative;
-   
-    .typography{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        width: 80%;
-        max-width: 42rem;
 
-        h1{
-            margin-bottom: 1.25rem;
+    .hero{
+        display: grid;
+        grid-template-columns: 1.05fr .95fr;
+        gap: 2.5rem;
+        align-items: center;
+    }
+
+    .eyebrow{
+        color: var(--primary-color);
+        font-size: .82rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        margin-bottom: .85rem;
+    }
+
+    .lead{
+        margin-top: 1rem;
+        max-width: 34rem;
+        font-size: 1.08rem;
+        line-height: 1.65;
+        color: var(--text-muted);
+    }
+
+    .cta{
+        margin-top: 1.75rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .85rem;
+    }
+
+    .secondary-links{
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        .linkedin-link{
+            display: inline-flex;
+            align-items: center;
+            gap: .35rem;
+            color: var(--text-muted);
+            font-size: .92rem;
+            font-weight: 600;
+            svg{ font-size: 1.1rem; }
+            &:hover{ color: var(--primary-color); }
         }
+    }
 
-        .lead{
-            font-size: 1.15rem;
-            line-height: 1.6;
-            margin: 0 auto;
-            max-width: 36rem;
+    .hero-visual{
+        .visual-caption{
+            margin-top: .75rem;
+            font-size: .82rem;
+            color: var(--text-muted);
+            text-align: center;
         }
+    }
 
-        .credibility{
-            margin-top: 1rem;
-            font-size: .9rem;
-            opacity: .7;
-            letter-spacing: 0.02em;
+    @media screen and (max-width: 960px){
+        .hero{
+            grid-template-columns: 1fr;
         }
-
-        .cta{
-            margin-top: 2rem;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+        .hero-visual{
+            order: -1;
         }
+    }
 
-        .icons{
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-            .icon{
-                border: 2px solid var(--border-color);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-radius: 50%;
-                transition: all .4s ease-in-out;
-                cursor: pointer;
-                &:hover{
-                    border: 2px solid var(--primary-color);
-                    color: var(--primary-color);
-                }
-                &:not(:last-child){
-                    margin-right: 1rem;
-                }
-                svg{
-                    margin: .5rem;
-                }
-            }
-
-        }
+    @media screen and (max-width: 642px){
+        padding: 1.5rem 1rem 2.5rem;
     }
 `;
 

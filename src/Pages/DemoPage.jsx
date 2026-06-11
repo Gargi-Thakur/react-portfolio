@@ -66,7 +66,10 @@ const DemoPage = () => {
 
     return (
         <MainLayout>
-            <Title title={'Live Demo'} span={'Live Demo'} />
+            <Title
+                title={'Live Demo Walkthrough'}
+                subtitle={'Explore what the NovaFit dashboard demo includes before opening the live app.'}
+            />
             <DemoPageStyled>
                 <InnerLayout>
                     <p className="intro">
@@ -185,8 +188,8 @@ const DemoPageStyled = styled.section`
     .content-block{
         margin-top: 2.5rem;
         h3{
-            color: var(--white-color);
-            font-size: 1.45rem;
+            color: var(--heading-color);
+            font-size: 1.35rem;
             margin-bottom: .75rem;
         }
         p{
@@ -237,14 +240,14 @@ const DemoPageStyled = styled.section`
             vertical-align: top;
         }
         th{
-            color: var(--white-color);
+            color: var(--heading-color);
             font-size: .85rem;
             text-transform: uppercase;
             letter-spacing: .5px;
             background-color: rgba(255, 255, 255, 0.03);
         }
         td:first-child{
-            color: var(--white-color);
+            color: var(--heading-color);
             font-weight: 600;
             width: 30%;
             white-space: nowrap;

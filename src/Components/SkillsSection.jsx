@@ -12,7 +12,11 @@ const SkillsSection = () => {
     return (
         <InnerLayout>
             <SkillsSectionStyled>
-                <Title title={'What I Do'} span={'What I Do'} />
+                <Title
+                    as="h2"
+                    title={'What I Do'}
+                    subtitle={'Custom dashboards, workflow automation, and development built for real business operations.'}
+                />
                 <div className="skills">
                     <SkillCard
                         icon={<InsightsIcon />}

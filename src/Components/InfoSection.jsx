@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import PrimaryButton from './PrimaryButton';
-import resume from '../data/janResume.pdf';
+import resume from '../data/Gargi_Resume2025.pdf';
 
 const InfoSection = () => {
     return (
@@ -21,7 +21,7 @@ const InfoSection = () => {
                 <br />
                 <div className="buttons">
                     <NavLink to="/contact"><PrimaryButton title={"Let's Talk"} /></NavLink>
-                    <a href={resume} download="Gargi_Resume.pdf"><PrimaryButton title={'Download Resume'} /></a>
+                    <a href={resume} download="Gargi_Resume2025.pdf"><PrimaryButton title={'Download Resume'} /></a>
                 </div>
             </div>
         </InfoSectionStyled>
@@ -47,13 +47,16 @@ const InfoSectionStyled = styled.div`
     .content {
         width: 100%;
         h4 {
-            font-size: 2rem;
-            color: var(--white-color);
+            font-size: 1.6rem;
+            color: var(--heading-color);
+            font-weight: 700;
             span {
-                font-size: 2rem;
+                font-size: inherit;
+                color: var(--primary-color);
             }
         }
         .paragraph {
+            color: var(--text-muted);
             padding: .6rem 0;
         }
         .buttons {

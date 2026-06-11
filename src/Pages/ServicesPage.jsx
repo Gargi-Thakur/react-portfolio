@@ -19,7 +19,10 @@ const ServicesPage = () => {
 
     return (
         <MainLayout>
-            <Title title={'Services'} span={'Services'} />
+            <Title
+                title={'Services & Pricing'}
+                subtitle={'Transparent pricing for custom AI dashboards and workflow automation, with founding-client rates available.'}
+            />
             <ServicesPageStyled>
                 <InnerLayout>
                     <p className="intro">
@@ -162,31 +165,34 @@ const ServicesPageStyled = styled.section`
 
     .service-card{
         position: relative;
-        background-color: var(--background-dark-grey);
+        background-color: var(--surface-color);
         border: 1px solid var(--border-color);
-        border-top: 8px solid var(--border-color);
+        border-radius: .85rem;
         padding: 2rem;
-        margin-top: 2.5rem;
-        transition: all .4s ease-in-out;
+        margin-top: 2rem;
+        box-shadow: var(--shadow-lg);
+        transition: border-color .2s ease, transform .2s ease;
         &:hover{
-            border-top: 8px solid var(--primary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
         }
         &.featured{
-            border-top: 8px solid var(--primary-color);
+            border-color: var(--primary-color);
+            border-left: 4px solid var(--primary-color);
         }
 
         .badge{
             position: absolute;
             top: 1.2rem;
             right: 1.2rem;
-            background-color: var(--primary-color);
-            color: white;
+            background-color: var(--primary-soft);
+            color: var(--primary-color);
             font-size: .75rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            padding: .25rem .8rem;
-            border-radius: 2px;
+            padding: .3rem .75rem;
+            border-radius: 999px;
         }
     }
 
@@ -195,12 +201,12 @@ const ServicesPageStyled = styled.section`
         align-items: center;
         gap: 1rem;
         h3{
-            color: var(--white-color);
-            font-size: 1.7rem;
+            color: var(--heading-color);
+            font-size: 1.55rem;
         }
         h4{
-            color: var(--white-color);
-            font-size: 1.3rem;
+            color: var(--heading-color);
+            font-size: 1.2rem;
         }
         .card-icon{
             display: flex;
@@ -236,6 +242,8 @@ const ServicesPageStyled = styled.section`
 
     .pricing{
         border: 1px solid var(--border-color);
+        border-radius: .65rem;
+        background: var(--surface-muted);
         padding: 1.2rem 1.5rem;
         margin-bottom: 1.5rem;
 
@@ -251,8 +259,8 @@ const ServicesPageStyled = styled.section`
                 letter-spacing: 1px;
             }
             .price-value{
-                color: var(--white-color);
-                font-weight: 600;
+                color: var(--heading-color);
+                font-weight: 700;
                 font-size: 1.25rem;
                 small{
                     font-size: .85rem;
@@ -278,7 +286,7 @@ const ServicesPageStyled = styled.section`
                 padding-top: .3rem;
                 font-size: 1rem;
                 strong{
-                    color: var(--white-color);
+                    color: var(--heading-color);
                 }
             }
         }
@@ -300,8 +308,8 @@ const ServicesPageStyled = styled.section`
     .founding-explainer{
         margin-top: 3.5rem;
         h4{
-            color: var(--white-color);
-            font-size: 1.3rem;
+            color: var(--heading-color);
+            font-size: 1.2rem;
             padding: 1rem 0 .4rem 0;
         }
         .process{

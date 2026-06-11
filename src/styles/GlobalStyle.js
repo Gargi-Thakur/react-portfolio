@@ -1,62 +1,54 @@
-import {createGlobalStyle} from 'styled-components';
-
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-/* :root{
-    --primary-color: #007bff;
-    --primary-color-light: #057FFF;
-    --secondary-color: #6c757d;
-    --background-dark-color: #10121A;
-    --background-dark-grey: #191D2B;
-    --border-color: #2e344e;
-    --background-light-color: #F1F1F1;
-    --background-light-color-2: rgba(3,127,255,.3);
-    --white-color: #FFF;
-    --font-light-color: #a4acc4;
-    --font-dark-color: #313131;
-    --font-dark-color-2: #151515;
-    --sidebar-dark-color: #191D2B;
-    --scrollbar-bg-color: #383838;
-    --scrollbar-thump-color: #6b6b6b;
-    --scrollbar-track-color: #383838;
-
-} */
-
 .light-theme{
-    --primary-color: #007bff;
-    --primary-color-light: #057FFF;
-    --secondary-color: #F1F1F1;
-    --background-dark-color: #F1F1F1;
-    --background-dark-grey: #e4e4e4;
-    --border-color: #cbced8;
-    --background-light-color: #F1F1F1;
-    --background-light-color-2: rgba(3,127,255,.3);
-    --white-color: #151515;
-    --font-light-color: #313131;
-    --font-dark-color: #313131;
-    --font-dark-color-2: #151515;
-    --sidebar-dark-color: #E4E4E4;
-    --scrollbar-bg-color: #383838;
-    --scrollbar-thump-color: #6b6b6b;
-    --scrollbar-track-color: #383838;
+    --primary-color: #1d4ed8;
+    --primary-hover: #1e40af;
+    --primary-soft: rgba(29, 78, 216, 0.1);
+    --secondary-color: #e2e8f0;
+    --background-dark-color: #f8fafc;
+    --background-dark-grey: #ffffff;
+    --surface-color: #ffffff;
+    --surface-muted: #f1f5f9;
+    --border-color: #e2e8f0;
+    --background-light-color: #f8fafc;
+    --background-light-color-2: rgba(29, 78, 216, 0.12);
+    --heading-color: #0f172a;
+    --white-color: #0f172a;
+    --font-light-color: #475569;
+    --text-muted: #64748b;
+    --font-dark-color: #0f172a;
+    --font-dark-color-2: #1e293b;
+    --sidebar-dark-color: #ffffff;
+    --shadow-lg: 0 18px 40px rgba(15, 23, 42, 0.08);
+    --scrollbar-bg-color: #e2e8f0;
+    --scrollbar-thump-color: #94a3b8;
+    --scrollbar-track-color: #f1f5f9;
 }
+
 .dark-theme{
-    --primary-color: #007bff;
-    --primary-color-light: #057FFF;
-    --secondary-color: #6c757d;
-    --background-dark-color: #10121A;
-    --background-dark-grey: #191D2B;
-    --border-color: #2e344e;
-    --background-light-color: #F1F1F1;
-    --background-light-color-2: rgba(3,127,255,.3);
-    --white-color: #FFF;
-    --font-light-color: #a4acc4;
-    --font-dark-color: #313131;
-    --font-dark-color-2: #151515;
-    --sidebar-dark-color: #191D2B;
-    --scrollbar-bg-color: #383838;
-    --scrollbar-thump-color: #6b6b6b;
-    --scrollbar-track-color: #383838;
+    --primary-color: #60a5fa;
+    --primary-hover: #3b82f6;
+    --primary-soft: rgba(96, 165, 250, 0.14);
+    --secondary-color: #334155;
+    --background-dark-color: #0b1220;
+    --background-dark-grey: #111827;
+    --surface-color: #111827;
+    --surface-muted: #1f2937;
+    --border-color: #334155;
+    --background-light-color: #111827;
+    --background-light-color-2: rgba(96, 165, 250, 0.16);
+    --heading-color: #f8fafc;
+    --white-color: #f8fafc;
+    --font-light-color: #cbd5e1;
+    --text-muted: #94a3b8;
+    --font-dark-color: #e2e8f0;
+    --font-dark-color-2: #f8fafc;
+    --sidebar-dark-color: #111827;
+    --shadow-lg: 0 18px 40px rgba(0, 0, 0, 0.35);
+    --scrollbar-bg-color: #1f2937;
+    --scrollbar-thump-color: #64748b;
+    --scrollbar-track-color: #111827;
 }
 
 *{
@@ -65,116 +57,71 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.1rem;
-    
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body{
     background-color: var(--background-dark-color);
     color: var(--font-light-color);
-    transition: all .4s ease-in-out;
+    transition: background-color .25s ease, color .25s ease;
+    line-height: 1.6;
 }
 
 body::-webkit-scrollbar{
     width: 9px;
-    background-color: #383838;
+    background-color: var(--scrollbar-track-color);
 }
 body::-webkit-scrollbar-thumb{
     border-radius: 10px;
-    background-color: #6b6b6b;
+    background-color: var(--scrollbar-thump-color);
 }
 body::-webkit-scrollbar-track{
     border-radius: 10px;
-    background-color: #383838;
+    background-color: var(--scrollbar-bg-color);
 }
 
 textarea{
     max-width: 100%;
 }
+
 a{
     font-family: inherit;
     color: inherit;
     font-size: inherit;
-    font-size: 1rem;
 }
 
 h1{
-    font-size: 4rem;
-    color: var(--white-color);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    color: var(--heading-color);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     span{
-        font-size: 4rem;
-        @media screen and (max-width: 502px){
-            font-size: 3rem
-        }
+        color: var(--primary-color);
+        font-size: inherit;
     }
-    @media screen and (max-width: 502px){
-        font-size: 3rem
-    }
+}
+
+h2, h3, h4{
+    color: var(--heading-color);
 }
 
 span{
     color: var(--primary-color);
 }
+
 h6{
-    color: var(--white-color);
+    color: var(--heading-color);
     font-size: 1.2rem;
     padding-bottom: .6rem;
 }
 
-//Utilities
+p{
+    font-size: 1rem;
+}
+
 .u-margin-bottom{
     margin-bottom: 4rem;
 }
-
-
-//Floting Toggler
-.light-dark-mode{
-    position: fixed;
-    right: 0;
-    top: 25%;
-    background-color: var(--background-light-color-2);
-    width: 6.5rem;
-    height: 2.5rem;
-    z-index: 15;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    svg{
-      display: flex;
-      align-items: center;
-      font-size: 1.7rem;
-      color: var(--white-color);
-    }
-}
-
-  //Nav Toggler
-  .ham-burger-menu{
-      position: absolute;
-      right: 5%;
-      top: 3%; 
-      display: none;
-      z-index: 15;
-      svg{
-          font-size: 3rem;
-      }
-    }
-
-    .nav-toggle{
-        transform: translateX(0);
-        z-index: 20;
-    }
-  @media screen and (max-width:1200px){
-    .ham-burger-menu{
-        display: block;
-    }
-  }
-
-
-${'' /* Global Media Queries */}
-
-
-
 `;
 
 export default GlobalStyle;

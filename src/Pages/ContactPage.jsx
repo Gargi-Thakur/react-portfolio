@@ -13,7 +13,10 @@ const ContactPage = () => {
 
     return (
         <MainLayout>
-            <Title title={'Contact'} span={'Contact'} />
+            <Title
+                title={'Contact'}
+                subtitle={'Tell me what is slowing your team down and we can see if a dashboard or automation is the right fix.'}
+            />
             <ContactPageStyled >
             <InnerLayout className={'contact-section'}>
                 <div className="content">
@@ -64,9 +67,13 @@ const ContactPageStyled = styled.section`
         }
         .contact-title{
             h4{
-                color: var(--white-color);
-                padding: 1rem 0;
-                font-size: 1.8rem;
+                color: var(--heading-color);
+                padding: 1rem 0 .5rem;
+                font-size: 1.35rem;
+            }
+            p{
+                color: var(--text-muted);
+                max-width: 34rem;
             }
         }
         .form{
@@ -83,22 +90,24 @@ const ContactPageStyled = styled.section`
                     left: 20px;
                     top: -19px;
                     display: inline-block;
-                    background-color: var(--background-dark-color);
+                    background-color: var(--surface-color);
                     padding:0 .5rem;
                     color: inherit;
                 }
                 input{
                     border: 1px solid var(--border-color);
+                    border-radius: .45rem;
                     outline: none;
-                    background: transparent;
+                    background: var(--surface-color);
                     height: 50px;
                     padding:0 15px;
                     width: 100%;
                     color: inherit;
                 }
                 textarea{
-                    background-color: transparent;
+                    background-color: var(--surface-color);
                     border: 1px solid var(--border-color);
+                    border-radius: .45rem;
                     outline: none;
                     color: inherit;
                     width: 100%;

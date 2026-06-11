@@ -9,31 +9,18 @@ const PrimaryButton = ({ title }) => {
     )
 }
 
-// Rendered as a span because this component is always wrapped in a link;
-// nesting <a> inside <a> is invalid HTML.
 const PrimaryButtonStyled = styled.span`
     background-color: var(--primary-color);
-    padding: .8rem 2.5rem;
+    padding: .75rem 1.35rem;
     color: white;
     cursor: pointer;
     display: inline-block;
-    font-size: inherit;
-    text-transform: uppercase;
-    position: relative;
-    transition: all .4s ease-in-out;
-    &::after{
-        content: "";
-        position: absolute;
-        width: 0;
-        height: .2rem;
-        transition: all .4s ease-in-out;
-        left: 0;
-        bottom: 0;
-        opacity: .7;
-    }
-    &:hover::after{
-        width: 100%;
-        background-color: var(--white-color);
+    font-size: .9rem;
+    font-weight: 700;
+    border-radius: .45rem;
+    transition: background-color .2s ease, transform .2s ease;
+    &:hover{
+        background-color: var(--primary-hover);
     }
 `;
 

@@ -115,7 +115,7 @@ To deploy elsewhere, any static host works with the same build command/publish d
 
 - **Updating dependencies**: `npm outdated` to review, `npm update` for safe minor/patch bumps. Major bumps of `react`, `react-router-dom`, `@mui/*`, or `vite` deserve a changelog read first.
 - **Rebranding copy** lives in: `HomePage.jsx` (hero), `InfoSection.jsx` (bio), `SkillsSection.jsx` (service cards), plus the meta/JSON-LD in `index.html` and titles in each page's `useDocumentMeta` call.
-- **Resume**: replace `src/data/janResume.pdf` and the import in `InfoSection.jsx`.
+- **Resume**: replace `src/data/Gargi_Resume2025.pdf` and the import in `InfoSection.jsx`.
 
 ## License
 

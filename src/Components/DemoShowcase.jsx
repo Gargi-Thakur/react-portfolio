@@ -56,9 +56,11 @@ const DemoShowcase = ({ compact = false }) => {
 
 const DemoShowcaseStyled = styled.section`
     margin-top: 3rem;
-    background-color: var(--background-dark-grey);
+    background-color: var(--surface-color);
     border: 1px solid var(--border-color);
     border-left: 4px solid var(--primary-color);
+    border-radius: .75rem;
+    box-shadow: var(--shadow-lg);
 
     .demo-content{
         padding: 2rem;
@@ -74,7 +76,7 @@ const DemoShowcaseStyled = styled.section`
     }
 
     h3{
-        color: var(--white-color);
+        color: var(--heading-color);
         font-size: 1.6rem;
         margin-bottom: .75rem;
     }
@@ -82,6 +84,7 @@ const DemoShowcaseStyled = styled.section`
     .summary{
         max-width: 40rem;
         line-height: 1.6;
+        color: var(--text-muted);
     }
 
     .highlights{

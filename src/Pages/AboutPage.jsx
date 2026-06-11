@@ -15,7 +15,10 @@ const AboutPage = () => {
     return (
         <MainLayout>
             <AboutStyled >
-                <Title title={'About'} span={'About'} />
+                <Title
+                    title={'About'}
+                    subtitle={'I build dashboards that show what to reorder and automation that handles email, leads, and scheduling, so your team spends less time in spreadsheets.'}
+                />
                 <InfoSection />
                 <DemoShowcase />
                 <SkillsSection />
