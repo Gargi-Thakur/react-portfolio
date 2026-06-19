@@ -14,7 +14,9 @@ const PrimaryButtonStyled = styled.span`
     padding: .75rem 1.35rem;
     color: white;
     cursor: pointer;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: .9rem;
     font-weight: 700;
     border-radius: .45rem;

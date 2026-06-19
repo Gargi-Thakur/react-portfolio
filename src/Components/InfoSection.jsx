@@ -10,17 +10,27 @@ const InfoSection = () => {
             <div className="content">
                 <h4>Hi, I am <span>Gargi</span></h4>
                 <p className="paragraph">
-                    I help small businesses make better decisions and save time with practical AI. My lead offer is a custom AI insights dashboard that reads your sales data and tells you in plain language what's selling, what's slowing, and what to reorder. And if your team is buried in repetitive work (answering the same emails, chasing leads, juggling bookings), I build automation that handles it for you.
+                    I help small businesses see what is happening in their operations and
+                    fix the manual work that slows them down. My lead offer is a Small
+                    Business Operations Dashboard: the 3–5 metrics your team checks every
+                    week, in one place, with alerts when something needs attention. If you
+                    are not sure where to start, I run Workflow Automation Audits that
+                    map where time and money leak before we build anything.
                 </p>
                 <p className="paragraph">
-                    I come at this as a full-stack developer (React, TypeScript/Next.js, Python/Django), which means your automations aren't held together with duct tape. They're built to integrate properly with the tools you already use and to keep working as your business grows. My background in Life Sciences taught me to think in processes: before I automate anything, I map out how the work actually flows, then remove the bottlenecks.
+                    I come at this as a full-stack software developer, which means I build the
+                    whole system, not just one piece of it. Your dashboards and
+                    automations integrate properly with the tools you already use and
+                    keep working as your business grows. My background in Life Sciences
+                    taught me to think in processes: before I automate anything, I map
+                    out how the work actually flows, then remove the bottlenecks.
                 </p>
                 <p className="paragraph">
                     Based in Vancouver, BC, working with small businesses everywhere. If you're curious whether something in your day-to-day can be automated, the answer is probably yes. Let's talk.
                 </p>
                 <br />
                 <div className="buttons">
-                    <NavLink to="/contact"><PrimaryButton title={"Let's Talk"} /></NavLink>
+                    <NavLink to="/contact"><PrimaryButton title={'Book a Workflow Audit'} /></NavLink>
                     <a href={resume} download="Gargi_Resume2025.pdf"><PrimaryButton title={'Download Resume'} /></a>
                 </div>
             </div>

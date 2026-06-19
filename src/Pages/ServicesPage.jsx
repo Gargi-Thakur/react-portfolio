@@ -6,108 +6,153 @@ import Title from '../Components/Title';
 import PrimaryButton from '../Components/PrimaryButton';
 import DemoShowcase from '../Components/DemoShowcase';
 import InsightsIcon from '@mui/icons-material/Insights';
-import MailOutlineIcon from '@mui/icons-material/MailOutlined';
-import StorefrontIcon from '@mui/icons-material/Storefront';
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import AutorenewIcon from '@mui/icons-material/Autorenew';
 import CheckIcon from '@mui/icons-material/Check';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 
 const ServicesPage = () => {
     useDocumentMeta(
-        'Services | Gargi Thakur - AI Automation for Small Businesses',
-        'Custom AI insights dashboards and email & workflow automation for small businesses. Book a free consultation to discuss scope and next steps.'
+        'Services | Gargi Thakur - Operations Dashboards & Workflow Automation',
+        'Three starter offers for small businesses: operations dashboards, workflow automation audits, and monthly automation support. Book a workflow audit or scope your dashboard.'
     );
 
     return (
         <MainLayout>
             <Title
                 title={'Services'}
-                subtitle={'Two core offerings for small businesses. Every project starts with a free consultation so we can scope what you actually need.'}
+                subtitle={'Three focused starter offers. Pick the one that matches where you are today.'}
             />
             <ServicesPageStyled>
                 <InnerLayout>
+                    <div className="path-guide">
+                        <p><strong>Saw the NovaFit example and want something similar?</strong> Start with the Operations Dashboard.</p>
+                        <p><strong>Not sure where the problem is yet?</strong> Start with a Workflow Automation Audit.</p>
+                    </div>
+
                     <p className="intro">
-                        Pricing depends on your data sources, workflows, and how much you
-                        want automated. Book a consultation and I will walk through options
-                        with you honestly, with no obligation.
+                        Each offer has a clear scope and deliverable. I do not sell vague
+                        custom AI projects. Pricing depends on your data and workflows and
+                        is confirmed in writing before any build starts.
                     </p>
 
                     <div className="service-card featured">
-                        <div className="badge">Lead Offer</div>
+                        <div className="badge">Most popular</div>
                         <div className="card-head">
                             <div className="card-icon"><InsightsIcon /></div>
-                            <h3>AI Insights Dashboard</h3>
+                            <div className="card-head-copy">
+                                <h3>Small Business Operations Dashboard</h3>
+                                <p className="best-for">
+                                    Best for: retail, fitness studios, cafés, clinics, wineries,
+                                    service businesses, and small e-commerce stores.
+                                </p>
+                            </div>
                         </div>
                         <p className="description">
-                            A custom dashboard wired to your sales and ecommerce data that
-                            surfaces plain-language AI insights: what's selling, what's
-                            slowing down, and what stock or raw materials to reorder, and
-                            when.
+                            One dashboard with the 3–5 numbers your team checks every week:
+                            stock levels, reorder needs, sales trends, transfer status, or
+                            whatever manual check is eating hours today. Built on cleaned-up
+                            data you already have.
                         </p>
                         <ul className="includes">
-                            <li><CheckIcon /> Connected directly to your existing sales / ecommerce data</li>
-                            <li><CheckIcon /> Plain-language insights: no charts to decode, no jargon</li>
-                            <li><CheckIcon /> Reorder alerts for stock and raw materials</li>
-                            <li><CheckIcon /> Monitored, maintained, and lightly improved every month</li>
+                            <li><CheckIcon /> Data cleanup and connection to your existing sources</li>
+                            <li><CheckIcon /> Custom dashboard with 3–5 key metrics and decision views</li>
+                            <li><CheckIcon /> Basic alerts for low stock, slow movers, or workflow gaps</li>
+                            <li><CheckIcon /> Handoff, training, and documentation for your team</li>
                         </ul>
-                        <DemoShowcase compact />
-                        <p className="consult-note">
-                            Want to see what this looks like first? Explore the live demo above,
-                            then book a call to talk about your business.
+                        <p className="price-direction">
+                            Fixed project fee based on scope. Optional monthly maintenance
+                            after launch.
                         </p>
-                        <NavLink to="/contact">
-                            <PrimaryButton title={'Book a Free Consultation'} />
-                        </NavLink>
+                        <DemoShowcase compact embedded />
+                        <div className="card-actions">
+                            <NavLink to="/contact" className="card-cta">
+                                <PrimaryButton title={'Scope My Dashboard'} />
+                            </NavLink>
+                        </div>
+                    </div>
+
+                    <div className="service-card entry">
+                        <div className="badge entry-badge">Start here if unsure</div>
+                        <div className="card-head">
+                            <div className="card-icon"><ManageSearchIcon /></div>
+                            <div className="card-head-copy">
+                                <h3>Workflow Automation Audit</h3>
+                                <p className="best-for">
+                                    Best for: businesses drowning in emails, spreadsheets,
+                                    manual follow-ups, order checks, and inventory checks.
+                                </p>
+                            </div>
+                        </div>
+                        <p className="description">
+                            Not sure whether you need a dashboard, automation, or both?
+                            I map how work actually flows today, quantify the biggest time
+                            leaks, and leave you with a prioritized plan, not a pitch for
+                            software you do not need.
+                        </p>
+                        <ul className="includes">
+                            <li><CheckIcon /> 60–90 minute workflow review with your team</li>
+                            <li><CheckIcon /> Automation map of where manual work repeats</li>
+                            <li><CheckIcon /> Top 3 recommendations ranked by time and money saved</li>
+                            <li><CheckIcon /> Clear next step: dashboard build, automation, or both</li>
+                        </ul>
+                        <p className="price-direction">
+                            Free introductory call for most businesses. Paid diagnostic
+                            available for complex operations. I will tell you which applies
+                            when you reach out.
+                        </p>
+                        <div className="card-actions">
+                            <NavLink to="/contact" className="card-cta">
+                                <PrimaryButton title={'Book a Workflow Audit'} />
+                            </NavLink>
+                        </div>
                     </div>
 
                     <div className="service-card">
                         <div className="card-head">
-                            <div className="card-icon"><MailOutlineIcon /></div>
-                            <h3>AI Email &amp; Workflow Automation</h3>
+                            <div className="card-icon"><AutorenewIcon /></div>
+                            <div className="card-head-copy">
+                                <h3>Monthly Automation Partner</h3>
+                                <p className="best-for">
+                                    Best for: businesses that need ongoing improvements after
+                                    the first dashboard or automation is live.
+                                </p>
+                            </div>
                         </div>
                         <p className="description">
-                            Routine email handling, lead follow-up, and client scheduling,
-                            with drafted replies queued up for your review. Nothing slips
-                            through the cracks, and the phone tag stops.
+                            Operations change. New products, new locations, new bottlenecks.
+                            This keeps your dashboard accurate, adds small automations as
+                            needs come up, and gives you a developer on call without hiring
+                            full time.
                         </p>
                         <ul className="includes">
-                            <li><CheckIcon /> Incoming email sorted and prioritized automatically</li>
-                            <li><CheckIcon /> Replies drafted in your voice, ready for one-click review</li>
-                            <li><CheckIcon /> Every lead followed up within minutes, not days</li>
-                            <li><CheckIcon /> Clients book, reschedule, and get reminders on autopilot</li>
+                            <li><CheckIcon /> Dashboard maintenance and metric updates</li>
+                            <li><CheckIcon /> Small workflow automations and reporting improvements</li>
+                            <li><CheckIcon /> Priority support when something breaks or shifts</li>
+                            <li><CheckIcon /> Regular check-ins on what to improve next</li>
                         </ul>
-                        <p className="consult-note">
-                            Not sure if your inbox or follow-up process is a good fit? Tell me
-                            what your team does today and I will say straight whether automation
-                            can help.
+                        <p className="price-direction">
+                            Monthly retainer based on hours and scope. Defined together
+                            after your first project.
                         </p>
-                        <NavLink to="/contact">
-                            <PrimaryButton title={'Book a Free Consultation'} />
-                        </NavLink>
-                    </div>
-
-                    <div className="addon-card">
-                        <div className="card-head">
-                            <div className="card-icon small"><StorefrontIcon /></div>
-                            <h4>Add-on: Ecommerce Website</h4>
+                        <div className="card-actions">
+                            <NavLink to="/contact" className="card-cta">
+                                <PrimaryButton title={'Talk About Ongoing Support'} />
+                            </NavLink>
                         </div>
-                        <p className="description">
-                            A clean, fast online store built by a full-stack developer, often
-                            bundled with an AI Insights Dashboard when you need both sales
-                            visibility and a storefront.
-                        </p>
                     </div>
 
                     <div className="process-section">
                         <h4>How it works</h4>
                         <ol className="process">
-                            <li><span>1.</span> Free consultation: we map where your time and money are leaking</li>
-                            <li><span>2.</span> Custom proposal: exact scope, timeline, and deliverables in writing</li>
-                            <li><span>3.</span> Build &amp; handoff: you review and approve before anything goes live</li>
-                            <li><span>4.</span> Ongoing support: monitoring, fixes, and small improvements as needed</li>
+                            <li><span>1.</span> Short call: we identify the one problem worth fixing first</li>
+                            <li><span>2.</span> Scoped proposal: exact deliverables, timeline, and fee in writing</li>
+                            <li><span>3.</span> Build and handoff: you review and approve before anything goes live</li>
+                            <li><span>4.</span> Optional ongoing support when you want a partner, not a one-off vendor</li>
                         </ol>
                         <div className="cta">
-                            <NavLink to="/contact">
-                                <PrimaryButton title={'Book a Free Consultation'} />
+                            <NavLink to="/demo">
+                                <PrimaryButton title={'See the NovaFit Example'} />
                             </NavLink>
                         </div>
                     </div>
@@ -118,10 +163,30 @@ const ServicesPage = () => {
 };
 
 const ServicesPageStyled = styled.section`
+    .path-guide{
+        max-width: 46rem;
+        padding: 1rem 1.15rem;
+        margin-bottom: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: .75rem;
+        background: var(--surface-muted);
+        p{
+            line-height: 1.6;
+            color: var(--text-muted);
+            & + p{
+                margin-top: .5rem;
+            }
+            strong{
+                color: var(--heading-color);
+            }
+        }
+    }
+
     .intro{
         max-width: 46rem;
-        padding-bottom: 1rem;
-        line-height: 1.6;
+        padding-bottom: .5rem;
+        line-height: 1.65;
+        color: var(--text-muted);
     }
 
     .service-card{
@@ -130,6 +195,7 @@ const ServicesPageStyled = styled.section`
         border: 1px solid var(--border-color);
         border-radius: .85rem;
         padding: 2rem;
+        padding-top: 2.25rem;
         margin-top: 2rem;
         box-shadow: var(--shadow-lg);
         transition: border-color .2s ease, transform .2s ease;
@@ -140,6 +206,9 @@ const ServicesPageStyled = styled.section`
         &.featured{
             border-color: var(--primary-color);
             border-left: 4px solid var(--primary-color);
+        }
+        &.entry{
+            border-left: 4px solid var(--border-color);
         }
 
         .badge{
@@ -154,73 +223,84 @@ const ServicesPageStyled = styled.section`
             letter-spacing: 1px;
             padding: .3rem .75rem;
             border-radius: 999px;
+            &.entry-badge{
+                background-color: var(--surface-muted);
+                color: var(--heading-color);
+            }
         }
     }
 
     .card-head{
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 1rem;
+        margin-bottom: .25rem;
+        padding-right: 6.5rem;
         h3{
             color: var(--heading-color);
             font-size: 1.55rem;
+            margin-bottom: .35rem;
         }
-        h4{
-            color: var(--heading-color);
-            font-size: 1.2rem;
+        .best-for{
+            font-size: .92rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            max-width: 36rem;
         }
         .card-icon{
             display: flex;
             align-items: center;
+            flex-shrink: 0;
             svg{
                 font-size: 2.8rem;
                 color: var(--primary-color);
-            }
-            &.small svg{
-                font-size: 2rem;
             }
         }
     }
 
     .description{
         padding: 1rem 0 .5rem 0;
+        line-height: 1.65;
+        color: var(--text-muted);
     }
 
     .includes{
         padding: .5rem 0 1rem 0;
         li{
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: .6rem;
             padding: .25rem 0;
             svg{
                 font-size: 1.1rem;
                 color: var(--primary-color);
                 flex-shrink: 0;
+                margin-top: .15rem;
             }
         }
     }
 
-    .consult-note{
-        margin-bottom: 1.25rem;
-        padding: 1rem 1.1rem;
-        border: 1px solid var(--border-color);
-        border-radius: .65rem;
+    .price-direction{
+        margin-bottom: 0;
+        padding: .85rem 1rem;
+        border-left: 3px solid var(--primary-color);
         background: var(--surface-muted);
-        font-size: .95rem;
+        font-size: .92rem;
         line-height: 1.55;
         color: var(--text-muted);
+        font-weight: 600;
     }
 
-    .addon-card{
-        background-color: transparent;
-        border: 1px dashed var(--border-color);
-        border-radius: .85rem;
-        padding: 1.5rem 2rem;
-        margin-top: 2rem;
-        .description{
-            padding-bottom: 0;
-        }
+    .card-actions{
+        margin-top: 1.25rem;
+    }
+
+    .card-cta{
+        display: inline-flex;
+    }
+
+    .service-card.featured .price-direction{
+        margin-bottom: 0;
     }
 
     .process-section{
@@ -242,6 +322,17 @@ const ServicesPageStyled = styled.section`
         }
         .cta{
             margin-top: 2rem;
+        }
+    }
+
+    @media screen and (max-width: 640px){
+        .card-head{
+            padding-right: 0;
+        }
+        .service-card .badge{
+            position: static;
+            display: inline-block;
+            margin-bottom: 1rem;
         }
     }
 `;

@@ -9,7 +9,7 @@ function Footer() {
                 <p>© 2026 Gargi Thakur · Vancouver, BC</p>
                 <div className="footer-links">
                     <NavLink to="/services">Services</NavLink>
-                    <NavLink to="/demo">Demo</NavLink>
+                    <NavLink to="/demo">Example</NavLink>
                     <NavLink to="/contact">Contact</NavLink>
                 </div>
             </div>

@@ -10,7 +10,7 @@ import Switch from '@mui/material/Switch';
 const navItems = [
     { to: '/', label: 'Home', end: true },
     { to: '/services', label: 'Services' },
-    { to: '/demo', label: 'Demo' },
+    { to: '/demo', label: 'Example' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
 ];
@@ -58,7 +58,7 @@ function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked }) {
                         />
                     </div>
                     <NavLink to="/contact" className="header-cta" onClick={() => setNavOpen(false)}>
-                        Book a call
+                        Book workflow audit
                     </NavLink>
                     <IconButton
                         className="menu-toggle"

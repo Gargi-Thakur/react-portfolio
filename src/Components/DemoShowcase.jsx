@@ -5,25 +5,30 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import CheckIcon from '@mui/icons-material/Check';
 import PrimaryButton from './PrimaryButton';
 import OutlineButton from './OutlineButton';
-import { DEMO_DASHBOARD_URL } from '../config';
+import { DEMO_DASHBOARD_URL, DEMO_DASHBOARD_NAME } from '../config';
 
 const highlights = [
-    'Stock levels across multiple locations in one view',
-    'Low-inventory and slow-moving product alerts',
-    'Transfer recommendations with approve/reject workflow',
-    'Trend charts and KPIs without decoding spreadsheets',
+    'Low-stock alerts before bestsellers run dry',
+    'Pending transfers approved without email chains',
+    'Inventory value across every location in one view',
+    'Reorder recommendations that cut guesswork and emergency buys',
 ];
 
-const DemoShowcase = ({ compact = false }) => {
+const DemoShowcase = ({ compact = false, embedded = false }) => {
+    const className = [
+        compact ? 'compact' : '',
+        embedded ? 'embedded' : '',
+    ].filter(Boolean).join(' ');
+
     return (
-        <DemoShowcaseStyled className={compact ? 'compact' : ''}>
+        <DemoShowcaseStyled className={className}>
             <div className="demo-content">
-                <p className="eyebrow">Live demo</p>
-                <h3>NovaFit AI Inventory Hub</h3>
+                <p className="eyebrow">Example build</p>
+                <h3>{DEMO_DASHBOARD_NAME}</h3>
                 <p className="summary">
-                    A working dashboard built with sample retail data so you can see
-                    how a custom insights product looks and feels before you commit.
-                    Your version would connect to your real sales or inventory systems.
+                    A sample multi-location retail operation that could not quickly see
+                    stock levels, reorder needs, or transfer approvals. One dashboard.
+                    Clear alerts. Decisions in minutes instead of spreadsheet marathons.
                 </p>
                 {!compact && (
                     <ul className="highlights">
@@ -35,20 +40,26 @@ const DemoShowcase = ({ compact = false }) => {
                         ))}
                     </ul>
                 )}
-                <div className="demo-actions">
-                    <NavLink to="/demo">
-                        <OutlineButton title={"See What's Inside"} />
+                {compact ? (
+                    <NavLink to="/demo" className="example-link">
+                        See problem, solution, and business value →
                     </NavLink>
-                    <a
-                        href={DEMO_DASHBOARD_URL}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="demo-link"
-                    >
-                        <PrimaryButton title={'Open Live Demo'} />
-                        <OpenInNewIcon className="external-icon" />
-                    </a>
-                </div>
+                ) : (
+                    <div className="demo-actions">
+                        <NavLink to="/demo">
+                            <OutlineButton title={'See Problem & Solution'} />
+                        </NavLink>
+                        <a
+                            href={DEMO_DASHBOARD_URL}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="demo-link"
+                        >
+                            <PrimaryButton title={'Open Live Dashboard'} />
+                            <OpenInNewIcon className="external-icon" />
+                        </a>
+                    </div>
+                )}
             </div>
         </DemoShowcaseStyled>
     );
@@ -85,6 +96,17 @@ const DemoShowcaseStyled = styled.section`
         max-width: 40rem;
         line-height: 1.6;
         color: var(--text-muted);
+    }
+
+    .example-link{
+        display: inline-block;
+        margin-top: 1rem;
+        font-size: .92rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        &:hover{
+            text-decoration: underline;
+        }
     }
 
     .highlights{
@@ -124,6 +146,7 @@ const DemoShowcaseStyled = styled.section`
     &.compact{
         margin-top: 1.5rem;
         border-left-width: 3px;
+        box-shadow: none;
         .demo-content{
             padding: 1.25rem 1.5rem;
         }
@@ -133,8 +156,33 @@ const DemoShowcaseStyled = styled.section`
         .summary{
             font-size: .95rem;
         }
-        .demo-actions{
-            margin-top: 1rem;
+    }
+
+    &.embedded{
+        margin-top: 1.25rem;
+        margin-bottom: 0;
+        border: 1px solid var(--border-color);
+        border-left: 1px solid var(--border-color);
+        border-radius: .65rem;
+        background-color: var(--surface-muted);
+        box-shadow: none;
+
+        .demo-content{
+            padding: 1.15rem 1.25rem;
+        }
+
+        h3{
+            font-size: 1.15rem;
+            margin-bottom: .5rem;
+        }
+
+        .summary{
+            font-size: .92rem;
+        }
+
+        .example-link{
+            margin-top: .85rem;
+            margin-bottom: 0;
         }
     }
 `;

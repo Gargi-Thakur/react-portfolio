@@ -9,15 +9,15 @@ import useDocumentMeta from '../hooks/useDocumentMeta';
 
 const AboutPage = () => {
     useDocumentMeta(
-        'About | Gargi Thakur - AI Automation for Small Businesses',
-        'Full-stack developer in Vancouver, BC helping small businesses automate email, lead follow-up, and scheduling with practical AI systems.'
+        'About | Gargi Thakur - Operations Dashboards & Workflow Automation',
+        'Full-stack Software Developer in Vancouver, BC helping small businesses with operations dashboards, workflow audits, and practical automation.'
     );
     return (
         <MainLayout>
             <AboutStyled >
                 <Title
                     title={'About'}
-                    subtitle={'I build dashboards that show what to reorder and automation that handles email, leads, and scheduling, so your team spends less time in spreadsheets.'}
+                    subtitle={'Full-stack Software Developer in Vancouver, BC. I build operations dashboards and workflow automation so your team spends less time in spreadsheets and manual follow-ups.'}
                 />
                 <InfoSection />
                 <DemoShowcase />

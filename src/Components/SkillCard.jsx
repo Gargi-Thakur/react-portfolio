@@ -15,6 +15,7 @@ const SkillCard = ({ image, icon, title, paragraph }) => {
 }
 
 const SkillCardStyled = styled.div`
+    height: 100%;
     background-color: var(--surface-color);
     border: 1px solid var(--border-color);
     border-radius: .75rem;
@@ -25,7 +26,10 @@ const SkillCardStyled = styled.div`
         transform: translateY(-2px);
     }
     .container{
+        height: 100%;
         padding: 1.35rem;
+        display: flex;
+        flex-direction: column;
         h4{
             color: var(--heading-color);
             font-size: 1.2rem;
@@ -34,6 +38,7 @@ const SkillCardStyled = styled.div`
         }
 
         p{
+            flex: 1;
             padding: .25rem 0 0;
             color: var(--text-muted);
             font-size: .95rem;

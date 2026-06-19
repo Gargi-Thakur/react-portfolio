@@ -10,30 +10,31 @@ import useDocumentMeta from '../hooks/useDocumentMeta';
 
 function HomePage() {
     useDocumentMeta(
-        'Gargi Thakur | AI Insights Dashboards & Automation for Small Businesses',
-        'Custom AI insights dashboards and email & workflow automation for small businesses. Know what\'s selling, what\'s slowing, and what to reorder. Full-stack developer in Vancouver, BC.'
+        'Gargi Thakur | Operations Dashboards & Workflow Automation for Small Businesses',
+        'Operations dashboards and workflow automation for small businesses. See stock, reorders, and daily ops clearly. Book a workflow audit or explore the NovaFit example.'
     );
     return (
         <HomePageStyled>
             <section className="hero">
                 <div className="hero-copy">
                     <p className="eyebrow">Vancouver, BC · Full-stack developer</p>
-                    <h1>Practical AI dashboards and automation for <span>small businesses</span></h1>
+                    <h1>Know what needs attention before it costs you sales or time</h1>
                     <p className="lead">
-                        I build custom insights dashboards and workflow automation so you
-                        can see what to reorder, follow up faster, and spend less time in
-                        spreadsheets.
+                        I build operations dashboards and workflow automation for small
+                        businesses stuck in spreadsheets, email threads, and manual checks.
+                        Whether you run inventory across locations or just need one place
+                        to see the numbers that matter, I help you act faster and firefight less.
                     </p>
                     <div className="cta">
                         <NavLink to="/contact">
-                            <PrimaryButton title={'Book a Free Consultation'} />
+                            <PrimaryButton title={'Book a Workflow Audit'} />
                         </NavLink>
                         <NavLink to="/demo">
-                            <OutlineButton title={'View Live Demo'} />
+                            <OutlineButton title={'See NovaFit Example'} />
                         </NavLink>
                     </div>
                     <div className="secondary-links">
-                        <NavLink to="/services"><TextLink title={'Services'} /></NavLink>
+                        <NavLink to="/services"><TextLink title={'Starter offers'} /></NavLink>
                         <a href="https://www.linkedin.com/in/gargithakur94/" target="_blank" rel="noreferrer" className="linkedin-link">
                             <LinkedinIcon />
                             LinkedIn
@@ -42,7 +43,7 @@ function HomePage() {
                 </div>
                 <div className="hero-visual">
                     <DashboardPreview />
-                    <p className="visual-caption">Sample dashboard preview from NovaFit AI Inventory Hub</p>
+                    <p className="visual-caption">NovaFit AI Inventory Hub: multi-location stock visibility in one view</p>
                 </div>
             </section>
         </HomePageStyled>

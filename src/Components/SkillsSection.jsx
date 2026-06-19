@@ -5,8 +5,8 @@ import { InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
 import SkillCard from '../Components/SkillCard';
 import InsightsIcon from '@mui/icons-material/Insights';
-import MailOutlineIcon from '@mui/icons-material/MailOutlined';
-import StorefrontIcon from '@mui/icons-material/Storefront';
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import AutorenewIcon from '@mui/icons-material/Autorenew';
 
 const SkillsSection = () => {
     return (
@@ -15,34 +15,32 @@ const SkillsSection = () => {
                 <Title
                     as="h2"
                     title={'What I Do'}
-                    subtitle={'Custom dashboards, workflow automation, and development built for real business operations.'}
+                    subtitle={'Three focused offers for small businesses with real operations problems, not vague AI experiments.'}
                 />
                 <div className="skills">
                     <SkillCard
                         icon={<InsightsIcon />}
-                        title={'AI Insights Dashboard'}
-                        paragraph={"A custom dashboard wired to your sales and ecommerce data that tells you, in plain language, what's selling, what's slowing, and what stock or raw materials to reorder, and when. No spreadsheets to decode."}
+                        title={'Operations Dashboard'}
+                        paragraph={"One screen for the 3–5 metrics your team checks every week: stock levels, reorder needs, sales trends, or transfer status. Built on your existing data so managers decide faster and stop living in spreadsheets."}
                     />
-                    <div className="mid-card">
-                        <SkillCard
-                            icon={<MailOutlineIcon />}
-                            title={'Email & Workflow Automation'}
-                            paragraph={"Routine email handling, lead follow-up, and client scheduling, with replies drafted for your review. Every enquiry gets answered within minutes, nothing slips through, and the phone tag stops."}
-                        />
-                    </div>
                     <SkillCard
-                        icon={<StorefrontIcon />}
-                        title={'Web & Ecommerce Development'}
-                        paragraph={"Clean, fast online stores and websites built on a real engineering foundation (React, TypeScript/Next.js, Python/Django), so they integrate properly with your tools and keep working as you grow."}
+                        icon={<ManageSearchIcon />}
+                        title={'Workflow Automation Audit'}
+                        paragraph={"A structured review of where manual work repeats: emails, follow-ups, order checks, inventory checks. You leave with an automation map and the top 3 fixes ranked by time and money saved."}
+                    />
+                    <SkillCard
+                        icon={<AutorenewIcon />}
+                        title={'Monthly Automation Partner'}
+                        paragraph={"Ongoing dashboard maintenance, small automations, and reporting improvements for teams that need a developer on call without hiring full time."}
                     />
                 </div>
                 <p className="stack-note">
                     <NavLink to="/demo" className="services-link">
-                        View the live inventory dashboard walkthrough
+                        See the NovaFit example
                     </NavLink>
-                    {' '}to see what a custom build looks like, or visit the{' '}
-                    <NavLink to="/services" className="services-link">Services page</NavLink>
-                    {' '}to learn more.
+                    {' '}(multi-location inventory dashboard) or visit{' '}
+                    <NavLink to="/services" className="services-link">Services</NavLink>
+                    {' '}to pick the right starting point.
                 </p>
             </SkillsSectionStyled>
         </InnerLayout>
@@ -54,17 +52,14 @@ const SkillsSectionStyled = styled.section`
         margin-top: 5rem;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 1.5rem;
-        @media screen and (max-width:1000px){
-            flex-direction: column;
-        }
+        gap: 1.5rem;
+        align-items: stretch;
         @media screen and (max-width:950px){
             grid-template-columns: repeat(2, 1fr);
         }
         @media screen and (max-width:650px){
             grid-template-columns: repeat(1, 1fr);
         }
-       
     }
 
     .stack-note{
