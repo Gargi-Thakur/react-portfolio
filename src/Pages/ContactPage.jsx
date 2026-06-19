@@ -15,6 +15,7 @@ const ContactPage = () => {
         <MainLayout>
             <Title
                 title={'Contact'}
+                label={'Start here'}
                 subtitle={'Book a workflow audit or tell me what you want to see on one screen. I will reply with an honest next step.'}
             />
             <ContactPageStyled >
@@ -74,9 +75,12 @@ const ContactPageStyled = styled.section`
         }
         .contact-title{
             h4{
+                font-family: 'Syne', sans-serif;
                 color: var(--heading-color);
                 padding: 1rem 0 .5rem;
                 font-size: 1.35rem;
+                font-weight: 700;
+                letter-spacing: -0.02em;
             }
             p{
                 color: var(--text-muted);
@@ -114,28 +118,45 @@ const ContactPageStyled = styled.section`
                     left: 20px;
                     top: -19px;
                     display: inline-block;
-                    background-color: var(--surface-color);
-                    padding:0 .5rem;
-                    color: inherit;
+                    background-color: var(--surface-solid);
+                    padding: 0 .5rem;
+                    font-size: .85rem;
+                    font-weight: 600;
+                    color: var(--heading-color);
                 }
                 input{
-                    border: 1px solid var(--border-color);
-                    border-radius: .45rem;
+                    border: 1px solid var(--border-strong);
+                    border-radius: var(--radius-md);
                     outline: none;
-                    background: var(--surface-color);
+                    background: var(--surface-solid);
                     height: 50px;
-                    padding:0 15px;
+                    padding: 0 15px;
                     width: 100%;
-                    color: inherit;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    transition: border-color .2s ease, box-shadow .2s ease;
+                    &:focus{
+                        border-color: var(--primary-color);
+                        box-shadow: 0 0 0 3px var(--primary-soft);
+                    }
                 }
                 textarea{
-                    background-color: var(--surface-color);
-                    border: 1px solid var(--border-color);
-                    border-radius: .45rem;
+                    background-color: var(--surface-solid);
+                    border: 1px solid var(--border-strong);
+                    border-radius: var(--radius-md);
                     outline: none;
-                    color: inherit;
+                    color: var(--font-light-color);
                     width: 100%;
-                    padding: .8rem 1rem;
+                    min-height: 10rem;
+                    padding: .85rem 1rem;
+                    font-size: 1rem;
+                    line-height: 1.6;
+                    resize: vertical;
+                    transition: border-color .2s ease, box-shadow .2s ease;
+                    &:focus{
+                        border-color: var(--primary-color);
+                        box-shadow: 0 0 0 3px var(--primary-soft);
+                    }
                 }
             }
 

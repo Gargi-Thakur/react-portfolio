@@ -26,9 +26,10 @@ const DemoShowcase = ({ compact = false, embedded = false }) => {
                 <p className="eyebrow">Example build</p>
                 <h3>{DEMO_DASHBOARD_NAME}</h3>
                 <p className="summary">
-                    A sample multi-location retail operation that could not quickly see
-                    stock levels, reorder needs, or transfer approvals. One dashboard.
-                    Clear alerts. Decisions in minutes instead of spreadsheet marathons.
+                    Built for a multi-location retailer that was checking stock, reorders,
+                    and transfer approvals across spreadsheets and email. This dashboard
+                    puts it in one place with clear alerts, so decisions take minutes
+                    instead of a spreadsheet marathon.
                 </p>
                 {!compact && (
                     <ul className="highlights">
@@ -67,10 +68,10 @@ const DemoShowcase = ({ compact = false, embedded = false }) => {
 
 const DemoShowcaseStyled = styled.section`
     margin-top: 3rem;
-    background-color: var(--surface-color);
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--primary-color);
-    border-radius: .75rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(16px);
     box-shadow: var(--shadow-lg);
 
     .demo-content{
@@ -87,8 +88,10 @@ const DemoShowcaseStyled = styled.section`
     }
 
     h3{
+        font-family: 'Syne', sans-serif;
         color: var(--heading-color);
         font-size: 1.6rem;
+        letter-spacing: -0.03em;
         margin-bottom: .75rem;
     }
 
@@ -162,10 +165,10 @@ const DemoShowcaseStyled = styled.section`
         margin-top: 1.25rem;
         margin-bottom: 0;
         border: 1px solid var(--border-color);
-        border-left: 1px solid var(--border-color);
-        border-radius: .65rem;
-        background-color: var(--surface-muted);
+        border-radius: var(--radius-lg);
+        background: var(--surface-muted);
         box-shadow: none;
+        backdrop-filter: none;
 
         .demo-content{
             padding: 1.15rem 1.25rem;

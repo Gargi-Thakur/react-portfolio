@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
+import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import IconButton from '@mui/material/IconButton';
-import Switch from '@mui/material/Switch';
 
 const navItems = [
     { to: '/', label: 'Home', end: true },
@@ -15,16 +15,21 @@ const navItems = [
     { to: '/contact', label: 'Contact' },
 ];
 
-function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked }) {
+function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked, themePreference = 'auto' }) {
+    const isDark = theme === 'dark-theme';
+
     return (
         <HeaderStyled>
-            <div className="header-inner">
+            <div className="header-shell">
                 <NavLink to="/" className="brand" onClick={() => setNavOpen(false)} aria-label="Gargi Thakur home">
                     <span className="brand-mark" aria-hidden="true">GT</span>
-                    <span className="brand-name">Gargi Thakur</span>
+                    <span className="brand-copy">
+                        <span className="brand-name">Gargi Thakur</span>
+                        <span className="brand-tag">Operations & Automation</span>
+                    </span>
                 </NavLink>
 
-                <nav className={`nav-links ${navOpen ? 'open' : ''}`}>
+                <nav className={`nav-links ${navOpen ? 'open' : ''}`} aria-label="Main">
                     {navItems.map(({ to, label, end }) => (
                         <NavLink
                             key={to}
@@ -36,29 +41,23 @@ function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked }) {
                             {label}
                         </NavLink>
                     ))}
-                    <div className="mobile-theme">
-                        <Brightness4Icon />
-                        <Switch
-                            checked={themeChecked}
-                            onChange={onThemeToggle}
-                            inputProps={{ 'aria-label': 'Toggle dark mode' }}
-                            size="small"
-                        />
-                    </div>
                 </nav>
 
                 <div className="header-actions">
-                    <div className="desktop-theme">
-                        <Brightness4Icon />
-                        <Switch
-                            checked={themeChecked}
-                            onChange={onThemeToggle}
-                            inputProps={{ 'aria-label': 'Toggle dark mode' }}
-                            size="small"
-                        />
-                    </div>
+                    <button
+                        type="button"
+                        className="theme-toggle"
+                        onClick={onThemeToggle}
+                        aria-label={
+                            themePreference === 'auto'
+                                ? (isDark ? 'Switch to light mode (manual override)' : 'Switch to dark mode (manual override)')
+                                : (isDark ? 'Switch to light mode' : 'Switch to dark mode')
+                        }
+                    >
+                        {isDark ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />}
+                    </button>
                     <NavLink to="/contact" className="header-cta" onClick={() => setNavOpen(false)}>
-                        Book workflow audit
+                        Book audit
                     </NavLink>
                     <IconButton
                         className="menu-toggle"
@@ -76,49 +75,71 @@ function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked }) {
 
 const HeaderStyled = styled.header`
     position: fixed;
-    top: 0;
+    top: 1rem;
     left: 0;
     right: 0;
     z-index: 100;
-    background-color: var(--surface-color);
-    border-bottom: 1px solid var(--border-color);
-    backdrop-filter: blur(10px);
+    padding: 0 1.25rem;
+    pointer-events: none;
 
-    .header-inner{
-        max-width: 72rem;
+    .header-shell{
+        pointer-events: auto;
+        max-width: 80rem;
         margin: 0 auto;
-        padding: 0 1.5rem;
-        height: 4.25rem;
+        padding: .55rem .65rem .55rem .85rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
+        border-radius: var(--radius-pill);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(20px) saturate(160%);
+        -webkit-backdrop-filter: blur(20px) saturate(160%);
+        box-shadow: var(--shadow-lg);
     }
 
     .brand{
         display: flex;
         align-items: center;
-        gap: .65rem;
+        gap: .75rem;
         min-width: 0;
         .brand-mark{
-            width: 2.1rem;
-            height: 2.1rem;
-            border-radius: .55rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+            width: 2.35rem;
+            height: 2.35rem;
+            border-radius: 50%;
+            background: var(--gradient-primary);
             color: #fff;
-            font-size: .78rem;
+            font-family: 'Syne', sans-serif;
+            font-size: .72rem;
             font-weight: 800;
-            letter-spacing: .04em;
+            letter-spacing: .06em;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.35);
+        }
+        .brand-copy{
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
         }
         .brand-name{
             color: var(--heading-color);
-            font-size: 1.02rem;
+            font-family: 'Syne', sans-serif;
+            font-size: .95rem;
             font-weight: 700;
             letter-spacing: -0.02em;
+            line-height: 1.15;
+            white-space: nowrap;
+        }
+        .brand-tag{
+            color: var(--text-muted);
+            font-size: .68rem;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase;
             white-space: nowrap;
         }
     }
@@ -126,49 +147,67 @@ const HeaderStyled = styled.header`
     .nav-links{
         display: flex;
         align-items: center;
-        gap: .25rem;
+        gap: .15rem;
+        padding: .2rem;
+        border-radius: var(--radius-pill);
+        background: var(--surface-muted);
+        border: 1px solid var(--border-color);
         a{
-            color: var(--text-muted);
-            font-size: .92rem;
+            color: var(--nav-link-color, var(--font-light-color));
+            font-size: .82rem;
             font-weight: 600;
-            padding: .45rem .75rem;
-            border-radius: .4rem;
-            transition: color .2s ease, background-color .2s ease;
+            padding: .5rem .85rem;
+            border-radius: var(--radius-pill);
+            transition: color .25s ease, background-color .25s ease, transform .25s ease;
             &:hover{
                 color: var(--heading-color);
-                background-color: var(--surface-muted);
+                background-color: var(--surface-solid);
             }
             &.active{
-                color: var(--primary-color);
-                background-color: var(--primary-soft);
+                color: var(--heading-color);
+                background-color: var(--surface-solid);
+                box-shadow: 0 2px 12px rgba(10, 10, 11, 0.06);
             }
-        }
-        .mobile-theme{
-            display: none;
         }
     }
 
     .header-actions{
         display: flex;
         align-items: center;
-        gap: .5rem;
-        .desktop-theme{
-            display: flex;
+        gap: .45rem;
+        .theme-toggle{
+            display: inline-flex;
             align-items: center;
-            gap: .15rem;
+            justify-content: center;
+            width: 2.35rem;
+            height: 2.35rem;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: var(--surface-muted);
             color: var(--text-muted);
+            cursor: pointer;
+            transition: color .2s ease, border-color .2s ease, transform .2s ease;
+            svg{ font-size: 1.05rem; }
+            &:hover{
+                color: var(--heading-color);
+                border-color: var(--border-strong);
+                transform: rotate(-8deg);
+            }
         }
         .header-cta{
-            background-color: var(--primary-color);
+            background: var(--gradient-primary);
             color: #fff !important;
-            font-size: .85rem;
+            font-size: .82rem;
             font-weight: 700;
-            padding: .55rem 1rem;
-            border-radius: .45rem;
+            padding: .62rem 1.1rem;
+            border-radius: var(--radius-pill);
             white-space: nowrap;
-            transition: background-color .2s ease;
+            transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.28);
             &:hover{
-                background-color: var(--primary-hover);
+                transform: translateY(-1px);
+                filter: brightness(1.05);
+                box-shadow: 0 12px 28px rgba(99, 102, 241, 0.35);
             }
         }
         .menu-toggle{
@@ -181,41 +220,86 @@ const HeaderStyled = styled.header`
         display: none;
     }
 
-    @media screen and (max-width: 900px){
+    @media screen and (max-width: 960px){
+        .brand-tag{
+            display: none;
+        }
         .nav-links{
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 900px){
+        top: .75rem;
+        padding: 0 .85rem;
+
+        .header-shell{
+            padding: .55rem .65rem;
+        }
+
+        .nav-links{
+            display: flex;
             position: fixed;
-            top: 4.25rem;
-            left: 0;
-            right: 0;
+            top: 5.25rem;
+            left: 1rem;
+            right: 1rem;
             flex-direction: column;
             align-items: stretch;
-            padding: 1rem 1.5rem 1.5rem;
-            background-color: var(--surface-color);
-            border-bottom: 1px solid var(--border-color);
-            transform: translateY(-120%);
+            gap: .25rem;
+            padding: .65rem;
+            border-radius: var(--radius-xl);
+            background: var(--surface-solid);
+            backdrop-filter: none;
+            border: 1px solid var(--border-strong);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px) scale(0.98);
             opacity: 0;
             pointer-events: none;
-            transition: transform .25s ease, opacity .25s ease;
+            transition: transform .28s ease, opacity .28s ease;
             &.open{
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
                 opacity: 1;
                 pointer-events: auto;
             }
             a{
-                padding: .75rem .5rem;
-            }
-            .mobile-theme{
-                display: flex;
-                align-items: center;
-                gap: .25rem;
-                margin-top: .5rem;
-                padding-top: .75rem;
-                border-top: 1px solid var(--border-color);
-                color: var(--text-muted);
+                padding: .9rem 1rem;
+                border-radius: var(--radius-md);
+                font-size: .95rem;
+                font-weight: 600;
+                color: var(--font-light-color);
+                background: transparent;
+                border: 1px solid transparent;
+                transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease;
+                @media (hover: hover){
+                    &:hover:not(.active){
+                        color: var(--heading-color);
+                        background: var(--menu-item-hover);
+                        border-color: var(--border-color);
+                        transform: translateX(3px);
+                    }
+                }
+                &:focus-visible{
+                    color: var(--heading-color);
+                    background: var(--menu-item-hover);
+                    border-color: var(--primary-color);
+                    outline: none;
+                }
+                &:active:not(.active){
+                    color: var(--heading-color);
+                    background: var(--menu-item-active);
+                    transform: scale(0.99);
+                }
+                &.active{
+                    color: var(--heading-color);
+                    background: var(--menu-item-active);
+                    border-color: rgba(99, 102, 241, 0.25);
+                    box-shadow: none;
+                    font-weight: 700;
+                }
             }
         }
         .header-actions{
-            .desktop-theme, .header-cta{
+            .header-cta{
                 display: none;
             }
             .menu-toggle{
@@ -225,8 +309,11 @@ const HeaderStyled = styled.header`
         .nav-backdrop{
             display: block;
             position: fixed;
-            inset: 4.25rem 0 0 0;
-            background: rgba(15, 23, 42, 0.35);
+            inset: 0;
+            background: rgba(10, 10, 11, 0.35);
+            backdrop-filter: blur(4px);
+            pointer-events: auto;
+            z-index: -1;
         }
     }
 `;

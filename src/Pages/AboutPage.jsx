@@ -17,6 +17,7 @@ const AboutPage = () => {
             <AboutStyled >
                 <Title
                     title={'About'}
+                    label={'Profile'}
                     subtitle={'Full-stack Software Developer in Vancouver, BC. I build operations dashboards and workflow automation so your team spends less time in spreadsheets and manual follow-ups.'}
                 />
                 <InfoSection />
