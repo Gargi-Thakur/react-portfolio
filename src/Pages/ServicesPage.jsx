@@ -21,6 +21,7 @@ const ServicesPage = () => {
         <MainLayout>
             <Title
                 title={'Services'}
+                label={'Offers'}
                 subtitle={'Three focused starter offers. Pick the one that matches where you are today.'}
             />
             <ServicesPageStyled>
@@ -165,13 +166,14 @@ const ServicesPage = () => {
 const ServicesPageStyled = styled.section`
     .path-guide{
         max-width: 46rem;
-        padding: 1rem 1.15rem;
-        margin-bottom: 1rem;
-        border: 1px solid var(--border-color);
-        border-radius: .75rem;
-        background: var(--surface-muted);
+        padding: 1.15rem 1.25rem;
+        margin-bottom: 1.25rem;
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-xl);
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
         p{
-            line-height: 1.6;
+            line-height: 1.65;
             color: var(--text-muted);
             & + p{
                 margin-top: .5rem;
@@ -184,47 +186,56 @@ const ServicesPageStyled = styled.section`
 
     .intro{
         max-width: 46rem;
-        padding-bottom: .5rem;
-        line-height: 1.65;
+        padding-bottom: .75rem;
+        line-height: 1.7;
         color: var(--text-muted);
+        font-size: 1.05rem;
     }
 
     .service-card{
         position: relative;
-        background-color: var(--surface-color);
-        border: 1px solid var(--border-color);
-        border-radius: .85rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-xl);
         padding: 2rem;
         padding-top: 2.25rem;
-        margin-top: 2rem;
+        margin-top: 1.75rem;
+        backdrop-filter: blur(16px);
         box-shadow: var(--shadow-lg);
-        transition: border-color .2s ease, transform .2s ease;
+        transition: border-color .3s ease, transform .3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow .3s ease;
+        overflow: hidden;
         &:hover{
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
+            border-color: var(--border-strong);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
         }
         &.featured{
-            border-color: var(--primary-color);
-            border-left: 4px solid var(--primary-color);
-        }
-        &.entry{
-            border-left: 4px solid var(--border-color);
+            border-color: rgba(99, 102, 241, 0.35);
+            &::before{
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: var(--gradient-primary);
+            }
         }
 
         .badge{
             position: absolute;
-            top: 1.2rem;
-            right: 1.2rem;
-            background-color: var(--primary-soft);
+            top: 1.35rem;
+            right: 1.35rem;
+            background: var(--primary-soft);
             color: var(--primary-color);
-            font-size: .75rem;
+            font-size: .68rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: .3rem .75rem;
-            border-radius: 999px;
+            letter-spacing: .12em;
+            padding: .35rem .8rem;
+            border-radius: var(--radius-pill);
             &.entry-badge{
-                background-color: var(--surface-muted);
+                background: var(--surface-muted);
                 color: var(--heading-color);
             }
         }
@@ -237,22 +248,29 @@ const ServicesPageStyled = styled.section`
         margin-bottom: .25rem;
         padding-right: 6.5rem;
         h3{
+            font-family: 'Syne', sans-serif;
             color: var(--heading-color);
             font-size: 1.55rem;
+            letter-spacing: -0.03em;
             margin-bottom: .35rem;
         }
         .best-for{
             font-size: .92rem;
             color: var(--text-muted);
-            line-height: 1.5;
+            line-height: 1.55;
             max-width: 36rem;
         }
         .card-icon{
             display: flex;
             align-items: center;
+            justify-content: center;
+            width: 3.25rem;
+            height: 3.25rem;
+            border-radius: 50%;
+            background: var(--primary-soft);
             flex-shrink: 0;
             svg{
-                font-size: 2.8rem;
+                font-size: 1.65rem;
                 color: var(--primary-color);
             }
         }
@@ -282,8 +300,9 @@ const ServicesPageStyled = styled.section`
 
     .price-direction{
         margin-bottom: 0;
-        padding: .85rem 1rem;
-        border-left: 3px solid var(--primary-color);
+        padding: .9rem 1rem;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-color);
         background: var(--surface-muted);
         font-size: .92rem;
         line-height: 1.55;

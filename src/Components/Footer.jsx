@@ -6,7 +6,13 @@ function Footer() {
     return (
         <FooterStyled>
             <div className="footer-inner">
-                <p>© 2026 Gargi Thakur · Vancouver, BC</p>
+                <div className="footer-brand">
+                    <span className="mark">GT</span>
+                    <div>
+                        <p className="name">Gargi Thakur</p>
+                        <p className="meta">© 2026 · Vancouver, BC</p>
+                    </div>
+                </div>
                 <div className="footer-links">
                     <NavLink to="/services">Services</NavLink>
                     <NavLink to="/demo">Example</NavLink>
@@ -18,33 +24,66 @@ function Footer() {
 }
 
 const FooterStyled = styled.footer`
-    border-top: 1px solid var(--border-color);
-    background-color: var(--surface-color);
+    position: relative;
+    z-index: 1;
     margin-top: auto;
+    padding: 0 1.5rem 2rem;
 
     .footer-inner{
-        max-width: 72rem;
+        max-width: 80rem;
         margin: 0 auto;
-        padding: 1.5rem;
+        padding: 1.35rem 1.5rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 1rem;
+        gap: 1.5rem;
         flex-wrap: wrap;
-        p{
-            font-size: .9rem;
+        border-radius: var(--radius-xl);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        backdrop-filter: blur(16px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .footer-brand{
+        display: flex;
+        align-items: center;
+        gap: .85rem;
+        .mark{
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            color: #fff;
+            font-family: 'Syne', sans-serif;
+            font-size: .68rem;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .name{
+            font-family: 'Syne', sans-serif;
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--heading-color);
+        }
+        .meta{
+            font-size: .82rem;
             color: var(--text-muted);
         }
-        .footer-links{
-            display: flex;
-            gap: 1rem;
-            a{
-                font-size: .9rem;
-                color: var(--text-muted);
-                font-weight: 600;
-                &:hover{
-                    color: var(--primary-color);
-                }
+    }
+
+    .footer-links{
+        display: flex;
+        gap: 1.25rem;
+        a{
+            font-size: .88rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            transition: color .2s ease;
+            &:hover{
+                color: var(--heading-color);
             }
         }
     }

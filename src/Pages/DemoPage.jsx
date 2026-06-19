@@ -50,6 +50,7 @@ const DemoPage = () => {
         <MainLayout>
             <Title
                 title={DEMO_DASHBOARD_NAME}
+                label={'Case study'}
                 subtitle={'Sample multi-location retail business. This is the kind of operations dashboard I build when stock visibility, reorders, and transfer approvals need to live in one place.'}
             />
             <DemoPageStyled>
@@ -245,13 +246,16 @@ const DemoPageStyled = styled.section`
     .closing-cta{
         margin-top: 3rem;
         padding: 2rem;
-        border: 1px solid var(--primary-color);
-        border-left: 4px solid var(--primary-color);
-        border-radius: .85rem;
-        background: var(--surface-color);
+        border: 1px solid var(--glass-border);
+        border-radius: var(--radius-xl);
+        background: var(--glass-bg);
+        backdrop-filter: blur(16px);
+        box-shadow: var(--shadow-lg);
         h3{
+            font-family: 'Syne', sans-serif;
             color: var(--heading-color);
             font-size: 1.5rem;
+            letter-spacing: -0.03em;
             margin-bottom: .65rem;
         }
         p{

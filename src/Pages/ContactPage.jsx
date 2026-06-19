@@ -15,6 +15,7 @@ const ContactPage = () => {
         <MainLayout>
             <Title
                 title={'Contact'}
+                label={'Start here'}
                 subtitle={'Book a workflow audit or tell me what you want to see on one screen. I will reply with an honest next step.'}
             />
             <ContactPageStyled >
@@ -120,7 +121,7 @@ const ContactPageStyled = styled.section`
                 }
                 input{
                     border: 1px solid var(--border-color);
-                    border-radius: .45rem;
+                    border-radius: var(--radius-md);
                     outline: none;
                     background: var(--surface-color);
                     height: 50px;
@@ -129,9 +130,9 @@ const ContactPageStyled = styled.section`
                     color: inherit;
                 }
                 textarea{
-                    background-color: var(--surface-color);
+                    background-color: var(--surface-solid);
                     border: 1px solid var(--border-color);
-                    border-radius: .45rem;
+                    border-radius: var(--radius-md);
                     outline: none;
                     color: inherit;
                     width: 100%;

@@ -57,11 +57,14 @@ const InfoSectionStyled = styled.div`
     .content {
         width: 100%;
         h4 {
-            font-size: 1.6rem;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.75rem;
             color: var(--heading-color);
             font-weight: 700;
+            letter-spacing: -0.03em;
             span {
                 font-size: inherit;
+                font-family: inherit;
                 color: var(--primary-color);
             }
         }

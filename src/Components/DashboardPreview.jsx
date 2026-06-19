@@ -93,11 +93,12 @@ function DashboardPreview() {
 
 const DashboardPreviewStyled = styled.div`
     width: 100%;
-    border: 1px solid var(--border-color);
-    border-radius: .85rem;
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
     overflow: hidden;
-    background: var(--surface-color);
-    box-shadow: var(--shadow-lg);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
     animation: ${gentleFloat} 5s ease-in-out infinite;
 
     @media (prefers-reduced-motion: reduce) {
@@ -128,10 +129,10 @@ const DashboardPreviewStyled = styled.div`
             flex: 1;
             font-size: .75rem;
             color: var(--text-muted);
-            background: var(--surface-color);
+            background: var(--surface-solid);
             border: 1px solid var(--border-color);
-            border-radius: .35rem;
-            padding: .25rem .55rem;
+            border-radius: var(--radius-pill);
+            padding: .3rem .75rem;
         }
     }
 
@@ -159,9 +160,9 @@ const DashboardPreviewStyled = styled.div`
 
     .stat-card{
         border: 1px solid var(--border-color);
-        border-radius: .55rem;
+        border-radius: var(--radius-md);
         padding: .65rem .7rem;
-        background: var(--surface-muted);
+        background: var(--surface-solid);
         opacity: 0;
         animation: ${fadeUp} 0.55s ease forwards;
         animation-delay: var(--delay);
