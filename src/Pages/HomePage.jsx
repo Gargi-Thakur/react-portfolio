@@ -33,7 +33,7 @@ function HomePage() {
                         </NavLink>
                     </div>
                     <div className="secondary-links">
-                        <NavLink to="/services"><TextLink title={'Services & pricing'} /></NavLink>
+                        <NavLink to="/services"><TextLink title={'Services'} /></NavLink>
                         <a href="https://www.linkedin.com/in/gargithakur94/" target="_blank" rel="noreferrer" className="linkedin-link">
                             <LinkedinIcon />
                             LinkedIn

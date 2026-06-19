@@ -40,9 +40,9 @@ const SkillsSection = () => {
                     <NavLink to="/demo" className="services-link">
                         View the live inventory dashboard walkthrough
                     </NavLink>
-                    {' '}to see what a custom build looks like. Pricing is on the{' '}
+                    {' '}to see what a custom build looks like, or visit the{' '}
                     <NavLink to="/services" className="services-link">Services page</NavLink>
-                    , including founding-client rates for my first few clients.
+                    {' '}to learn more.
                 </p>
             </SkillsSectionStyled>
         </InnerLayout>

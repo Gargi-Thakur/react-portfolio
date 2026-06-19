@@ -13,26 +13,24 @@ import useDocumentMeta from '../hooks/useDocumentMeta';
 
 const ServicesPage = () => {
     useDocumentMeta(
-        'Services & Pricing | Gargi Thakur - AI Automation for Small Businesses',
-        'AI insights dashboards and email & workflow automation for small businesses. Transparent pricing, founding-client rates available. Built by a full-stack developer in Vancouver, BC.'
+        'Services | Gargi Thakur - AI Automation for Small Businesses',
+        'Custom AI insights dashboards and email & workflow automation for small businesses. Book a free consultation to discuss scope and next steps.'
     );
 
     return (
         <MainLayout>
             <Title
-                title={'Services & Pricing'}
-                subtitle={'Transparent pricing for custom AI dashboards and workflow automation, with founding-client rates available.'}
+                title={'Services'}
+                subtitle={'Two core offerings for small businesses. Every project starts with a free consultation so we can scope what you actually need.'}
             />
             <ServicesPageStyled>
                 <InnerLayout>
                     <p className="intro">
-                        Two core services, priced transparently. I'm currently taking on
-                        founding clients at a significant discount in exchange for a
-                        testimonial and permission to share the results as a case study.
-                        Details below.
+                        Pricing depends on your data sources, workflows, and how much you
+                        want automated. Book a consultation and I will walk through options
+                        with you honestly, with no obligation.
                     </p>
 
-                    {/* Lead offer */}
                     <div className="service-card featured">
                         <div className="badge">Lead Offer</div>
                         <div className="card-head">
@@ -52,30 +50,15 @@ const ServicesPage = () => {
                             <li><CheckIcon /> Monitored, maintained, and lightly improved every month</li>
                         </ul>
                         <DemoShowcase compact />
-                        <div className="pricing">
-                            <div className="price-row">
-                                <span className="price-label">Build</span>
-                                <span className="price-value">$3,500–$5,000 <small>one-time</small></span>
-                            </div>
-                            <div className="price-row">
-                                <span className="price-label">Care plan</span>
-                                <span className="price-value">$250–$400<small>/month</small></span>
-                            </div>
-                            <div className="founding-rate">
-                                <span className="founding-tag">Founding-client rate</span>
-                                <p>
-                                    <strong>$1,500 build</strong> (same monthly) for my first
-                                    two clients, in exchange for a testimonial and permission
-                                    to use your results as a case study.
-                                </p>
-                            </div>
-                        </div>
+                        <p className="consult-note">
+                            Want to see what this looks like first? Explore the live demo above,
+                            then book a call to talk about your business.
+                        </p>
                         <NavLink to="/contact">
                             <PrimaryButton title={'Book a Free Consultation'} />
                         </NavLink>
                     </div>
 
-                    {/* Service 2 */}
                     <div className="service-card">
                         <div className="card-head">
                             <div className="card-icon"><MailOutlineIcon /></div>
@@ -92,62 +75,39 @@ const ServicesPage = () => {
                             <li><CheckIcon /> Every lead followed up within minutes, not days</li>
                             <li><CheckIcon /> Clients book, reschedule, and get reminders on autopilot</li>
                         </ul>
-                        <div className="pricing">
-                            <div className="price-row">
-                                <span className="price-label">Setup</span>
-                                <span className="price-value">$2,000–$3,500 <small>one-time</small></span>
-                            </div>
-                            <div className="price-row">
-                                <span className="price-label">Care plan</span>
-                                <span className="price-value">$150–$300<small>/month</small></span>
-                            </div>
-                            <div className="founding-rate">
-                                <span className="founding-tag">Founding-client rate</span>
-                                <p>
-                                    <strong>$750–$1,000 setup</strong> (same monthly), in
-                                    exchange for a testimonial and a case study.
-                                </p>
-                            </div>
-                        </div>
+                        <p className="consult-note">
+                            Not sure if your inbox or follow-up process is a good fit? Tell me
+                            what your team does today and I will say straight whether automation
+                            can help.
+                        </p>
                         <NavLink to="/contact">
                             <PrimaryButton title={'Book a Free Consultation'} />
                         </NavLink>
                     </div>
 
-                    {/* Add-on */}
                     <div className="addon-card">
                         <div className="card-head">
                             <div className="card-icon small"><StorefrontIcon /></div>
                             <h4>Add-on: Ecommerce Website</h4>
                         </div>
                         <p className="description">
-                            A clean, fast online store, built by an actual full-stack
-                            developer, typically <strong>$1,200–$2,500</strong> depending on
-                            scope, or bundled at a discount with the AI Insights Dashboard.
+                            A clean, fast online store built by a full-stack developer, often
+                            bundled with an AI Insights Dashboard when you need both sales
+                            visibility and a storefront.
                         </p>
                     </div>
 
-                    {/* Founding client explainer */}
-                    <div className="founding-explainer">
-                        <h4>Why founding-client rates?</h4>
-                        <p>
-                            I'm building a portfolio of documented, real-world results. The
-                            first two clients for each service get a steep discount on the
-                            build; in return, you agree to provide an honest testimonial and
-                            let me publish the outcome (anonymized if you prefer) as a case
-                            study. The work itself is identical to full price: same scope,
-                            same care plan, same support.
-                        </p>
+                    <div className="process-section">
                         <h4>How it works</h4>
                         <ol className="process">
                             <li><span>1.</span> Free consultation: we map where your time and money are leaking</li>
-                            <li><span>2.</span> Fixed-price proposal: exact scope, timeline, and deliverables in writing</li>
+                            <li><span>2.</span> Custom proposal: exact scope, timeline, and deliverables in writing</li>
                             <li><span>3.</span> Build &amp; handoff: you review and approve before anything goes live</li>
-                            <li><span>4.</span> Monthly care plan: monitoring, fixes, and small improvements; cancel anytime</li>
+                            <li><span>4.</span> Ongoing support: monitoring, fixes, and small improvements as needed</li>
                         </ol>
                         <div className="cta">
                             <NavLink to="/contact">
-                                <PrimaryButton title={"Claim a Founding Spot"} />
+                                <PrimaryButton title={'Book a Free Consultation'} />
                             </NavLink>
                         </div>
                     </div>
@@ -161,6 +121,7 @@ const ServicesPageStyled = styled.section`
     .intro{
         max-width: 46rem;
         padding-bottom: 1rem;
+        line-height: 1.6;
     }
 
     .service-card{
@@ -240,77 +201,34 @@ const ServicesPageStyled = styled.section`
         }
     }
 
-    .pricing{
+    .consult-note{
+        margin-bottom: 1.25rem;
+        padding: 1rem 1.1rem;
         border: 1px solid var(--border-color);
         border-radius: .65rem;
         background: var(--surface-muted);
-        padding: 1.2rem 1.5rem;
-        margin-bottom: 1.5rem;
-
-        .price-row{
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            padding: .3rem 0;
-            .price-label{
-                color: inherit;
-                text-transform: uppercase;
-                font-size: .8rem;
-                letter-spacing: 1px;
-            }
-            .price-value{
-                color: var(--heading-color);
-                font-weight: 700;
-                font-size: 1.25rem;
-                small{
-                    font-size: .85rem;
-                    font-weight: 400;
-                    color: var(--font-light-color);
-                }
-            }
-        }
-
-        .founding-rate{
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px dashed var(--border-color);
-            .founding-tag{
-                display: inline-block;
-                color: var(--primary-color);
-                font-size: .8rem;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-            p{
-                padding-top: .3rem;
-                font-size: 1rem;
-                strong{
-                    color: var(--heading-color);
-                }
-            }
-        }
+        font-size: .95rem;
+        line-height: 1.55;
+        color: var(--text-muted);
     }
 
     .addon-card{
         background-color: transparent;
         border: 1px dashed var(--border-color);
+        border-radius: .85rem;
         padding: 1.5rem 2rem;
-        margin-top: 2.5rem;
+        margin-top: 2rem;
         .description{
             padding-bottom: 0;
-            strong{
-                color: var(--white-color);
-            }
         }
     }
 
-    .founding-explainer{
-        margin-top: 3.5rem;
+    .process-section{
+        margin-top: 3rem;
         h4{
             color: var(--heading-color);
             font-size: 1.2rem;
-            padding: 1rem 0 .4rem 0;
+            padding-bottom: .4rem;
         }
         .process{
             li{

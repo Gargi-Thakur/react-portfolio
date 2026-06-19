@@ -166,7 +166,7 @@ const DemoPage = () => {
                             <PrimaryButton title={'Book a Free Consultation'} />
                         </NavLink>
                         <NavLink to="/services">
-                            <PrimaryButton title={'View Services & Pricing'} />
+                            <PrimaryButton title={'View Services'} />
                         </NavLink>
                     </div>
                 </InnerLayout>
