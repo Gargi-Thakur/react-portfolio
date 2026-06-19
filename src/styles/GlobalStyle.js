@@ -1,7 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 
+const sharedRadius = `
+    --radius-sm: 0.5rem;
+    --radius-md: 0.85rem;
+    --radius-lg: 1.25rem;
+    --radius-xl: 1.75rem;
+    --radius-pill: 999px;
+`;
+
 const GlobalStyle = createGlobalStyle`
 .light-theme{
+    ${sharedRadius}
     --primary-color: #4338ca;
     --primary-hover: #3730a3;
     --primary-soft: rgba(67, 56, 202, 0.1);
@@ -36,14 +45,10 @@ const GlobalStyle = createGlobalStyle`
     --scrollbar-bg-color: #e7e5e4;
     --scrollbar-thump-color: #a1a1aa;
     --scrollbar-track-color: #f4f4f5;
-    --radius-sm: 0.5rem;
-    --radius-md: 0.85rem;
-    --radius-lg: 1.25rem;
-    --radius-xl: 1.75rem;
-    --radius-pill: 999px;
 }
 
 .dark-theme{
+    ${sharedRadius}
     --primary-color: #818cf8;
     --primary-hover: #a5b4fc;
     --primary-soft: rgba(129, 140, 248, 0.14);
