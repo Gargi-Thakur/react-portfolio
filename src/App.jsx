@@ -10,13 +10,27 @@ import DemoPage from './Pages/DemoPage';
 import ContactPage from './Pages/ContactPage';
 import { Routes, Route } from 'react-router-dom';
 
+const THEME_STORAGE_KEY = 'portfolio-theme';
+
+function getInitialTheme() {
+  const saved = localStorage.getItem(THEME_STORAGE_KEY);
+  if (saved === 'light-theme' || saved === 'dark-theme') {
+    return saved;
+  }
+  return 'dark-theme';
+}
+
 function App() {
-  const [theme, setTheme] = useState('light-theme');
-  const [checked, setChecked] = useState(false);
+  const [theme, setTheme] = useState(getInitialTheme);
+  const [checked, setChecked] = useState(() => getInitialTheme() === 'dark-theme');
   const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.className = theme;
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute('content', theme === 'dark-theme' ? '#09090b' : '#f7f6f3');
   }, [theme]);
 
   const themeToggler = () => {
