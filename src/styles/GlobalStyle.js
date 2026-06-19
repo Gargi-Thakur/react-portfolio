@@ -43,6 +43,8 @@ const GlobalStyle = createGlobalStyle`
     --mesh-3: rgba(67, 56, 202, 0.08);
     --glass-bg: rgba(255, 255, 255, 0.65);
     --glass-border: rgba(255, 255, 255, 0.8);
+    --menu-item-hover: rgba(67, 56, 202, 0.08);
+    --menu-item-active: rgba(67, 56, 202, 0.14);
     --scrollbar-bg-color: #e7e5e4;
     --scrollbar-thump-color: #a1a1aa;
     --scrollbar-track-color: #f4f4f5;
@@ -82,6 +84,8 @@ const GlobalStyle = createGlobalStyle`
     --mesh-3: rgba(129, 140, 248, 0.08);
     --glass-bg: rgba(24, 24, 27, 0.72);
     --glass-border: rgba(255, 255, 255, 0.1);
+    --menu-item-hover: rgba(129, 140, 248, 0.12);
+    --menu-item-active: rgba(129, 140, 248, 0.2);
     --scrollbar-bg-color: #27272a;
     --scrollbar-thump-color: #52525b;
     --scrollbar-track-color: #18181b;

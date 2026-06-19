@@ -26,9 +26,10 @@ const DemoShowcase = ({ compact = false, embedded = false }) => {
                 <p className="eyebrow">Example build</p>
                 <h3>{DEMO_DASHBOARD_NAME}</h3>
                 <p className="summary">
-                    A sample multi-location retail operation that could not quickly see
-                    stock levels, reorder needs, or transfer approvals. One dashboard.
-                    Clear alerts. Decisions in minutes instead of spreadsheet marathons.
+                    Built for a multi-location retailer that was checking stock, reorders,
+                    and transfer approvals across spreadsheets and email. This dashboard
+                    puts it in one place with clear alerts, so decisions take minutes
+                    instead of a spreadsheet marathon.
                 </p>
                 {!compact && (
                     <ul className="highlights">

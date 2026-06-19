@@ -17,6 +17,7 @@ function Footer() {
                     <NavLink to="/services">Services</NavLink>
                     <NavLink to="/demo">Example</NavLink>
                     <NavLink to="/contact">Contact</NavLink>
+                    <NavLink to="/privacy">Privacy</NavLink>
                 </div>
             </div>
         </FooterStyled>

@@ -268,14 +268,31 @@ const HeaderStyled = styled.header`
                 font-weight: 600;
                 color: var(--font-light-color);
                 background: transparent;
-                &:hover,
+                border: 1px solid transparent;
+                transition: color .2s ease, background-color .2s ease, border-color .2s ease, transform .2s ease;
+                @media (hover: hover){
+                    &:hover:not(.active){
+                        color: var(--heading-color);
+                        background: var(--menu-item-hover);
+                        border-color: var(--border-color);
+                        transform: translateX(3px);
+                    }
+                }
                 &:focus-visible{
                     color: var(--heading-color);
-                    background: var(--surface-muted);
+                    background: var(--menu-item-hover);
+                    border-color: var(--primary-color);
+                    outline: none;
+                }
+                &:active:not(.active){
+                    color: var(--heading-color);
+                    background: var(--menu-item-active);
+                    transform: scale(0.99);
                 }
                 &.active{
                     color: var(--heading-color);
-                    background: var(--primary-soft);
+                    background: var(--menu-item-active);
+                    border-color: rgba(99, 102, 241, 0.25);
                     box-shadow: none;
                     font-weight: 700;
                 }

@@ -8,6 +8,7 @@ import AboutPage from './Pages/AboutPage';
 import ServicesPage from './Pages/ServicesPage';
 import DemoPage from './Pages/DemoPage';
 import ContactPage from './Pages/ContactPage';
+import PrivacyPage from './Pages/PrivacyPage';
 import { Routes, Route } from 'react-router-dom';
 import {
   getInitialThemeState,
@@ -91,6 +92,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/demo" element={<DemoPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
         </Routes>
       </MainContentStyled>
       <Footer />

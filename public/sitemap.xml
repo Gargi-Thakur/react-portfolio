@@ -20,4 +20,8 @@
     <loc>https://gargithakur.com/contact</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://gargithakur.com/privacy</loc>
+    <priority>0.4</priority>
+  </url>
 </urlset>
