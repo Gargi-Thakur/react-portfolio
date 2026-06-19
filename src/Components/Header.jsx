@@ -15,7 +15,7 @@ const navItems = [
     { to: '/contact', label: 'Contact' },
 ];
 
-function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked }) {
+function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked, themePreference = 'auto' }) {
     const isDark = theme === 'dark-theme';
 
     return (
@@ -48,7 +48,11 @@ function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked }) {
                         type="button"
                         className="theme-toggle"
                         onClick={onThemeToggle}
-                        aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+                        aria-label={
+                            themePreference === 'auto'
+                                ? (isDark ? 'Switch to light mode (manual override)' : 'Switch to dark mode (manual override)')
+                                : (isDark ? 'Switch to light mode' : 'Switch to dark mode')
+                        }
                     >
                         {isDark ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />}
                     </button>

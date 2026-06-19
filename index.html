@@ -100,6 +100,29 @@
     ]
   }
   </script>
+  <script>
+    (function () {
+      var MODE_KEY = 'portfolio-theme-mode';
+      var MANUAL_KEY = 'portfolio-theme-manual';
+      var hour = new Date().getHours();
+      var isDay = hour >= 7 && hour < 19;
+      var mode = localStorage.getItem(MODE_KEY);
+      var manual = localStorage.getItem(MANUAL_KEY);
+      var theme;
+
+      if (mode === 'manual' && (manual === 'light-theme' || manual === 'dark-theme')) {
+        theme = manual;
+      } else {
+        theme = isDay ? 'light-theme' : 'dark-theme';
+      }
+
+      document.documentElement.className = theme;
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) {
+        meta.setAttribute('content', theme === 'dark-theme' ? '#09090b' : '#f7f6f3');
+      }
+    })();
+  </script>
 </head>
 
 <body>

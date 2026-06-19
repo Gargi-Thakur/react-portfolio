@@ -9,38 +9,65 @@ import ServicesPage from './Pages/ServicesPage';
 import DemoPage from './Pages/DemoPage';
 import ContactPage from './Pages/ContactPage';
 import { Routes, Route } from 'react-router-dom';
-
-const THEME_STORAGE_KEY = 'portfolio-theme';
-
-function getInitialTheme() {
-  const saved = localStorage.getItem(THEME_STORAGE_KEY);
-  if (saved === 'light-theme' || saved === 'dark-theme') {
-    return saved;
-  }
-  return 'dark-theme';
-}
+import {
+  getInitialThemeState,
+  getThemeForTimeOfDay,
+  msUntilNextThemeChange,
+  persistThemeState,
+  resolveTheme,
+} from './utils/theme';
 
 function App() {
-  const [theme, setTheme] = useState(getInitialTheme);
-  const [checked, setChecked] = useState(() => getInitialTheme() === 'dark-theme');
+  const [themeState, setThemeState] = useState(getInitialThemeState);
+  const [scheduleTick, setScheduleTick] = useState(0);
   const [navOpen, setNavOpen] = useState(false);
+
+  const theme = resolveTheme(themeState.mode, themeState.manualTheme, scheduleTick);
+  const isDark = theme === 'dark-theme';
+  const isAuto = themeState.mode === 'auto';
 
   useEffect(() => {
     document.documentElement.className = theme;
-    localStorage.setItem(THEME_STORAGE_KEY, theme);
+    persistThemeState(themeState.mode, themeState.manualTheme);
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute('content', theme === 'dark-theme' ? '#09090b' : '#f7f6f3');
-  }, [theme]);
+      ?.setAttribute('content', isDark ? '#09090b' : '#f7f6f3');
+  }, [theme, themeState, isDark]);
+
+  useEffect(() => {
+    if (!isAuto) {
+      return undefined;
+    }
+
+    let timeoutId;
+
+    const scheduleNextSwitch = () => {
+      timeoutId = window.setTimeout(() => {
+        setScheduleTick((tick) => tick + 1);
+        scheduleNextSwitch();
+      }, msUntilNextThemeChange());
+    };
+
+    scheduleNextSwitch();
+
+    const intervalId = window.setInterval(() => {
+      setScheduleTick((tick) => tick + 1);
+    }, 60_000);
+
+    return () => {
+      window.clearTimeout(timeoutId);
+      window.clearInterval(intervalId);
+    };
+  }, [isAuto]);
 
   const themeToggler = () => {
-    if (theme === 'light-theme') {
-      setTheme('dark-theme');
-      setChecked(true);
-    } else {
-      setTheme('light-theme');
-      setChecked(false);
-    }
+    const currentTheme = isAuto ? getThemeForTimeOfDay() : themeState.manualTheme;
+    const nextTheme = currentTheme === 'light-theme' ? 'dark-theme' : 'light-theme';
+
+    setThemeState({
+      mode: 'manual',
+      manualTheme: nextTheme,
+    });
   };
 
   return (
@@ -54,7 +81,8 @@ function App() {
         setNavOpen={setNavOpen}
         theme={theme}
         onThemeToggle={themeToggler}
-        themeChecked={checked}
+        themeChecked={isDark}
+        themePreference={isAuto ? 'auto' : themeState.manualTheme}
       />
       <MainContentStyled>
         <Routes>
