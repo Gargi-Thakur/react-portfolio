@@ -153,7 +153,7 @@ const HeaderStyled = styled.header`
         background: var(--surface-muted);
         border: 1px solid var(--border-color);
         a{
-            color: var(--text-muted);
+            color: var(--nav-link-color, var(--font-light-color));
             font-size: .82rem;
             font-weight: 600;
             padding: .5rem .85rem;
@@ -245,11 +245,12 @@ const HeaderStyled = styled.header`
             right: 1rem;
             flex-direction: column;
             align-items: stretch;
-            padding: .75rem;
+            gap: .25rem;
+            padding: .65rem;
             border-radius: var(--radius-xl);
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+            background: var(--surface-solid);
+            backdrop-filter: none;
+            border: 1px solid var(--border-strong);
             box-shadow: var(--shadow-lg);
             transform: translateY(-8px) scale(0.98);
             opacity: 0;
@@ -261,8 +262,23 @@ const HeaderStyled = styled.header`
                 pointer-events: auto;
             }
             a{
-                padding: .85rem 1rem;
+                padding: .9rem 1rem;
                 border-radius: var(--radius-md);
+                font-size: .95rem;
+                font-weight: 600;
+                color: var(--font-light-color);
+                background: transparent;
+                &:hover,
+                &:focus-visible{
+                    color: var(--heading-color);
+                    background: var(--surface-muted);
+                }
+                &.active{
+                    color: var(--heading-color);
+                    background: var(--primary-soft);
+                    box-shadow: none;
+                    font-weight: 700;
+                }
             }
         }
         .header-actions{

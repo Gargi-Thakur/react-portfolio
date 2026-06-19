@@ -29,7 +29,8 @@ const GlobalStyle = createGlobalStyle`
     --heading-color: #0a0a0b;
     --white-color: #0a0a0b;
     --font-light-color: #3f3f46;
-    --text-muted: #71717a;
+    --text-muted: #52525b;
+    --nav-link-color: #27272a;
     --font-dark-color: #0a0a0b;
     --font-dark-color-2: #18181b;
     --sidebar-dark-color: #ffffff;
@@ -68,6 +69,7 @@ const GlobalStyle = createGlobalStyle`
     --white-color: #fafafa;
     --font-light-color: #d4d4d8;
     --text-muted: #a1a1aa;
+    --nav-link-color: #e4e4e7;
     --font-dark-color: #e4e4e7;
     --font-dark-color-2: #fafafa;
     --sidebar-dark-color: #18181b;
@@ -122,6 +124,20 @@ body::-webkit-scrollbar-track{
 
 textarea{
     max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button{
+    font: inherit;
+    color: inherit;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color: var(--text-muted);
+    opacity: 1;
 }
 
 a{
