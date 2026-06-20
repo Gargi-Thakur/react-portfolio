@@ -180,7 +180,7 @@ const AppStyled = styled.div`
 
 const MainContentStyled = styled.main`
   flex: 1;
-  padding-top: 6.5rem;
+  padding-top: 6.35rem;
   position: relative;
   z-index: 1;
   animation: pageFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;

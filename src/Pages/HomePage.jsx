@@ -22,18 +22,17 @@ function HomePage() {
     return (
         <HomePageStyled>
             <section className="hero">
+                <p className="eyebrow hero-eyebrow">
+                    <span className="dot" aria-hidden="true" />
+                    Vancouver, BC · Full-stack Software Developer
+                </p>
                 <div className="hero-copy">
-                    <p className="eyebrow">
-                        <span className="dot" aria-hidden="true" />
-                        Vancouver, BC · Full-stack Software Developer
-                    </p>
                     <h1>
-                        Know what needs <span className="gradient-text">attention</span> before it costs you sales or time
+                        Know what needs <span className="gradient-text">attention</span> before it costs you
                     </h1>
                     <p className="lead">
-                        I build operations dashboards and workflow automation for small
-                        businesses stuck in spreadsheets, email threads, and manual checks.
-                        One place to see what matters. Less firefighting.
+                        Operations dashboards and workflow automation for small
+                        businesses buried in spreadsheets and email. One place to see what matters.
                     </p>
                     <div className="cta">
                         <NavLink to="/contact">
@@ -72,23 +71,67 @@ function HomePage() {
 const HomePageStyled = styled.div`
     max-width: 80rem;
     margin: 0 auto;
-    padding: 1rem 1.5rem 4rem;
+    padding: 1.25rem 1.5rem 4rem;
     width: 100%;
 
     .hero{
         display: grid;
-        grid-template-columns: 1.05fr .95fr;
-        gap: 3.5rem;
-        align-items: center;
-        min-height: calc(100vh - 10rem);
+        grid-template-columns: 1.12fr .88fr;
+        grid-template-areas:
+            "eyebrow eyebrow"
+            "copy visual";
+        gap: 0 3rem;
+        align-items: start;
+        min-height: auto;
+        padding-top: 0.25rem;
+    }
+
+    .hero-eyebrow{
+        grid-area: eyebrow;
+        margin-bottom: 0.85rem;
+        width: fit-content;
+        max-width: 100%;
+        justify-self: start;
+    }
+
+    .hero-copy{
+        grid-area: copy;
+
+        h1{
+            font-size: clamp(2.15rem, 4.2vw, 3.45rem);
+            line-height: 1.05;
+        }
+    }
+
+    .hero-visual{
+        grid-area: visual;
+        position: relative;
+        align-self: start;
+        .visual-glow{
+            position: absolute;
+            inset: 10% -5% -5%;
+            background: var(--shadow-glow);
+            filter: blur(40px);
+            z-index: 0;
+        }
+        > *:not(.visual-glow){
+            position: relative;
+            z-index: 1;
+        }
+        .visual-caption{
+            margin-top: 1rem;
+            font-size: .78rem;
+            color: var(--text-muted);
+            text-align: center;
+            letter-spacing: .02em;
+        }
     }
 
     .eyebrow{
         display: inline-flex;
         align-items: center;
         gap: .55rem;
-        padding: .45rem .85rem .45rem .65rem;
-        margin-bottom: 1.25rem;
+        padding: .4rem .85rem .4rem .65rem;
         border-radius: var(--radius-pill);
         border: 1px solid var(--border-color);
         background: var(--surface-muted);
@@ -106,15 +149,15 @@ const HomePageStyled = styled.div`
     }
 
     .lead{
-        margin-top: 1.35rem;
-        max-width: 36rem;
-        font-size: 1.12rem;
-        line-height: 1.75;
+        margin-top: 0.9rem;
+        max-width: 34rem;
+        font-size: 1.05rem;
+        line-height: 1.55;
         color: var(--text-muted);
     }
 
     .cta{
-        margin-top: 2rem;
+        margin-top: 1.25rem;
         display: flex;
         flex-wrap: wrap;
         gap: .85rem;
@@ -170,36 +213,42 @@ const HomePageStyled = styled.div`
         }
     }
 
-    .hero-visual{
-        position: relative;
-        .visual-glow{
-            position: absolute;
-            inset: 10% -5% -5%;
-            background: var(--shadow-glow);
-            filter: blur(40px);
-            z-index: 0;
+    @media screen and (max-height: 880px){
+        .hero-eyebrow{
+            margin-bottom: 0.65rem;
         }
-        > *:not(.visual-glow){
-            position: relative;
-            z-index: 1;
+
+        .hero-copy h1{
+            font-size: clamp(1.95rem, 3.8vw, 3.1rem);
         }
-        .visual-caption{
+
+        .lead{
+            margin-top: 0.7rem;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .cta{
             margin-top: 1rem;
-            font-size: .78rem;
-            color: var(--text-muted);
-            text-align: center;
-            letter-spacing: .02em;
         }
     }
 
     @media screen and (max-width: 960px){
         .hero{
             grid-template-columns: 1fr;
+            grid-template-areas:
+                "eyebrow"
+                "visual"
+                "copy";
+            gap: 0;
             min-height: auto;
-            gap: 2.5rem;
+        }
+        .hero-eyebrow{
+            margin-bottom: 0.75rem;
         }
         .hero-visual{
-            order: -1;
+            order: unset;
+            margin-bottom: 2.5rem;
         }
         .proof-row{
             grid-template-columns: 1fr;
