@@ -12,7 +12,7 @@ const Title = ({ title, subtitle, as: Heading = 'h1', label }) => {
 }
 
 const TitleStyled = styled.div`
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     h1, h2{
         font-family: 'Syne', sans-serif;
         font-size: clamp(2.2rem, 4vw, 3.25rem);

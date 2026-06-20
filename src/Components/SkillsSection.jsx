@@ -48,8 +48,15 @@ const SkillsSection = () => {
 }
 
 const SkillsSectionStyled = styled.section`
+    margin-top: 0;
+    padding-top: 0;
+
+    > div:first-child{
+        margin-bottom: 1.25rem;
+    }
+
     .skills{
-        margin-top: 5rem;
+        margin-top: 0;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;

@@ -29,7 +29,9 @@ const AboutPage = () => {
 }
 
 const AboutStyled = styled.section`
-    
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 `;
 
 export default AboutPage

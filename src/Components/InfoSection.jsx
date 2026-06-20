@@ -39,7 +39,7 @@ const InfoSection = () => {
 }
 
 const InfoSectionStyled = styled.div`
-    margin-top: 5rem;
+    margin-top: 0;
     display: flex;
     @media screen and (max-width:1000px) {
         flex-direction: column;

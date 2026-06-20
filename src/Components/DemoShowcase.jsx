@@ -67,7 +67,8 @@ const DemoShowcase = ({ compact = false, embedded = false }) => {
 };
 
 const DemoShowcaseStyled = styled.section`
-    margin-top: 3rem;
+    margin-top: 0;
+    margin-bottom: 0;
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-xl);
