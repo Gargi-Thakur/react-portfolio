@@ -1,9 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "npx playwright install chromium && npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_VERSION = "22"
+  PLAYWRIGHT_BROWSERS_PATH = "0"
 
 # SPA fallback so React Router deep links (/about, /contact) work
 [[redirects]]
