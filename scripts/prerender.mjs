@@ -23,6 +23,12 @@ const routes = [
         contains: 'Hi, I am',
     },
     {
+        path: '/ai-automation-vancouver',
+        title: 'AI Automation Consultant in Vancouver | Gargi Thakur',
+        contains: 'AI Automation Consultant in Vancouver',
+        schemaTypes: ['Service', 'FAQPage'],
+    },
+    {
         path: '/services',
         title: 'Services | Gargi Thakur - Operations Dashboards & Workflow Automation',
         contains: 'Small Business Operations Dashboard',
@@ -82,6 +88,7 @@ try {
             title: document.title,
             canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href') ?? '',
             rootText: document.querySelector('#root')?.innerText?.trim() ?? '',
+            routeSchema: document.getElementById('route-structured-data')?.textContent ?? '',
         }));
 
         const expectedCanonical = `${SITE_ORIGIN}${route.path}`;
@@ -96,6 +103,11 @@ try {
         }
         if (snapshot.rootText.length < 80) {
             errors.push(`${route.path}: prerendered #root is too short (${snapshot.rootText.length} chars)`);
+        }
+        for (const schemaType of route.schemaTypes ?? []) {
+            if (!snapshot.routeSchema.includes(`"@type":"${schemaType}"`)) {
+                errors.push(`${route.path}: JSON-LD missing @type ${schemaType}`);
+            }
         }
 
         const html = rewritePreviewOrigin(await page.content());

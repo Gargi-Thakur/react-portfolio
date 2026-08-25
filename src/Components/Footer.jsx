@@ -14,6 +14,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="footer-links">
+                    <NavLink to="/ai-automation-vancouver">AI Automation Vancouver</NavLink>
                     <NavLink to="/services">Services</NavLink>
                     <NavLink to="/demo">Example</NavLink>
                     <NavLink to="/contact">Contact</NavLink>
@@ -77,6 +78,7 @@ const FooterStyled = styled.footer`
 
     .footer-links{
         display: flex;
+        flex-wrap: wrap;
         gap: 1.25rem;
         a{
             font-size: .88rem;
