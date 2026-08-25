@@ -51,6 +51,7 @@ function HomePage() {
                         ))}
                     </div>
                     <div className="secondary-links">
+                        <NavLink to="/ai-automation-vancouver"><TextLink title={'AI automation in Vancouver'} /></NavLink>
                         <NavLink to="/services"><TextLink title={'Starter offers'} /></NavLink>
                         <a href="https://www.linkedin.com/in/gargithakur94/" target="_blank" rel="noreferrer" className="linkedin-link">
                             <LinkedinIcon />

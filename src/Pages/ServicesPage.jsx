@@ -34,7 +34,11 @@ const ServicesPage = () => {
                     <p className="intro">
                         Each offer has a clear scope and deliverable. I do not sell vague
                         custom AI projects. Pricing depends on your data and workflows and
-                        is confirmed in writing before any build starts.
+                        is confirmed in writing before any build starts. Based in Vancouver?
+                        Start with{' '}
+                        <NavLink to="/ai-automation-vancouver" className="intro-link">
+                            AI automation for Vancouver businesses
+                        </NavLink>.
                     </p>
 
                     <div className="service-card featured">
@@ -190,6 +194,13 @@ const ServicesPageStyled = styled.section`
         line-height: 1.7;
         color: var(--text-muted);
         font-size: 1.05rem;
+        .intro-link{
+            color: var(--primary-color);
+            font-weight: 600;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
     }
 
     .service-card{

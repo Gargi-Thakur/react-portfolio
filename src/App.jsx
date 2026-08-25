@@ -9,6 +9,7 @@ import ServicesPage from './Pages/ServicesPage';
 import DemoPage from './Pages/DemoPage';
 import ContactPage from './Pages/ContactPage';
 import PrivacyPage from './Pages/PrivacyPage';
+import AiAutomationVancouverPage from './Pages/AiAutomationVancouverPage';
 import { Routes, Route } from 'react-router-dom';
 import {
   getInitialThemeState,
@@ -90,6 +91,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/ai-automation-vancouver" element={<AiAutomationVancouverPage />} />
           <Route path="/demo" element={<DemoPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
