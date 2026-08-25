@@ -36,6 +36,19 @@ function App() {
       ?.setAttribute('content', isDark ? '#09090b' : '#f7f6f3');
   }, [theme, themeState, isDark]);
 
+  // The prerendered HTML inlines a snapshot of the styled-components output so
+  // the page paints styled before JS loads. Once mounted, styled-components has
+  // re-inserted its own rules and the snapshot is a stale duplicate.
+  useEffect(() => {
+    const snapshotStyles = document.getElementById('prerender-critical-css');
+    if (!snapshotStyles) {
+      return undefined;
+    }
+
+    const frame = window.requestAnimationFrame(() => snapshotStyles.remove());
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
+
   useEffect(() => {
     if (!isAuto) {
       return undefined;
