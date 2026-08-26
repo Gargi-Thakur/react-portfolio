@@ -1,0 +1,6 @@
+# Normalise line endings so diffs stay reviewable
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.pdf binary
+*.svg text eol=lf
