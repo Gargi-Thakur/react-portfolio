@@ -11,10 +11,16 @@ function Navigation({ navToggle, setNavToggle }) {
                     <NavLink to="/" end className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>Home</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/about" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>About</NavLink>
+                    <NavLink to="/assessment" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>Assessment</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/services" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>Services</NavLink>
+                    <NavLink to="/implementation" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>Implementation</NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink to="/proof" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>Proof</NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink to="/about" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>About</NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active-class' : '')} onClick={() => setNavToggle(!navToggle)}>Contact</NavLink>

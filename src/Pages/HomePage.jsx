@@ -2,45 +2,72 @@ import React from 'react'
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import LinkedinIcon from '@mui/icons-material/LinkedIn';
-import PrimaryButton from '../Components/PrimaryButton';
 import OutlineButton from '../Components/OutlineButton';
 import TextLink from '../Components/TextLink';
 import DashboardPreview from '../Components/DashboardPreview';
+import AssessmentCTA from '../Components/AssessmentCTA';
+import GuaranteeBadge from '../Components/GuaranteeBadge';
+import FooterCTA from '../Components/FooterCTA';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 
 const proofPoints = [
-    { value: '3–5', label: 'Key metrics on one screen' },
-    { value: '60–90', label: 'Minute workflow audit' },
-    { value: '1', label: 'Dashboard, not ten tabs' },
+    { value: '3–7', label: 'AI tools picked for your business' },
+    { value: '1 wk', label: 'From first call to finished report' },
+    { value: '5+ hrs', label: 'Found per week — or a full refund' },
+];
+
+const howItWorks = [
+    {
+        step: '1',
+        name: 'Discovery call',
+        text: '45 minutes. You walk me through a normal day — what you dread, where work piles up, what you’ve tried. I pull the problems. No pitch.',
+    },
+    {
+        step: '2',
+        name: 'AI analysis',
+        text: 'I match your workflows to the tools that fit — then add picks from my own toolkit. You get 3 to 7 recommendations, not a generic list.',
+    },
+    {
+        step: '3',
+        name: 'The report',
+        text: 'Top-3 summary, priority matrix, tool-by-tool recommendations, a 4-day quick-start, and the dollars each fix is worth.',
+    },
+    {
+        step: '4',
+        name: 'Review call',
+        text: '30 minutes. We walk every recommendation together, then decide what’s urgent, DIY or help, and your timeline.',
+    },
 ];
 
 function HomePage() {
     useDocumentMeta(
-        'Gargi Thakur | Operations Dashboards & Workflow Automation for Small Businesses',
-        'Operations dashboards and workflow automation for small businesses. See stock, reorders, and daily ops clearly. Book a workflow audit or explore the NovaFit example.'
+        'AI Consultant Vancouver — 5+ Hours/Week or a Full Refund | Gargi Thakur',
+        'A custom report of the 3–7 AI tools your small business actually needs — in one week, for $999. If it doesn’t find you 5+ hours a week, you pay nothing.'
     );
     return (
         <HomePageStyled>
             <section className="hero">
                 <p className="eyebrow hero-eyebrow">
                     <span className="dot" aria-hidden="true" />
-                    Vancouver, BC · Full-stack Software Developer
+                    Vancouver, BC · AI for Small Business
                 </p>
                 <div className="hero-copy">
                     <h1>
-                        Know what needs <span className="gradient-text">attention</span> before it costs you
+                        The 3–7 AI tools your business actually needs.{' '}
+                        I find you <span className="gradient-text">5+ hours a week</span> — or you pay nothing.
                     </h1>
                     <p className="lead">
-                        Operations dashboards and workflow automation for small
-                        businesses buried in spreadsheets and email. One place to see what matters.
+                        The AI Tools Assessment is the on-ramp: a custom report in one
+                        week, for $999. Implementation is where we scale — only if you want help after.
                     </p>
                     <div className="cta">
-                        <NavLink to="/contact">
-                            <PrimaryButton title={'Book a Workflow Audit'} />
+                        <AssessmentCTA />
+                        <NavLink to="/proof">
+                            <OutlineButton title={'See a real example'} />
                         </NavLink>
-                        <NavLink to="/demo">
-                            <OutlineButton title={'See NovaFit Example'} />
-                        </NavLink>
+                    </div>
+                    <div className="guarantee-row">
+                        <GuaranteeBadge />
                     </div>
                     <div className="proof-row">
                         {proofPoints.map((item) => (
@@ -52,7 +79,7 @@ function HomePage() {
                     </div>
                     <div className="secondary-links">
                         <NavLink to="/ai-automation-vancouver"><TextLink title={'AI automation in Vancouver'} /></NavLink>
-                        <NavLink to="/services"><TextLink title={'Starter offers'} /></NavLink>
+                        <NavLink to="/implementation"><TextLink title={'Implementation services'} /></NavLink>
                         <a href="https://www.linkedin.com/in/gargithakur94/" target="_blank" rel="noreferrer" className="linkedin-link">
                             <LinkedinIcon />
                             LinkedIn
@@ -62,9 +89,31 @@ function HomePage() {
                 <div className="hero-visual">
                     <div className="visual-glow" aria-hidden="true" />
                     <DashboardPreview />
-                    <p className="visual-caption">NovaFit AI Inventory Hub · multi-location stock visibility</p>
+                    <p className="visual-caption">NovaFit AI Inventory Hub · built by me — I don’t just recommend, I build</p>
                 </div>
             </section>
+
+            <section className="how-it-works">
+                <h2>How it works</h2>
+                <div className="steps">
+                    {howItWorks.map((item) => (
+                        <div className="step-card" key={item.step}>
+                            <span className="step-num">{item.step}</span>
+                            <h3>{item.name}</h3>
+                            <p>{item.text}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section className="objection-strip">
+                <p>
+                    You don’t need to be technical. You don’t need new software you’ll never open.
+                    Most of what I recommend works with the tools you already use.
+                </p>
+            </section>
+
+            <FooterCTA />
         </HomePageStyled>
     )
 }
@@ -259,6 +308,79 @@ const HomePageStyled = styled.div`
 
     @media screen and (max-width: 642px){
         padding: .5rem 1rem 3rem;
+    }
+
+    .guarantee-row{
+        margin-top: 1rem;
+    }
+
+    .how-it-works{
+        margin-top: 4.5rem;
+        h2{
+            font-family: 'Syne', sans-serif;
+            color: var(--heading-color);
+            font-size: clamp(1.5rem, 2.6vw, 2rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+        .steps{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
+            @media screen and (max-width: 978px){
+                grid-template-columns: 1fr 1fr;
+            }
+            @media screen and (max-width: 620px){
+                grid-template-columns: 1fr;
+            }
+        }
+        .step-card{
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            background: var(--surface-muted);
+            padding: 1.5rem;
+            .step-num{
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50%;
+                background: var(--gradient-primary);
+                color: white;
+                font-weight: 700;
+                font-size: .9rem;
+                margin-bottom: .85rem;
+            }
+            h3{
+                font-family: 'Syne', sans-serif;
+                color: var(--heading-color);
+                font-size: 1.05rem;
+                margin-bottom: .45rem;
+            }
+            p{
+                color: var(--text-muted);
+                font-size: .92rem;
+                line-height: 1.65;
+            }
+        }
+    }
+
+    .objection-strip{
+        margin-top: 3rem;
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        background: var(--glass-bg);
+        backdrop-filter: blur(12px);
+        padding: 1.5rem 2rem;
+        text-align: center;
+        p{
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 46rem;
+            margin: 0 auto;
+        }
     }
 `;
 
