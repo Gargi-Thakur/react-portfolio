@@ -38,9 +38,9 @@ const SkillsSection = () => {
                     <NavLink to="/proof" className="services-link">
                         See the NovaFit example
                     </NavLink>
-                    {' '}(multi-location inventory dashboard) or visit{' '}
+                    {' (multi-location inventory dashboard) or visit '}
                     <NavLink to="/implementation" className="services-link">Implementation</NavLink>
-                    {' '}for the expansion menu after the assessment.
+                    {' for the expansion menu after the assessment.'}
                 </p>
             </SkillsSectionStyled>
         </InnerLayout>

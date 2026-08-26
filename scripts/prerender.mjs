@@ -8,7 +8,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 process.chdir(root);
 
 const SITE_ORIGIN = 'https://gargithakur.com';
-const PREVIEW_PORT = 4173;
+const PREVIEW_PORT = Number(process.env.PREVIEW_PORT) || 4173;
 const PREVIEW_ORIGIN = `http://127.0.0.1:${PREVIEW_PORT}`;
 const CRITICAL_STYLE_ID = 'prerender-critical-css';
 const MIN_CRITICAL_CSS_CHARS = 2000;
@@ -112,6 +112,10 @@ try {
     for (const route of routes) {
         await page.goto(`${PREVIEW_ORIGIN}${route.path}`, { waitUntil: 'load' });
         await page.waitForSelector('html[data-prerender-ready="true"]', { timeout: 15_000 });
+        await page.evaluate(() => {
+            document.documentElement.classList.add('is-prerendered');
+            document.documentElement.classList.remove('is-hydrated');
+        });
 
         const snapshot = await page.evaluate(() => ({
             // styled-components and emotion insert rules through the CSSOM in

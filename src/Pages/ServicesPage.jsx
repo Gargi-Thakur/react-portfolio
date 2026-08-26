@@ -147,7 +147,7 @@ const ServicesPage = () => {
                 <InnerLayout>
                     <div className="concierge-block">
                         <p className="concierge-label">Done-With-You</p>
-                        <h3>The AI Concierge — {CONCIERGE_PRICE}</h3>
+                        <h3>{`The AI Concierge — ${CONCIERGE_PRICE}`}</h3>
                         <p>
                             Two 45-minute calls a month, Slack access between sessions, and a
                             12 business-hour response time. In session we set up Claude co-work,

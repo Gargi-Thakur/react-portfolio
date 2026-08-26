@@ -53,8 +53,9 @@ function HomePage() {
                 </p>
                 <div className="hero-copy">
                     <h1>
-                        The 3–7 AI tools your business actually needs.{' '}
-                        I find you <span className="gradient-text">5+ hours a week</span> — or you pay nothing.
+                        {'The 3–7 AI tools your business actually needs. I find you '}
+                        <span className="gradient-text">5+ hours a week</span>
+                        {' — or you pay nothing.'}
                     </h1>
                     <p className="lead">
                         The AI Tools Assessment is the on-ramp: a custom report in one
