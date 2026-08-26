@@ -7,8 +7,8 @@ import useDocumentMeta from '../hooks/useDocumentMeta';
 
 const ContactPage = () => {
     useDocumentMeta(
-        'Contact | Gargi Thakur - Operations Dashboards & Workflow Automation',
-        'Book a workflow audit or scope an operations dashboard for your small business. Tell me what is slowing your team down.'
+        'Contact | Gargi Thakur — AI for Small Business',
+        'Ask about the AI Tools Assessment, implementation, or the AI Concierge retainer. I will reply with an honest next step.'
     );
 
     return (
@@ -16,7 +16,7 @@ const ContactPage = () => {
             <Title
                 title={'Contact'}
                 label={'Start here'}
-                subtitle={'Book a workflow audit or tell me what you want to see on one screen. I will reply with an honest next step.'}
+                subtitle={'Ask about the AI Tools Assessment, an implementation build, or the AI Concierge. I will reply with an honest next step.'}
             />
             <ContactPageStyled >
             <InnerLayout className={'contact-section'}>
@@ -29,9 +29,9 @@ const ContactPage = () => {
                             and whether you saw the NovaFit example. No jargon, no obligation.
                         </p>
                         <ul className="contact-prompts">
-                            <li>Book a Workflow Automation Audit</li>
-                            <li>Scope a Small Business Operations Dashboard</li>
-                            <li>Ask about ongoing monthly support</li>
+                            <li>Ask about the AI Tools Assessment</li>
+                            <li>Ask about an implementation build</li>
+                            <li>Ask about the AI Concierge retainer</li>
                         </ul>
                     </div>
                         <form className="form" id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdBDwt5jPc00ipcqlMnPS9ulBjGSyCycdaRWayEM_InehfKZQ/formResponse" target="_blank" >
@@ -45,7 +45,7 @@ const ContactPage = () => {
                         </div>
                         <div className="form-field">
                             <label htmlFor="subject"  >Subject*</label>
-                                <input type="text" id="subject" name="entry.141461250" required placeholder="e.g. Workflow audit for my retail shop" />
+                                <input type="text" id="subject" name="entry.141461250" required placeholder="e.g. AI Tools Assessment for my retail shop" />
                         </div>
                         <div className="form-field">
                             <label htmlFor="textarea">Message*</label>

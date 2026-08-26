@@ -16,12 +16,12 @@ const MIN_CRITICAL_CSS_CHARS = 2000;
 const routes = [
     {
         path: '/',
-        title: 'Gargi Thakur | Operations Dashboards & Workflow Automation for Small Businesses',
-        contains: 'Know what needs',
+        title: 'AI Consultant Vancouver — 5+ Hours/Week or a Full Refund | Gargi Thakur',
+        contains: 'hours a week',
     },
     {
         path: '/about',
-        title: 'About | Gargi Thakur - Operations Dashboards & Workflow Automation',
+        title: 'About | Gargi Thakur — AI for Small Business',
         contains: 'Hi, I am',
     },
     {
@@ -31,18 +31,23 @@ const routes = [
         schemaTypes: ['Service', 'FAQPage'],
     },
     {
-        path: '/services',
-        title: 'Services | Gargi Thakur - Operations Dashboards & Workflow Automation',
-        contains: 'Small Business Operations Dashboard',
+        path: '/assessment',
+        title: 'AI Tools Assessment for Small Business | Gargi Thakur',
+        contains: 'AI Tools Assessment',
     },
     {
-        path: '/demo',
+        path: '/implementation',
+        title: 'Implementation | AI Automation for Small Business | Gargi Thakur',
+        contains: 'After the assessment',
+    },
+    {
+        path: '/proof',
         title: 'NovaFit AI Inventory Hub | Multi-Location Stock Dashboard',
         contains: 'multi-location',
     },
     {
         path: '/contact',
-        title: 'Contact | Gargi Thakur - Operations Dashboards & Workflow Automation',
+        title: 'Contact | Gargi Thakur — AI for Small Business',
         contains: 'Get In Touch',
     },
     {

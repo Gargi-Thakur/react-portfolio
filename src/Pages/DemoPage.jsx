@@ -5,8 +5,8 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import CheckIcon from '@mui/icons-material/Check';
 import { MainLayout, InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
-import PrimaryButton from '../Components/PrimaryButton';
 import OutlineButton from '../Components/OutlineButton';
+import AssessmentCTA from '../Components/AssessmentCTA';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import { DEMO_DASHBOARD_URL, DEMO_DASHBOARD_NAME } from '../config';
 
@@ -126,14 +126,12 @@ const DemoPage = () => {
                     <section className="closing-cta">
                         <h3>Want this for your business?</h3>
                         <p>
-                            Book a workflow audit. I will map where stock visibility breaks
+                            Start with the AI Tools Assessment. I will map where the hours leak
                             down today and whether an operations dashboard like this is the
                             right first step.
                         </p>
                         <div className="cta-row">
-                            <NavLink to="/contact">
-                                <PrimaryButton title={'Book a Workflow Audit'} />
-                            </NavLink>
+                            <AssessmentCTA />
                             <a
                                 href={DEMO_DASHBOARD_URL}
                                 target="_blank"
@@ -143,8 +141,8 @@ const DemoPage = () => {
                                 <OutlineButton title={'Open Live Dashboard'} />
                                 <OpenInNewIcon />
                             </a>
-                            <NavLink to="/services">
-                                <OutlineButton title={'View Services'} />
+                            <NavLink to="/implementation">
+                                <OutlineButton title={'View Implementation'} />
                             </NavLink>
                         </div>
                     </section>

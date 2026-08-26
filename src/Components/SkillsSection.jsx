@@ -15,32 +15,32 @@ const SkillsSection = () => {
                 <Title
                     as="h2"
                     title={'What I Do'}
-                    subtitle={'Three focused offers for small businesses with real operations problems, not vague AI experiments.'}
+                    subtitle={'The $999 assessment is the on-ramp. Implementation is where we scale.'}
                 />
                 <div className="skills">
                     <SkillCard
                         icon={<InsightsIcon />}
-                        title={'Operations Dashboard'}
-                        paragraph={"One screen for the 3–5 metrics your team checks every week: stock levels, reorder needs, sales trends, or transfer status. Built on your existing data so managers decide faster and stop living in spreadsheets."}
+                        title={'AI Tools Assessment'}
+                        paragraph={"The on-ramp. A 45-minute call, then a custom report of the 3–7 AI tools that fit your business: priority matrix, 4-day quick-start plan, and the dollar impact of each fix. It finds 5+ hours/week, or you pay nothing."}
                     />
                     <SkillCard
                         icon={<ManageSearchIcon />}
-                        title={'Workflow Automation Audit'}
-                        paragraph={"A structured review of where manual work repeats: emails, follow-ups, order checks, inventory checks. You leave with an automation map and the top 3 fixes ranked by time and money saved."}
+                        title={'Implementation'}
+                        paragraph={"After the assessment: automation builds, custom workflows, knowledge systems, and full AI implementation. Fixed price, scoped in writing, delivered in weeks."}
                     />
                     <SkillCard
                         icon={<AutorenewIcon />}
-                        title={'Monthly Automation Partner'}
-                        paragraph={"Ongoing dashboard maintenance, small automations, and reporting improvements for teams that need a developer on call without hiring full time."}
+                        title={'Proof, Not Promises'}
+                        paragraph={"I build my own systems first. The NovaFit AI Inventory Hub is working software you can open and click through — the same standard your build gets."}
                     />
                 </div>
                 <p className="stack-note">
-                    <NavLink to="/demo" className="services-link">
+                    <NavLink to="/proof" className="services-link">
                         See the NovaFit example
                     </NavLink>
                     {' '}(multi-location inventory dashboard) or visit{' '}
-                    <NavLink to="/services" className="services-link">Services</NavLink>
-                    {' '}to pick the right starting point.
+                    <NavLink to="/implementation" className="services-link">Implementation</NavLink>
+                    {' '}for the expansion menu after the assessment.
                 </p>
             </SkillsSectionStyled>
         </InnerLayout>

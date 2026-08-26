@@ -16,7 +16,7 @@ const sections = [
     },
     {
         title: 'Why I collect it',
-        body: 'I use contact form information to respond to inquiries, scope projects, and follow up about services such as workflow audits or operations dashboard work.',
+        body: 'I use contact form information to respond to inquiries, scope projects, and follow up about services such as the AI Tools Assessment or automation work.',
     },
     {
         title: 'Where your data goes',

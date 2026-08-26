@@ -23,13 +23,13 @@ const DemoShowcase = ({ compact = false, embedded = false }) => {
     return (
         <DemoShowcaseStyled className={className}>
             <div className="demo-content">
-                <p className="eyebrow">Example build</p>
+                <p className="eyebrow">Reference build</p>
                 <h3>{DEMO_DASHBOARD_NAME}</h3>
                 <p className="summary">
-                    Built for a multi-location retailer that was checking stock, reorders,
-                    and transfer approvals across spreadsheets and email. This dashboard
-                    puts it in one place with clear alerts, so decisions take minutes
-                    instead of a spreadsheet marathon.
+                    NovaFit is a demo multi-location retailer. The dashboard consolidates
+                    stock levels, reorder needs, transfer approvals, and inventory value
+                    across locations onto a single screen, with alerts when something needs
+                    attention. It is working software you can click through, not a mockup.
                 </p>
                 {!compact && (
                     <ul className="highlights">
@@ -42,12 +42,12 @@ const DemoShowcase = ({ compact = false, embedded = false }) => {
                     </ul>
                 )}
                 {compact ? (
-                    <NavLink to="/demo" className="example-link">
+                    <NavLink to="/proof" className="example-link">
                         See problem, solution, and business value →
                     </NavLink>
                 ) : (
                     <div className="demo-actions">
-                        <NavLink to="/demo">
+                        <NavLink to="/proof">
                             <OutlineButton title={'See Problem & Solution'} />
                         </NavLink>
                         <a

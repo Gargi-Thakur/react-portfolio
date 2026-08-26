@@ -10,7 +10,8 @@ import DemoPage from './Pages/DemoPage';
 import ContactPage from './Pages/ContactPage';
 import PrivacyPage from './Pages/PrivacyPage';
 import AiAutomationVancouverPage from './Pages/AiAutomationVancouverPage';
-import { Routes, Route } from 'react-router-dom';
+import AssessmentPage from './Pages/AssessmentPage';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import {
   getInitialThemeState,
   getThemeForTimeOfDay,
@@ -102,12 +103,16 @@ function App() {
       <MainContentStyled>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/assessment" element={<AssessmentPage />} />
+          <Route path="/implementation" element={<ServicesPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/services" element={<ServicesPage />} />
           <Route path="/ai-automation-vancouver" element={<AiAutomationVancouverPage />} />
-          <Route path="/demo" element={<DemoPage />} />
+          <Route path="/proof" element={<DemoPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
+          {/* legacy URLs */}
+          <Route path="/services" element={<Navigate to="/implementation" replace />} />
+          <Route path="/demo" element={<Navigate to="/proof" replace />} />
         </Routes>
       </MainContentStyled>
       <Footer />

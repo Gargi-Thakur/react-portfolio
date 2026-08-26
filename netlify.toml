@@ -6,6 +6,17 @@
   NODE_VERSION = "22"
   PLAYWRIGHT_BROWSERS_PATH = "0"
 
+# Legacy URLs from the pre-assessment site
+[[redirects]]
+  from = "/services"
+  to = "/implementation"
+  status = 301
+
+[[redirects]]
+  from = "/demo"
+  to = "/proof"
+  status = 301
+
 # SPA fallback so React Router deep links (/about, /contact) work
 [[redirects]]
   from = "/*"

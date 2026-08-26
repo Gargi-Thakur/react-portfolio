@@ -6,17 +6,25 @@ import CloseIcon from '@mui/icons-material/Close';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import IconButton from '@mui/material/IconButton';
+import { SITE_MODE, BOOKING_URL } from '../config';
+
+const HEADER_CTA = {
+    waitlist: { to: '/assessment', label: 'Join the waitlist' },
+    live: { to: BOOKING_URL, label: 'Book your AI Tools Assessment', external: true },
+};
 
 const navItems = [
     { to: '/', label: 'Home', end: true },
-    { to: '/services', label: 'Services' },
-    { to: '/demo', label: 'Example' },
+    { to: '/assessment', label: 'Assessment' },
+    { to: '/implementation', label: 'Implementation' },
+    { to: '/proof', label: 'Proof' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
 ];
 
 function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked, themePreference = 'auto' }) {
     const isDark = theme === 'dark-theme';
+    const headerCta = HEADER_CTA[SITE_MODE];
 
     return (
         <HeaderStyled>
@@ -25,7 +33,7 @@ function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked, theme
                     <span className="brand-mark" aria-hidden="true">GT</span>
                     <span className="brand-copy">
                         <span className="brand-name">Gargi Thakur</span>
-                        <span className="brand-tag">Operations & Automation</span>
+                        <span className="brand-tag">AI for Small Business</span>
                     </span>
                 </NavLink>
 
@@ -56,9 +64,15 @@ function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked, theme
                     >
                         {isDark ? <LightModeOutlinedIcon /> : <DarkModeOutlinedIcon />}
                     </button>
-                    <NavLink to="/contact" className="header-cta" onClick={() => setNavOpen(false)}>
-                        Book audit
-                    </NavLink>
+                    {headerCta.external ? (
+                        <a href={headerCta.to} className="header-cta" target="_blank" rel="noreferrer">
+                            {headerCta.label}
+                        </a>
+                    ) : (
+                        <NavLink to={headerCta.to} className="header-cta" onClick={() => setNavOpen(false)}>
+                            {headerCta.label}
+                        </NavLink>
+                    )}
                     <IconButton
                         className="menu-toggle"
                         onClick={() => setNavOpen(!navOpen)}

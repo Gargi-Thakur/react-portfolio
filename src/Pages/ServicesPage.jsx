@@ -1,368 +1,283 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import { MainLayout, InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
-import PrimaryButton from '../Components/PrimaryButton';
-import DemoShowcase from '../Components/DemoShowcase';
-import InsightsIcon from '@mui/icons-material/Insights';
-import ManageSearchIcon from '@mui/icons-material/ManageSearch';
-import AutorenewIcon from '@mui/icons-material/Autorenew';
-import CheckIcon from '@mui/icons-material/Check';
+import PriceCard from '../Components/PriceCard';
+import FooterCTA from '../Components/FooterCTA';
+import FAQAccordion from '../Components/FAQAccordion';
 import useDocumentMeta from '../hooks/useDocumentMeta';
+import { ASSESSMENT_PRICE, CONCIERGE_PRICE } from '../config';
+
+const MENU = [
+    {
+        name: 'Automation Build',
+        price: '$1K–$3K',
+        text: 'The repetitive work runs itself. Zapier/Make flows — built, tested, your team trained, then handed off.',
+    },
+    {
+        name: 'Process Redesign',
+        price: '$3K–$5K',
+        text: 'We map how work happens today, design how it should happen, and eliminate the waste before automating it.',
+    },
+    {
+        name: 'Custom Workflows',
+        price: '$3K–$5K',
+        text: 'One-click operations built on prompts and templates — proposals, follow-ups, reports that used to take hours.',
+    },
+    {
+        name: 'Knowledge Systems',
+        price: '$3K+',
+        text: 'A custom GPT trained on your context library — policies, pricing, past jobs — so it answers like your best employee.',
+    },
+    {
+        name: 'Full Implementation',
+        price: '$5K–$10K+',
+        text: 'Custom AI agents and workflow automation across the business. The whole assessment plan, built for you.',
+    },
+];
+
+const PROCESS = [
+    {
+        n: '01',
+        name: 'Scoped proposal',
+        text: 'After your review call, I write up exactly what gets built, what it will do, when it lands, and what it costs. Fixed price. Nothing starts until you approve it in writing.',
+    },
+    {
+        n: '02',
+        name: 'Build',
+        text: 'I build against that written scope and share progress as it goes. You are never waiting weeks wondering what is happening.',
+    },
+    {
+        n: '03',
+        name: 'Test with your real work',
+        text: 'We run it on your actual jobs, quotes, or documents — not a demo dataset. Anything that breaks gets fixed before handoff.',
+    },
+    {
+        n: '04',
+        name: 'Handoff and training',
+        text: 'I train whoever uses it day to day, document how it works, and stay available for two weeks of fixes after launch.',
+    },
+];
+
+const NOT_DOING = [
+    'Vague "custom AI" projects with no defined deliverable',
+    'Anything I cannot measure a before-and-after on',
+    'Chatbots your team has to babysit to get a useful answer',
+    'Enterprise rollouts or per-seat software resale',
+];
+
+const FAQ_ITEMS = [
+    {
+        q: 'Do I have to do the assessment first?',
+        a: 'Yes — and that is deliberate. Building before we know which workflow is actually costing you the most is how projects get expensive and miss. The assessment is $999, it is credited toward any project of $2,500 or more booked within 30 days, and it is refunded entirely if it does not find you 5+ hours a week.',
+    },
+    {
+        q: 'How is a project priced?',
+        a: 'Fixed price, confirmed in writing before any work starts. Never hourly. If we discover the scope needs to change mid-build, that becomes a written change request with its own price and timeline — approved by you before I touch it.',
+    },
+    {
+        q: 'How long does a build take?',
+        a: 'An automation build is typically one to two weeks. Larger implementations run three to six weeks with milestones you sign off along the way. Your exact dates go in the proposal, so you know them before you commit.',
+    },
+    {
+        q: 'What happens if it breaks after handoff?',
+        a: 'Two weeks of fixes are included with every build. After that, ongoing support is a separate arrangement — either ad hoc or through the AI Concierge retainer below.',
+    },
+    {
+        q: 'Do I own what you build?',
+        a: 'Yes. The automations, prompts, and any custom tooling are yours, running in your own accounts, on tools you control. Nothing is locked to me.',
+    },
+];
 
 const ServicesPage = () => {
     useDocumentMeta(
-        'Services | Gargi Thakur - Operations Dashboards & Workflow Automation',
-        'Three starter offers for small businesses: operations dashboards, workflow automation audits, and monthly automation support. Book a workflow audit or scope your dashboard.'
+        'Implementation | AI Automation for Small Business | Gargi Thakur',
+        'Automation builds, process redesign, custom workflows and knowledge systems for Vancouver small businesses. Fixed price, scoped in writing first.'
     );
 
     return (
         <MainLayout>
-            <Title
-                title={'Services'}
-                label={'Offers'}
-                subtitle={'Three focused starter offers. Pick the one that matches where you are today.'}
-            />
             <ServicesPageStyled>
+                <Title
+                    label={'Implementation'}
+                    title={'After the assessment — I can build it for you.'}
+                    subtitle={`The ${ASSESSMENT_PRICE} assessment is the on-ramp. Implementation is where we scale. Each build is a fixed price, scoped in writing after the review call.`}
+                />
                 <InnerLayout>
-                    <div className="path-guide">
-                        <p><strong>Saw the NovaFit example and want something similar?</strong> Start with the Operations Dashboard.</p>
-                        <p><strong>Not sure where the problem is yet?</strong> Start with a Workflow Automation Audit.</p>
-                    </div>
-
-                    <p className="intro">
-                        Each offer has a clear scope and deliverable. I do not sell vague
-                        custom AI projects. Pricing depends on your data and workflows and
-                        is confirmed in writing before any build starts. Based in Vancouver?
-                        Start with{' '}
-                        <NavLink to="/ai-automation-vancouver" className="intro-link">
-                            AI automation for Vancouver businesses
-                        </NavLink>.
-                    </p>
-
-                    <div className="service-card featured">
-                        <div className="badge">Most popular</div>
-                        <div className="card-head">
-                            <div className="card-icon"><InsightsIcon /></div>
-                            <div className="card-head-copy">
-                                <h3>Small Business Operations Dashboard</h3>
-                                <p className="best-for">
-                                    Best for: retail, fitness studios, cafés, clinics, wineries,
-                                    service businesses, and small e-commerce stores.
-                                </p>
-                            </div>
-                        </div>
-                        <p className="description">
-                            One dashboard with the 3–5 numbers your team checks every week:
-                            stock levels, reorder needs, sales trends, transfer status, or
-                            whatever manual check is eating hours today. Built on cleaned-up
-                            data you already have.
-                        </p>
-                        <ul className="includes">
-                            <li><CheckIcon /> Data cleanup and connection to your existing sources</li>
-                            <li><CheckIcon /> Custom dashboard with 3–5 key metrics and decision views</li>
-                            <li><CheckIcon /> Basic alerts for low stock, slow movers, or workflow gaps</li>
-                            <li><CheckIcon /> Handoff, training, and documentation for your team</li>
-                        </ul>
-                        <p className="price-direction">
-                            Fixed project fee based on scope. Optional monthly maintenance
-                            after launch.
-                        </p>
-                        <DemoShowcase compact embedded />
-                        <div className="card-actions">
-                            <NavLink to="/contact" className="card-cta">
-                                <PrimaryButton title={'Scope My Dashboard'} />
-                            </NavLink>
-                        </div>
-                    </div>
-
-                    <div className="service-card entry">
-                        <div className="badge entry-badge">Start here if unsure</div>
-                        <div className="card-head">
-                            <div className="card-icon"><ManageSearchIcon /></div>
-                            <div className="card-head-copy">
-                                <h3>Workflow Automation Audit</h3>
-                                <p className="best-for">
-                                    Best for: businesses drowning in emails, spreadsheets,
-                                    manual follow-ups, order checks, and inventory checks.
-                                </p>
-                            </div>
-                        </div>
-                        <p className="description">
-                            Not sure whether you need a dashboard, automation, or both?
-                            I map how work actually flows today, quantify the biggest time
-                            leaks, and leave you with a prioritized plan, not a pitch for
-                            software you do not need.
-                        </p>
-                        <ul className="includes">
-                            <li><CheckIcon /> 60–90 minute workflow review with your team</li>
-                            <li><CheckIcon /> Automation map of where manual work repeats</li>
-                            <li><CheckIcon /> Top 3 recommendations ranked by time and money saved</li>
-                            <li><CheckIcon /> Clear next step: dashboard build, automation, or both</li>
-                        </ul>
-                        <p className="price-direction">
-                            Free introductory call for most businesses. Paid diagnostic
-                            available for complex operations. I will tell you which applies
-                            when you reach out.
-                        </p>
-                        <div className="card-actions">
-                            <NavLink to="/contact" className="card-cta">
-                                <PrimaryButton title={'Book a Workflow Audit'} />
-                            </NavLink>
-                        </div>
-                    </div>
-
-                    <div className="service-card">
-                        <div className="card-head">
-                            <div className="card-icon"><AutorenewIcon /></div>
-                            <div className="card-head-copy">
-                                <h3>Monthly Automation Partner</h3>
-                                <p className="best-for">
-                                    Best for: businesses that need ongoing improvements after
-                                    the first dashboard or automation is live.
-                                </p>
-                            </div>
-                        </div>
-                        <p className="description">
-                            Operations change. New products, new locations, new bottlenecks.
-                            This keeps your dashboard accurate, adds small automations as
-                            needs come up, and gives you a developer on call without hiring
-                            full time.
-                        </p>
-                        <ul className="includes">
-                            <li><CheckIcon /> Dashboard maintenance and metric updates</li>
-                            <li><CheckIcon /> Small workflow automations and reporting improvements</li>
-                            <li><CheckIcon /> Priority support when something breaks or shifts</li>
-                            <li><CheckIcon /> Regular check-ins on what to improve next</li>
-                        </ul>
-                        <p className="price-direction">
-                            Monthly retainer based on hours and scope. Defined together
-                            after your first project.
-                        </p>
-                        <div className="card-actions">
-                            <NavLink to="/contact" className="card-cta">
-                                <PrimaryButton title={'Talk About Ongoing Support'} />
-                            </NavLink>
-                        </div>
-                    </div>
-
-                    <div className="process-section">
-                        <h4>How it works</h4>
-                        <ol className="process">
-                            <li><span>1.</span> Short call: we identify the one problem worth fixing first</li>
-                            <li><span>2.</span> Scoped proposal: exact deliverables, timeline, and fee in writing</li>
-                            <li><span>3.</span> Build and handoff: you review and approve before anything goes live</li>
-                            <li><span>4.</span> Optional ongoing support when you want a partner, not a one-off vendor</li>
-                        </ol>
-                        <div className="cta">
-                            <NavLink to="/demo">
-                                <PrimaryButton title={'See the NovaFit Example'} />
-                            </NavLink>
-                        </div>
+                    <div className="menu-grid">
+                        {MENU.map((item) => (
+                            <PriceCard key={item.name} {...item} />
+                        ))}
                     </div>
                 </InnerLayout>
+
+                <InnerLayout>
+                    <h2 className="section-heading">How a build runs</h2>
+                    <ol className="process-list">
+                        {PROCESS.map((step) => (
+                            <li key={step.n}>
+                                <span className="step-num">{step.n}</span>
+                                <div>
+                                    <h3>{step.name}</h3>
+                                    <p>{step.text}</p>
+                                </div>
+                            </li>
+                        ))}
+                    </ol>
+                </InnerLayout>
+
+                <InnerLayout>
+                    <h2 className="section-heading">What I don’t take on</h2>
+                    <ul className="cross-list">
+                        {NOT_DOING.map((item) => (
+                            <li key={item}>{item}</li>
+                        ))}
+                    </ul>
+                    <p className="note">
+                        You work directly with the person building the thing. That keeps scope
+                        small, honest, and tied to a problem you can name.
+                    </p>
+                </InnerLayout>
+
+                <InnerLayout>
+                    <h2 className="section-heading">Common questions</h2>
+                    <FAQAccordion items={FAQ_ITEMS} />
+                </InnerLayout>
+
+                <InnerLayout>
+                    <div className="concierge-block">
+                        <p className="concierge-label">Done-With-You</p>
+                        <h3>The AI Concierge — {CONCIERGE_PRICE}</h3>
+                        <p>
+                            Two 45-minute calls a month, Slack access between sessions, and a
+                            12 business-hour response time. In session we set up Claude co-work,
+                            build Claude projects for each business function, create skills for
+                            the workflows you already run, and keep an ongoing AI strategy.
+                        </p>
+                        <p>
+                            Before call 1, a short form so we skip the interview. After every
+                            call: recordings in a shared Drive, plus a one-pager of the top 3
+                            actions before next session.
+                        </p>
+                    </div>
+                </InnerLayout>
+
+                <FooterCTA headline={'It starts with the assessment'} />
             </ServicesPageStyled>
         </MainLayout>
     );
 };
 
 const ServicesPageStyled = styled.section`
-    .path-guide{
-        max-width: 46rem;
-        padding: 1.15rem 1.25rem;
+    .menu-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        @media screen and (max-width: 978px){
+            grid-template-columns: 1fr 1fr;
+        }
+        @media screen and (max-width: 620px){
+            grid-template-columns: 1fr;
+        }
+    }
+    .section-heading{
+        font-family: 'Syne', sans-serif;
+        color: var(--heading-color);
+        font-size: 1.5rem;
+        letter-spacing: -0.02em;
         margin-bottom: 1.25rem;
-        border: 1px solid var(--glass-border);
-        border-radius: var(--radius-xl);
-        background: var(--glass-bg);
-        backdrop-filter: blur(12px);
-        p{
-            line-height: 1.65;
-            color: var(--text-muted);
-            & + p{
-                margin-top: .5rem;
-            }
-            strong{
-                color: var(--heading-color);
-            }
-        }
     }
-
-    .intro{
-        max-width: 46rem;
-        padding-bottom: .75rem;
-        line-height: 1.7;
-        color: var(--text-muted);
-        font-size: 1.05rem;
-        .intro-link{
-            color: var(--primary-color);
-            font-weight: 600;
-            &:hover{
-                text-decoration: underline;
-            }
-        }
-    }
-
-    .service-card{
-        position: relative;
-        background: var(--glass-bg);
-        border: 1px solid var(--glass-border);
-        border-radius: var(--radius-xl);
-        padding: 2rem;
-        padding-top: 2.25rem;
-        margin-top: 1.75rem;
-        backdrop-filter: blur(16px);
-        box-shadow: var(--shadow-lg);
-        transition: border-color .3s ease, transform .3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow .3s ease;
-        overflow: hidden;
-        &:hover{
-            border-color: var(--border-strong);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg), var(--shadow-glow);
-        }
-        &.featured{
-            border-color: rgba(99, 102, 241, 0.35);
-            &::before{
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 3px;
-                background: var(--gradient-primary);
-            }
-        }
-
-        .badge{
-            position: absolute;
-            top: 1.35rem;
-            right: 1.35rem;
-            background: var(--primary-soft);
-            color: var(--primary-color);
-            font-size: .68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: .12em;
-            padding: .35rem .8rem;
-            border-radius: var(--radius-pill);
-            &.entry-badge{
-                background: var(--surface-muted);
-                color: var(--heading-color);
-            }
-        }
-    }
-
-    .card-head{
+    .process-list{
+        list-style: none;
+        padding: 0;
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
         gap: 1rem;
-        margin-bottom: .25rem;
-        padding-right: 6.5rem;
+        max-width: 46rem;
+        li{
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        .step-num{
+            flex: none;
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: .95rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            padding-top: .1rem;
+        }
         h3{
             font-family: 'Syne', sans-serif;
             color: var(--heading-color);
-            font-size: 1.55rem;
-            letter-spacing: -0.03em;
-            margin-bottom: .35rem;
+            font-size: 1.02rem;
+            margin-bottom: .3rem;
         }
-        .best-for{
-            font-size: .92rem;
+        p{
             color: var(--text-muted);
-            line-height: 1.55;
-            max-width: 36rem;
-        }
-        .card-icon{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 3.25rem;
-            height: 3.25rem;
-            border-radius: 50%;
-            background: var(--primary-soft);
-            flex-shrink: 0;
-            svg{
-                font-size: 1.65rem;
-                color: var(--primary-color);
-            }
+            font-size: .93rem;
+            line-height: 1.7;
         }
     }
-
-    .description{
-        padding: 1rem 0 .5rem 0;
-        line-height: 1.65;
-        color: var(--text-muted);
-    }
-
-    .includes{
-        padding: .5rem 0 1rem 0;
+    .cross-list{
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+        max-width: 46rem;
         li{
-            display: flex;
-            align-items: flex-start;
-            gap: .6rem;
-            padding: .25rem 0;
-            svg{
-                font-size: 1.1rem;
-                color: var(--primary-color);
-                flex-shrink: 0;
-                margin-top: .15rem;
+            position: relative;
+            padding-left: 1.6rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            &::before{
+                content: '✕';
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-weight: 700;
+                color: var(--text-muted);
+                opacity: .7;
             }
         }
     }
-
-    .price-direction{
-        margin-bottom: 0;
-        padding: .9rem 1rem;
-        border-radius: var(--radius-md);
-        border: 1px solid var(--border-color);
-        background: var(--surface-muted);
-        font-size: .92rem;
-        line-height: 1.55;
+    .note{
+        margin-top: 1rem;
+        max-width: 46rem;
         color: var(--text-muted);
-        font-weight: 600;
+        font-size: .93rem;
+        line-height: 1.7;
+        font-style: italic;
     }
-
-    .card-actions{
-        margin-top: 1.25rem;
-    }
-
-    .card-cta{
-        display: inline-flex;
-    }
-
-    .service-card.featured .price-direction{
-        margin-bottom: 0;
-    }
-
-    .process-section{
-        margin-top: 3rem;
-        h4{
+    .concierge-block{
+        border: 1px dashed var(--border-color);
+        border-radius: var(--radius-lg, 18px);
+        padding: 1.75rem 2rem;
+        max-width: 46rem;
+        h3{
+            font-family: 'Syne', sans-serif;
             color: var(--heading-color);
-            font-size: 1.2rem;
-            padding-bottom: .4rem;
+            font-size: 1.15rem;
+            margin-bottom: .5rem;
         }
-        .process{
-            li{
-                padding: .35rem 0;
-                span{
-                    color: var(--primary-color);
-                    font-weight: 700;
-                    margin-right: .6rem;
-                }
-            }
+        .concierge-label{
+            color: var(--primary-color);
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .14em;
+            margin-bottom: .45rem;
         }
-        .cta{
-            margin-top: 2rem;
+        p{
+            color: var(--text-muted);
+            line-height: 1.7;
         }
-    }
-
-    @media screen and (max-width: 640px){
-        .card-head{
-            padding-right: 0;
-        }
-        .service-card .badge{
-            position: static;
-            display: inline-block;
-            margin-bottom: 1rem;
+        p + p{
+            margin-top: .75rem;
         }
     }
 `;

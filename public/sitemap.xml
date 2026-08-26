@@ -5,6 +5,9 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://gargithakur.com/assessment</loc>
+  </url>
+  <url>
     <loc>https://gargithakur.com/about</loc>
     <priority>0.8</priority>
   </url>
@@ -13,11 +16,11 @@
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://gargithakur.com/services</loc>
+    <loc>https://gargithakur.com/implementation</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://gargithakur.com/demo</loc>
+    <loc>https://gargithakur.com/proof</loc>
     <priority>0.85</priority>
   </url>
   <url>

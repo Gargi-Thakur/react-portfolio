@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import PrimaryButton from './PrimaryButton';
+import AssessmentCTA from './AssessmentCTA';
 import resume from '../data/Gargi_Resume2025.pdf';
 
 const InfoSection = () => {
@@ -10,17 +10,17 @@ const InfoSection = () => {
             <div className="content">
                 <h4>Hi, I am <span>Gargi</span></h4>
                 <p className="paragraph">
-                    I help small businesses see what is happening in their operations and
-                    fix the manual work that slows them down. My lead offer is a Small
-                    Business Operations Dashboard: the 3–5 metrics your team checks every
-                    week, in one place, with alerts when something needs attention. If you
-                    are not sure where to start, I run Workflow Automation Audits that
-                    map where time and money leak before we build anything.
+                    I help small businesses put AI to work on the manual tasks that slow
+                    them down. Everything starts with the AI Tools Assessment: in one
+                    week you get a custom report of the 3–7 AI tools that actually fit
+                    your business — and it finds you 5+ hours a week or you pay nothing. The assessment is
+                    the on-ramp. If you want the plan built for you, implementation is
+                    where we scale.
                 </p>
                 <p className="paragraph">
                     I come at this as a full-stack software developer, which means I build the
-                    whole system, not just one piece of it. Your dashboards and
-                    automations integrate properly with the tools you already use and
+                    whole system, not just one piece of it. Your automations and
+                    custom tools integrate properly with the tools you already use and
                     keep working as your business grows. My background in Life Sciences
                     taught me to think in processes: before I automate anything, I map
                     out how the work actually flows, then remove the bottlenecks.
@@ -30,7 +30,7 @@ const InfoSection = () => {
                 </p>
                 <br />
                 <div className="buttons">
-                    <NavLink to="/contact"><PrimaryButton title={'Book a Workflow Audit'} /></NavLink>
+                    <AssessmentCTA />
                     <a href={resume} download="Gargi_Resume2025.pdf"><PrimaryButton title={'Download Resume'} /></a>
                 </div>
             </div>

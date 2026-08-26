@@ -10,17 +10,18 @@ import { MainLayout, InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
 import PrimaryButton from '../Components/PrimaryButton';
 import OutlineButton from '../Components/OutlineButton';
+import AssessmentCTA from '../Components/AssessmentCTA';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 import useStructuredData from '../hooks/useStructuredData';
-import { SITE_URL, DEMO_DASHBOARD_URL, DEMO_DASHBOARD_NAME } from '../config';
+import { SITE_URL, DEMO_DASHBOARD_URL, DEMO_DASHBOARD_NAME, ASSESSMENT_PRICE, CONCIERGE_PRICE } from '../config';
 
 const PAGE_PATH = '/ai-automation-vancouver';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const PAGE_TITLE = 'AI Automation Consultant in Vancouver | Gargi Thakur';
-const PAGE_DESCRIPTION = 'Vancouver-based AI automation consultant building operations dashboards and workflow automation for small businesses. Start with a 60–90 minute workflow audit, then a scoped build.';
+const PAGE_DESCRIPTION = `Vancouver AI consultant for small businesses. The ${ASSESSMENT_PRICE} AI Tools Assessment finds the 3–7 tools you need — or you pay nothing.`;
 
-const ANSWER = 'I am Gargi Thakur, an AI automation consultant and full-stack developer based in Vancouver, BC. I build operations dashboards and workflow automation for small businesses: stock levels, reorder alerts, and the manual checks eating your week. Start with a 60–90 minute workflow audit, then a scoped build.';
+const ANSWER = `I am Gargi Thakur, an AI consultant and full-stack developer based in Vancouver, BC. I help small businesses put AI to work on the manual tasks eating their week. The ${ASSESSMENT_PRICE} AI Tools Assessment is the on-ramp: a custom report of the 3–7 tools your business actually needs, and it identifies at least 5 hours a week of savings or you pay nothing. Implementation is where we scale.`;
 
 const serviceAreas = [
     'Vancouver',
@@ -42,18 +43,18 @@ const clientTypes = [
 const offers = [
     {
         icon: <InsightsIcon />,
-        name: 'Operations dashboard',
-        body: 'The 3–5 numbers your team checks every week on one screen: stock levels, reorder needs, sales trends, or transfer status. Built on data you already have, with alerts when something needs attention.',
+        name: 'AI Tools Assessment — the on-ramp',
+        body: `A 45-minute discovery call, then a custom report: the 3–7 AI tools that fit your business, a priority matrix, a 4-day quick-start plan, and the dollar impact of each fix. ${ASSESSMENT_PRICE}. 5+ hours/week identified, or a full refund.`,
     },
     {
         icon: <ManageSearchIcon />,
-        name: 'Workflow automation audit',
-        body: 'A 60–90 minute review of how work actually flows today. You leave with an automation map and the top 3 fixes ranked by time and money saved, not a pitch for software you do not need.',
+        name: 'Implementation — where we scale',
+        body: 'After the assessment: Zapier/Make automations ($1K–$3K), process redesign, custom workflows, knowledge systems, and full AI implementation ($5K–$10K+). Fixed price, scoped in writing before work starts.',
     },
     {
         icon: <AutorenewIcon />,
-        name: 'Monthly automation partner',
-        body: 'Ongoing dashboard maintenance, small automations, and reporting improvements for teams that want a developer on call without hiring full time.',
+        name: `AI Concierge — ${CONCIERGE_PRICE}`,
+        body: 'Done-with-you retainer: two 45-minute calls a month, Slack between sessions, 12 business-hour response. We set up Claude co-work, projects per function, and skills for the workflows you already run.',
     },
 ];
 
@@ -64,28 +65,28 @@ const notDoing = [
 ];
 
 const process = [
-    'Short call: we identify the one problem worth fixing first.',
-    'Scoped proposal: exact deliverables, timeline, and fee in writing.',
-    'Build and handoff: you review and approve before anything goes live.',
-    'Optional ongoing support when you want a partner, not a one-off vendor.',
+    'Discovery call: 45 minutes. You walk me through a normal day. I pull the problems — no pitch.',
+    'The report: 3–7 AI tools, top-3 summary, priority matrix, 4-day quick-start, and the dollar impact of each fix.',
+    'Review call: 30 minutes. What’s urgent, DIY or help, and your timeline.',
+    'Implementation if you want it: a fixed-price build from the expansion menu, scoped in writing before work starts.',
 ];
 
 const faqs = [
     {
         question: 'What does an AI automation consultant in Vancouver actually do?',
-        answer: 'I find the repetitive work in your operations and remove it. In practice that means an operations dashboard that shows the 3–5 metrics your team checks weekly, alerts for things like low stock, and automation for the manual checks, follow-ups, and spreadsheet reconciliation that eat hours every week.',
+        answer: 'I find the repetitive work eating your week and map the 3–7 AI tools that actually fit — then I can build it with you if you want help. That might be automations, custom workflows, a knowledge system, or a full implementation. The assessment is the on-ramp; implementation is where we scale.',
     },
     {
         question: 'How much does AI automation cost for a small business?',
-        answer: 'Dashboard builds are a fixed project fee based on scope. Ongoing support is a monthly retainer defined after your first project. Pricing depends on your data and workflows, and it is confirmed in writing before any build starts. The introductory call is free for most businesses.',
+        answer: `It starts with the AI Tools Assessment: ${ASSESSMENT_PRICE} fixed, one week, refund-backed. Builds after that are a fixed project fee from the expansion menu ($1K–$10K+), confirmed in writing before work starts. The AI Concierge retainer is ${CONCIERGE_PRICE}. No hourly billing.`,
     },
     {
         question: 'How long does a project take?',
-        answer: 'It depends on how clean your data is and how many systems are involved. The workflow audit is a single 60–90 minute session plus a written map. For a build, the timeline is scoped and confirmed in writing up front, so you know the deliverables and dates before work begins.',
+        answer: 'The AI Tools Assessment takes one week: a 45-minute discovery call, then a custom report, then a 30-minute review call. For a build, the timeline is scoped and confirmed in writing up front, so you know the deliverables and dates before work begins.',
     },
     {
         question: 'Do I actually need AI, or just a better dashboard?',
-        answer: 'Often the second one. Many small businesses do not have an AI problem, they have a visibility problem: the numbers exist but live in five places. That is why I start with an audit. If a plain dashboard or a simple automation solves it, I will tell you that instead of selling you a model.',
+        answer: 'Often the second one. Many small businesses do not have an AI problem, they have a visibility problem: the numbers exist but live in five places. That is why I start with an assessment. If a plain dashboard or a simple automation solves it, I will tell you that instead of selling you a model.',
     },
     {
         question: 'What tools and systems do you work with?',
@@ -164,11 +165,9 @@ const AiAutomationVancouverPage = () => {
             <PageStyled>
                 <InnerLayout>
                     <div className="cta top-cta">
-                        <NavLink to="/contact">
-                            <PrimaryButton title={'Book a Workflow Audit'} />
-                        </NavLink>
-                        <NavLink to="/demo">
-                            <OutlineButton title={'See a Real Example'} />
+                        <AssessmentCTA />
+                        <NavLink to="/proof">
+                            <OutlineButton title={'See the Reference Build'} />
                         </NavLink>
                     </div>
 
@@ -187,7 +186,7 @@ const AiAutomationVancouverPage = () => {
 
                     <section className="block">
                         <p className="label">What I build</p>
-                        <h2>Three ways AI automation shows up in a small business</h2>
+                        <h2>How we work together — assessment first, then builds</h2>
                         <div className="offer-grid">
                             {offers.map((offer) => (
                                 <article className="offer-card" key={offer.name}>
@@ -199,7 +198,7 @@ const AiAutomationVancouverPage = () => {
                         </div>
                         <p className="note">
                             Full scope and deliverables live on the{' '}
-                            <NavLink to="/services" className="inline-link">services page</NavLink>.
+                            <NavLink to="/implementation" className="inline-link">implementation page</NavLink>.
                         </p>
                     </section>
 
@@ -234,16 +233,17 @@ const AiAutomationVancouverPage = () => {
                     </section>
 
                     <section className="block proof">
-                        <p className="label">Proof</p>
+                        <p className="label">Reference build</p>
                         <h2>{DEMO_DASHBOARD_NAME}</h2>
                         <p>
-                            A multi-location retailer was checking stock, reorders, and transfer
-                            approvals across spreadsheets and email. This dashboard puts it on one
-                            screen with alerts and decision views, so a manager can scan it in under
-                            a minute instead of reconciling numbers by hand.
+                            NovaFit is a demo multi-location retailer. The dashboard puts stock,
+                            reorders, and transfer approvals on one screen with alerts and decision
+                            views, so a manager can scan it in under a minute instead of
+                            reconciling numbers by hand. It is working software you can open and
+                            click through.
                         </p>
                         <div className="cta">
-                            <NavLink to="/demo">
+                            <NavLink to="/proof">
                                 <OutlineButton title={'Read the Case Study'} />
                             </NavLink>
                             <a href={DEMO_DASHBOARD_URL} target="_blank" rel="noreferrer">
@@ -287,9 +287,7 @@ const AiAutomationVancouverPage = () => {
                             even when that step is not hiring me.
                         </p>
                         <div className="cta">
-                            <NavLink to="/contact">
-                                <PrimaryButton title={'Book a Workflow Audit'} />
-                            </NavLink>
+                            <AssessmentCTA />
                         </div>
                     </section>
                 </InnerLayout>
