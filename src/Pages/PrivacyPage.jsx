@@ -67,8 +67,7 @@ const PrivacyPage = () => {
                         </section>
                     ))}
                     <p className="contact-note">
-                        Questions about privacy?{' '}
-                        <NavLink to="/contact">Contact me</NavLink>.
+                        Questions about privacy? <NavLink to="/contact">Contact me</NavLink>.
                     </p>
                 </InnerLayout>
             </PrivacyPageStyled>

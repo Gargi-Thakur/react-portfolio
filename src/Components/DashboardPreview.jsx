@@ -236,6 +236,24 @@ const DashboardPreviewStyled = styled.div`
         color: var(--heading-color);
     }
 
+    html.is-prerendered & {
+        .preview-label,
+        .stat-card,
+        .chart-block,
+        .alert-block {
+            opacity: 1;
+            animation: none;
+        }
+        .bars i {
+            height: var(--bar-height);
+            animation: none;
+        }
+        .alert-block {
+            border-color: var(--border-color);
+            box-shadow: none;
+        }
+    }
+
     @media (prefers-reduced-motion: reduce) {
         .preview-label,
         .stat-card,

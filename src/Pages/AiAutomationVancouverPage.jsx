@@ -197,8 +197,7 @@ const AiAutomationVancouverPage = () => {
                             ))}
                         </div>
                         <p className="note">
-                            Full scope and deliverables live on the{' '}
-                            <NavLink to="/implementation" className="inline-link">implementation page</NavLink>.
+                            Full scope and deliverables live on the <NavLink to="/implementation" className="inline-link">implementation page</NavLink>.
                         </p>
                     </section>
 

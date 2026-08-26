@@ -36,7 +36,7 @@ const DemoShowcase = ({ compact = false, embedded = false }) => {
                         {highlights.map((item) => (
                             <li key={item}>
                                 <CheckIcon />
-                                {item}
+                                <span>{item}</span>
                             </li>
                         ))}
                     </ul>

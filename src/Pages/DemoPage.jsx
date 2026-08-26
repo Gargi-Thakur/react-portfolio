@@ -70,10 +70,7 @@ const DemoPage = () => {
                         <p className="label">The solution</p>
                         <h3>An operations dashboard with alerts and decision views.</h3>
                         <p>
-                            {DEMO_DASHBOARD_NAME} pulls stock, transfers, and trends into one
-                            screen managers can scan in under a minute. Alerts surface what needs
-                            attention. Decision views show what to reorder, move, or investigate
-                            next, without decoding charts or building pivot tables.
+                            {`${DEMO_DASHBOARD_NAME} pulls stock, transfers, and trends into one screen managers can scan in under a minute. Alerts surface what needs attention. Decision views show what to reorder, move, or investigate next, without decoding charts or building pivot tables.`}
                         </p>
                     </section>
 
@@ -107,7 +104,7 @@ const DemoPage = () => {
                             {businessValue.map((item) => (
                                 <li key={item}>
                                     <CheckIcon />
-                                    {item}
+                                    <span>{item}</span>
                                 </li>
                             ))}
                         </ul>

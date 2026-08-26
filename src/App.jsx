@@ -30,7 +30,9 @@ function App() {
   const isAuto = themeState.mode === 'auto';
 
   useEffect(() => {
-    document.documentElement.className = theme;
+    const root = document.documentElement;
+    root.classList.remove('light-theme', 'dark-theme');
+    root.classList.add(theme, 'is-hydrated');
     persistThemeState(themeState.mode, themeState.manualTheme);
     document
       .querySelector('meta[name="theme-color"]')
@@ -190,11 +192,6 @@ const MainContentStyled = styled.main`
   padding-top: 6.35rem;
   position: relative;
   z-index: 1;
-  animation: pageFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
 `;
 
 export default App;

@@ -107,10 +107,13 @@ body{
     font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
     background-color: var(--background-dark-color);
     color: var(--font-light-color);
-    transition: background-color .35s ease, color .35s ease;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+html.is-hydrated body{
+    transition: background-color .35s ease, color .35s ease;
 }
 
 body::-webkit-scrollbar{
@@ -188,17 +191,6 @@ p{
 
 .u-margin-bottom{
     margin-bottom: 4rem;
-}
-
-@keyframes pageFadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
