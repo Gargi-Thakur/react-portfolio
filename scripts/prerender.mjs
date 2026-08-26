@@ -22,7 +22,7 @@ const routes = [
     {
         path: '/about',
         title: 'About | Gargi Thakur — AI for Small Business',
-        contains: 'Hi, I am',
+        contains: "Hi, I",
     },
     {
         path: '/ai-automation-vancouver',
@@ -48,7 +48,7 @@ const routes = [
     {
         path: '/contact',
         title: 'Contact | Gargi Thakur — AI for Small Business',
-        contains: 'Get In Touch',
+        contains: 'Write me',
     },
     {
         path: '/privacy',

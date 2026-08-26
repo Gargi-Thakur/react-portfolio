@@ -12,27 +12,27 @@ import useDocumentMeta from '../hooks/useDocumentMeta';
 import { ASSESSMENT_PRICE } from '../config';
 
 const DELIVERABLES = [
-    'A 45-minute discovery call — I pull the problems, you don’t get a pitch.',
-    'A custom report: executive summary (top 3), priority matrix, tool-by-tool recommendations, a 4-day quick-start plan, and the financial impact of every fix.',
-    'A 30-minute review call — we walk every recommendation, then decide what’s urgent, DIY or help, and your timeline.',
+    'A 45-minute discovery call. You talk; I take notes. No pitch.',
+    'A written report: your top 3, a priority order, tool-by-tool notes, a 4-day start plan, and what each fix is worth.',
+    'A 30-minute review. We go through the list and decide what you’ll do yourself versus what you’d want help with.',
 ];
 
 const FAQ_ITEMS = [
     {
         q: 'Do I need to prepare anything?',
-        a: 'No. Come ready to walk me through a normal day — what you dread, where work piles up, and what you’ve already tried. I pull the problems. No pitch.',
+        a: 'No slides. Just be ready to talk through a normal day: what you dread, where work piles up, what you’ve already tried.',
     },
     {
         q: 'What if I already use some AI tools?',
-        a: 'Even better. The assessment looks at what you use, what you’ve abandoned, and what’s missing. Half the value is usually in getting more out of tools you already pay for.',
+        a: 'Good. I’ll look at what you use, what you abandoned, and what’s missing. A lot of the value is usually in getting more out of tools you already pay for.',
     },
     {
         q: 'What happens after the assessment?',
-        a: 'That’s up to you. The 4-day quick-start plan is built so you can DIY. If you want help, implementation is a separate, fixed-price project from the expansion menu — that’s where we scale.',
+        a: 'That’s your call. The 4-day start plan is written so you can do it yourself. If you want help, implementation is a separate fixed-price project. We only talk about that after the report.',
     },
     {
         q: 'How does the refund work?',
-        a: 'If we can’t find 5+ hours a week of realistic savings for your business, you get the full fee back. We measure it together on the review call.',
+        a: 'If we can’t find 5+ hours a week of realistic savings, you get the full fee back. We measure it together on the review call.',
     },
 ];
 
@@ -53,16 +53,16 @@ const AssessmentPage = () => {
 
     useDocumentMeta(
         'AI Tools Assessment for Small Business | Gargi Thakur',
-        `A custom report of the 3–7 AI tools your business actually needs — in one week, for ${ASSESSMENT_PRICE}. If it doesn’t find you 5+ hours a week, you pay nothing.`
+        `A one-week report of the 3–7 AI tools that fit, for ${ASSESSMENT_PRICE}. If it doesn’t find 5+ hours a week, you get the money back.`
     );
 
     return (
         <MainLayout>
             <AssessmentPageStyled>
                 <Title
-                    label={'The on-ramp'}
+                    label={'One week'}
                     title={`The AI Tools Assessment — ${ASSESSMENT_PRICE}`}
-                    subtitle={'A custom report of the 3–7 AI tools your business actually needs. One week, start to finish.'}
+                    subtitle={'A written report of the 3–7 tools that fit. One week, start to finish.'}
                 />
                 <div className="hero-row">
                     <GuaranteeBadge />

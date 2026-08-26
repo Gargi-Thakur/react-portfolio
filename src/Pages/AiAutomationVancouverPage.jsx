@@ -19,9 +19,9 @@ const PAGE_PATH = '/ai-automation-vancouver';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
 const PAGE_TITLE = 'AI Automation Consultant in Vancouver | Gargi Thakur';
-const PAGE_DESCRIPTION = `Vancouver AI consultant for small businesses. The ${ASSESSMENT_PRICE} AI Tools Assessment finds the 3–7 tools you need — or you pay nothing.`;
+const PAGE_DESCRIPTION = `Vancouver AI consultant for small businesses. The ${ASSESSMENT_PRICE} AI Tools Assessment is a one-week report of the 3–7 tools that fit. 5+ hours a week, or you get the money back.`;
 
-const ANSWER = `I am Gargi Thakur, an AI consultant and full-stack developer based in Vancouver, BC. I help small businesses put AI to work on the manual tasks eating their week. The ${ASSESSMENT_PRICE} AI Tools Assessment is the on-ramp: a custom report of the 3–7 tools your business actually needs, and it identifies at least 5 hours a week of savings or you pay nothing. Implementation is where we scale.`;
+const ANSWER = `I’m Gargi Thakur. I live in Vancouver and I help small businesses get AI onto the boring work: invoicing, stock, follow-ups, the stuff that eats evenings. The ${ASSESSMENT_PRICE} AI Tools Assessment is a one-week report of the 3–7 tools that fit. If it doesn’t find 5+ hours a week, you get the money back. Builds come after, only if you want them.`;
 
 const serviceAreas = [
     'Vancouver',
@@ -43,58 +43,58 @@ const clientTypes = [
 const offers = [
     {
         icon: <InsightsIcon />,
-        name: 'AI Tools Assessment — the on-ramp',
-        body: `A 45-minute discovery call, then a custom report: the 3–7 AI tools that fit your business, a priority matrix, a 4-day quick-start plan, and the dollar impact of each fix. ${ASSESSMENT_PRICE}. 5+ hours/week identified, or a full refund.`,
+        name: 'AI Tools Assessment',
+        body: `A 45-minute call, then a written report: the 3–7 tools that fit, what to do first, a 4-day start plan, and what each fix is worth. ${ASSESSMENT_PRICE}. 5+ hours/week, or a full refund.`,
     },
     {
         icon: <ManageSearchIcon />,
-        name: 'Implementation — where we scale',
-        body: 'After the assessment: Zapier/Make automations ($1K–$3K), process redesign, custom workflows, knowledge systems, and full AI implementation ($5K–$10K+). Fixed price, scoped in writing before work starts.',
+        name: 'Implementation',
+        body: 'After the assessment: Zapier/Make automations ($1K–$3K), process work, custom workflows, knowledge systems, and fuller builds ($5K–$10K+). Fixed price, written scope, before I start.',
     },
     {
         icon: <AutorenewIcon />,
         name: `AI Concierge — ${CONCIERGE_PRICE}`,
-        body: 'Done-with-you retainer: two 45-minute calls a month, Slack between sessions, 12 business-hour response. We set up Claude co-work, projects per function, and skills for the workflows you already run.',
+        body: 'Two 45-minute calls a month, Slack between sessions, reply within 12 business hours. We set up Claude the way you’ll use it, including projects and skills for the work you already do.',
     },
 ];
 
 const notDoing = [
-    'Vague "custom AI" projects with no defined deliverable',
-    'Enterprise-wide rollouts or per-seat software resale',
-    'Chatbots your team has to babysit to get a useful answer',
+    'Vague “custom AI” with no deliverable',
+    'Enterprise-wide rollouts or reselling per-seat software',
+    'Chatbots your team has to baby-sit',
 ];
 
 const process = [
-    'Discovery call: 45 minutes. You walk me through a normal day. I pull the problems — no pitch.',
-    'The report: 3–7 AI tools, top-3 summary, priority matrix, 4-day quick-start, and the dollar impact of each fix.',
-    'Review call: 30 minutes. What’s urgent, DIY or help, and your timeline.',
-    'Implementation if you want it: a fixed-price build from the expansion menu, scoped in writing before work starts.',
+    'Discovery call, 45 minutes. Walk me through a normal day. I’ll listen. No pitch.',
+    'The report: 3–7 tools, your top 3, what to do first, a 4-day start plan, and a dollar figure for each fix.',
+    'Review call, 30 minutes. What you’ll try yourself, what you’d want built, and when.',
+    'A build if you want one: fixed price, written scope, from the list on the implementation page.',
 ];
 
 const faqs = [
     {
-        question: 'What does an AI automation consultant in Vancouver actually do?',
-        answer: 'I find the repetitive work eating your week and map the 3–7 AI tools that actually fit — then I can build it with you if you want help. That might be automations, custom workflows, a knowledge system, or a full implementation. The assessment is the on-ramp; implementation is where we scale.',
+        question: 'What does an AI automation consultant in Vancouver do?',
+        answer: 'I find the repetitive work eating your week and write down the 3–7 tools that fit. If you want help after that, I can build automations, custom workflows, a knowledge system, or a fuller setup. The assessment comes first.',
     },
     {
         question: 'How much does AI automation cost for a small business?',
-        answer: `It starts with the AI Tools Assessment: ${ASSESSMENT_PRICE} fixed, one week, refund-backed. Builds after that are a fixed project fee from the expansion menu ($1K–$10K+), confirmed in writing before work starts. The AI Concierge retainer is ${CONCIERGE_PRICE}. No hourly billing.`,
+        answer: `It starts with the AI Tools Assessment: ${ASSESSMENT_PRICE} fixed, one week, refund if we don’t find 5+ hours. Builds after that are a fixed fee from the menu ($1K–$10K+), in writing before I start. The Concierge retainer is ${CONCIERGE_PRICE}. I don’t bill hourly.`,
     },
     {
         question: 'How long does a project take?',
-        answer: 'The AI Tools Assessment takes one week: a 45-minute discovery call, then a custom report, then a 30-minute review call. For a build, the timeline is scoped and confirmed in writing up front, so you know the deliverables and dates before work begins.',
+        answer: 'The assessment takes a week: 45-minute call, written report, 30-minute review. For a build, the dates go in the proposal so you see them before work begins.',
     },
     {
-        question: 'Do I actually need AI, or just a better dashboard?',
-        answer: 'Often the second one. Many small businesses do not have an AI problem, they have a visibility problem: the numbers exist but live in five places. That is why I start with an assessment. If a plain dashboard or a simple automation solves it, I will tell you that instead of selling you a model.',
+        question: 'Do I need AI, or just a better dashboard?',
+        answer: 'Often the second one. A lot of small businesses don’t have an AI problem. They have a visibility problem: the numbers exist, they’re just in five places. That’s why I start with an assessment. If a plain dashboard or a simple automation is enough, I’ll say so.',
     },
     {
         question: 'What tools and systems do you work with?',
-        answer: 'The ones you already use. Typically spreadsheets, POS exports, Shopify, email, and whatever internal tools your team lives in. I build the full system as a full-stack developer, so the dashboards and automations integrate properly and keep working as your business grows.',
+        answer: 'The ones you already use. Spreadsheets, POS exports, Shopify, email, whatever your team lives in. I’m a full-stack developer, so the dashboards and automations have to plug into that and keep working.',
     },
     {
         question: 'Do you only work with businesses in Vancouver?',
-        answer: 'I am based in Vancouver, BC and work with businesses across Metro Vancouver, including Burnaby, Richmond, Surrey, Coquitlam, and the North Shore. Work is done remotely with calls on Pacific Time, so clients outside the region are welcome too.',
+        answer: 'I live in Vancouver and work with shops across Metro Vancouver: Burnaby, Richmond, Surrey, Coquitlam, the North Shore. Calls are on Pacific Time. Clients outside the region are fine too.',
     },
 ];
 
@@ -167,7 +167,7 @@ const AiAutomationVancouverPage = () => {
                     <div className="cta top-cta">
                         <AssessmentCTA />
                         <NavLink to="/proof">
-                            <OutlineButton title={'See the Reference Build'} />
+                            <OutlineButton title={'See the example'} />
                         </NavLink>
                     </div>
 
@@ -186,7 +186,7 @@ const AiAutomationVancouverPage = () => {
 
                     <section className="block">
                         <p className="label">What I build</p>
-                        <h2>How we work together — assessment first, then builds</h2>
+                        <h2>Assessment first. A build only if you want one.</h2>
                         <div className="offer-grid">
                             {offers.map((offer) => (
                                 <article className="offer-card" key={offer.name}>
@@ -202,8 +202,8 @@ const AiAutomationVancouverPage = () => {
                     </section>
 
                     <section className="block">
-                        <p className="label">What I do not do</p>
-                        <h2>A solo developer, not an enterprise AI agency</h2>
+                        <p className="label">What I won’t take on</p>
+                        <h2>I’m one person. Not an agency with a slide deck.</h2>
                         <ul className="cross-list">
                             {notDoing.map((item) => (
                                 <li key={item}>
@@ -213,14 +213,14 @@ const AiAutomationVancouverPage = () => {
                             ))}
                         </ul>
                         <p className="note">
-                            You work directly with the person building the thing. That keeps
-                            scope small, honest, and tied to a problem you can name.
+                            You work with me, not a delivery team. That keeps the scope
+                            small and tied to a problem you can name.
                         </p>
                     </section>
 
                     <section className="block">
                         <p className="label">How it works</p>
-                        <h2>From first call to handoff</h2>
+                        <h2>What the week looks like</h2>
                         <ol className="process">
                             {process.map((step, index) => (
                                 <li key={step}>
@@ -235,15 +235,15 @@ const AiAutomationVancouverPage = () => {
                         <p className="label">Reference build</p>
                         <h2>{DEMO_DASHBOARD_NAME}</h2>
                         <p>
-                            NovaFit is a demo multi-location retailer. The dashboard puts stock,
-                            reorders, and transfer approvals on one screen with alerts and decision
-                            views, so a manager can scan it in under a minute instead of
-                            reconciling numbers by hand. It is working software you can open and
-                            click through.
+                            NovaFit is a made-up multi-location retailer. The dashboard puts
+                            stock, reorders, and transfer approvals on one screen, with alerts
+                            when something’s off, so a manager can scan it in under a minute
+                            instead of matching numbers by hand. You can open it and click
+                            around.
                         </p>
                         <div className="cta">
                             <NavLink to="/proof">
-                                <OutlineButton title={'Read the Case Study'} />
+                                <OutlineButton title={'See the write-up'} />
                             </NavLink>
                             <a href={DEMO_DASHBOARD_URL} target="_blank" rel="noreferrer">
                                 <PrimaryButton title={'Open Live Dashboard'} />
@@ -260,8 +260,8 @@ const AiAutomationVancouverPage = () => {
                             ))}
                         </ul>
                         <p className="note">
-                            Based in Vancouver, BC. Work happens remotely with calls on Pacific
-                            Time, so businesses outside the region are welcome as well.
+                            I live in Vancouver. Calls are on Pacific Time. Clients outside
+                            the region are fine too.
                         </p>
                     </section>
 
@@ -279,11 +279,11 @@ const AiAutomationVancouverPage = () => {
                     </section>
 
                     <section className="block closing">
-                        <h2>Tell me what you check manually every week</h2>
+                        <h2>Tell me what you still check by hand every week</h2>
                         <p>
-                            Mention where your data lives today (POS, spreadsheets, Shopify) and
-                            what you keep checking by hand. I will reply with an honest next step,
-                            even when that step is not hiring me.
+                            Mention where the data lives (POS, spreadsheets, Shopify) and
+                            what’s eating the hours. I’ll tell you if I’m the right person,
+                            including when the answer is no.
                         </p>
                         <div className="cta">
                             <AssessmentCTA />

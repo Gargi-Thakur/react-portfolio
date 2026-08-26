@@ -8,30 +8,30 @@ import useDocumentMeta from '../hooks/useDocumentMeta';
 const ContactPage = () => {
     useDocumentMeta(
         'Contact | Gargi Thakur — AI for Small Business',
-        'Ask about the AI Tools Assessment, implementation, or the AI Concierge retainer. I will reply with an honest next step.'
+        'Ask about the assessment, a build, or the retainer. I’ll tell you if I’m the right person.'
     );
 
     return (
         <MainLayout>
             <Title
                 title={'Contact'}
-                label={'Start here'}
-                subtitle={'Ask about the AI Tools Assessment, an implementation build, or the AI Concierge. I will reply with an honest next step.'}
+                label={'Email'}
+                subtitle={'Questions about the assessment, a build, or the retainer. I’ll tell you if I’m the right person.'}
             />
             <ContactPageStyled >
             <InnerLayout className={'contact-section'}>
                 <div className="content">
                     <div className="contact-title">
-                        <h4>Get In Touch</h4>
+                        <h4>Write me</h4>
                         <p>
-                            Useful things to mention: what you check manually each week,
-                            where your data lives today (POS, spreadsheets, Shopify, etc.),
-                            and whether you saw the NovaFit example. No jargon, no obligation.
+                            Useful things to mention: what you still check by hand each week,
+                            where the data lives (POS, spreadsheets, Shopify, etc.), and
+                            whether you looked at the NovaFit example.
                         </p>
                         <ul className="contact-prompts">
-                            <li>Ask about the AI Tools Assessment</li>
-                            <li>Ask about an implementation build</li>
-                            <li>Ask about the AI Concierge retainer</li>
+                            <li>The AI Tools Assessment</li>
+                            <li>A build after the assessment</li>
+                            <li>The monthly Concierge retainer</li>
                         </ul>
                     </div>
                         <form className="form" id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdBDwt5jPc00ipcqlMnPS9ulBjGSyCycdaRWayEM_InehfKZQ/formResponse" target="_blank" >
@@ -52,7 +52,7 @@ const ContactPage = () => {
                                 <textarea id="textarea" cols="30" rows="10" name="entry.850096426" required placeholder="What do you check manually each week? Where does your data live today?" ></textarea>
                         </div>
                         <div className="form-field f-button">
-                                <SubmitButton title={'Send Message'} type="submit" />
+                                <SubmitButton title={'Send'} type="submit" />
                         </div>
                     </form> 
                 </div>

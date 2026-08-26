@@ -12,27 +12,27 @@ const MENU = [
     {
         name: 'Automation Build',
         price: '$1K–$3K',
-        text: 'The repetitive work runs itself. Zapier/Make flows — built, tested, your team trained, then handed off.',
+        text: 'Zapier or Make flows for the stuff you do on repeat. I build it, we test it, I show your team, then it’s yours.',
     },
     {
         name: 'Process Redesign',
         price: '$3K–$5K',
-        text: 'We map how work happens today, design how it should happen, and eliminate the waste before automating it.',
+        text: 'We look at how the work happens now, cut the silly steps, then automate what’s left.',
     },
     {
         name: 'Custom Workflows',
         price: '$3K–$5K',
-        text: 'One-click operations built on prompts and templates — proposals, follow-ups, reports that used to take hours.',
+        text: 'Prompts and templates for the documents you write over and over: quotes, follow-ups, reports.',
     },
     {
         name: 'Knowledge Systems',
         price: '$3K+',
-        text: 'A custom GPT trained on your context library — policies, pricing, past jobs — so it answers like your best employee.',
+        text: 'A custom GPT that knows your policies, prices, and past jobs, so it doesn’t sound like a stranger.',
     },
     {
         name: 'Full Implementation',
         price: '$5K–$10K+',
-        text: 'Custom AI agents and workflow automation across the business. The whole assessment plan, built for you.',
+        text: 'The whole assessment plan, built. Automations across the business, still a fixed price.',
     },
 ];
 
@@ -40,52 +40,52 @@ const PROCESS = [
     {
         n: '01',
         name: 'Scoped proposal',
-        text: 'After your review call, I write up exactly what gets built, what it will do, when it lands, and what it costs. Fixed price. Nothing starts until you approve it in writing.',
+        text: 'After the review call I write down what gets built, what it will do, when it lands, and what it costs. Nothing starts until you approve that in writing.',
     },
     {
         n: '02',
         name: 'Build',
-        text: 'I build against that written scope and share progress as it goes. You are never waiting weeks wondering what is happening.',
+        text: 'I work against that scope and send progress as I go. You won’t sit around for weeks wondering if anything’s happening.',
     },
     {
         n: '03',
         name: 'Test with your real work',
-        text: 'We run it on your actual jobs, quotes, or documents — not a demo dataset. Anything that breaks gets fixed before handoff.',
+        text: 'We run it on your actual jobs, quotes, or documents. If something breaks, I fix it before handoff.',
     },
     {
         n: '04',
         name: 'Handoff and training',
-        text: 'I train whoever uses it day to day, document how it works, and stay available for two weeks of fixes after launch.',
+        text: 'I show whoever uses it day to day, leave notes on how it works, and stick around for two weeks of fixes after launch.',
     },
 ];
 
 const NOT_DOING = [
-    'Vague "custom AI" projects with no defined deliverable',
-    'Anything I cannot measure a before-and-after on',
-    'Chatbots your team has to babysit to get a useful answer',
-    'Enterprise rollouts or per-seat software resale',
+    'Vague “custom AI” with no deliverable',
+    'Work I can’t measure a before-and-after on',
+    'Chatbots your team has to baby-sit',
+    'Enterprise rollouts or reselling per-seat software',
 ];
 
 const FAQ_ITEMS = [
     {
         q: 'Do I have to do the assessment first?',
-        a: 'Yes — and that is deliberate. Building before we know which workflow is actually costing you the most is how projects get expensive and miss. The assessment is $999, it is credited toward any project of $2,500 or more booked within 30 days, and it is refunded entirely if it does not find you 5+ hours a week.',
+        a: `Yes. I won’t quote a build until we’ve done it, otherwise we’re guessing which workflow is costing you the most. The assessment is ${ASSESSMENT_PRICE}. If it doesn’t find 5+ hours a week, you get that back.`,
     },
     {
         q: 'How is a project priced?',
-        a: 'Fixed price, confirmed in writing before any work starts. Never hourly. If we discover the scope needs to change mid-build, that becomes a written change request with its own price and timeline — approved by you before I touch it.',
+        a: 'Fixed price, in writing, before I start. Not hourly. If the scope needs to change mid-build, that’s a written change request with its own price and date, and you approve it before I touch it.',
     },
     {
         q: 'How long does a build take?',
-        a: 'An automation build is typically one to two weeks. Larger implementations run three to six weeks with milestones you sign off along the way. Your exact dates go in the proposal, so you know them before you commit.',
+        a: 'An automation is usually one to two weeks. Bigger implementations run three to six weeks, with check-ins you sign off on. Your dates go in the proposal so you see them before you commit.',
     },
     {
         q: 'What happens if it breaks after handoff?',
-        a: 'Two weeks of fixes are included with every build. After that, ongoing support is a separate arrangement — either ad hoc or through the AI Concierge retainer below.',
+        a: 'Two weeks of fixes come with every build. After that, support is separate: either as needed, or through the AI Concierge retainer below.',
     },
     {
         q: 'Do I own what you build?',
-        a: 'Yes. The automations, prompts, and any custom tooling are yours, running in your own accounts, on tools you control. Nothing is locked to me.',
+        a: 'Yes. The automations, prompts, and any custom tooling run in your accounts, on tools you control. Nothing is locked to me.',
     },
 ];
 
@@ -100,8 +100,8 @@ const ServicesPage = () => {
             <ServicesPageStyled>
                 <Title
                     label={'Implementation'}
-                    title={'After the assessment — I can build it for you.'}
-                    subtitle={`The ${ASSESSMENT_PRICE} assessment is the on-ramp. Implementation is where we scale. Each build is a fixed price, scoped in writing after the review call.`}
+                    title={'After the assessment, I can build it.'}
+                    subtitle={`The ${ASSESSMENT_PRICE} assessment comes first. Then, if you want, a fixed-price build scoped in writing after the review call.`}
                 />
                 <InnerLayout>
                     <div className="menu-grid">
@@ -134,8 +134,8 @@ const ServicesPage = () => {
                         ))}
                     </ul>
                     <p className="note">
-                        You work directly with the person building the thing. That keeps scope
-                        small, honest, and tied to a problem you can name.
+                        You work with me, not a delivery team. That keeps the scope small
+                        and tied to a problem you can name.
                     </p>
                 </InnerLayout>
 
@@ -149,15 +149,15 @@ const ServicesPage = () => {
                         <p className="concierge-label">Done-With-You</p>
                         <h3>{`The AI Concierge — ${CONCIERGE_PRICE}`}</h3>
                         <p>
-                            Two 45-minute calls a month, Slack access between sessions, and a
-                            12 business-hour response time. In session we set up Claude co-work,
-                            build Claude projects for each business function, create skills for
-                            the workflows you already run, and keep an ongoing AI strategy.
+                            Two 45-minute calls a month, Slack between sessions, and I get
+                            back to you within 12 business hours. On the calls we set up
+                            Claude the way you’ll use it: projects per function, skills for
+                            the workflows you already run, and a plan for what to try next.
                         </p>
                         <p>
-                            Before call 1, a short form so we skip the interview. After every
-                            call: recordings in a shared Drive, plus a one-pager of the top 3
-                            actions before next session.
+                            Before the first call, a short form so we don’t spend the hour
+                            on biography. After each call: the recording in a shared Drive,
+                            plus a one-pager of the three things to do before we talk again.
                         </p>
                     </div>
                 </InnerLayout>

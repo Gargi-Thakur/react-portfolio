@@ -13,7 +13,7 @@ import { DEMO_DASHBOARD_URL, DEMO_DASHBOARD_NAME } from '../config';
 const features = [
     {
         feature: 'Low-stock SKUs',
-        impact: 'Catch gaps before a bestseller goes out of stock and you lose the sale.',
+        impact: 'See it before a bestseller is gone and you’ve lost the sale.',
     },
     {
         feature: 'Pending transfers',
@@ -21,62 +21,62 @@ const features = [
     },
     {
         feature: 'Inventory value',
-        impact: 'See total exposure across every location without opening five spreadsheets.',
+        impact: 'See the total across locations without opening five spreadsheets.',
     },
     {
         feature: 'Sales trends',
-        impact: 'Spot what is slowing before cash gets tied up in the wrong products.',
+        impact: 'Notice what’s slowing before cash sits in the wrong products.',
     },
     {
         feature: 'Reorder recommendations',
-        impact: 'Order the right quantity faster, with less guesswork and fewer emergency buys.',
+        impact: 'Order the right amount, with fewer panic buys.',
     },
 ];
 
 const businessValue = [
-    'Fewer stockouts and lost sales from products running dry',
-    'Faster ordering decisions because the numbers are already in one place',
-    'Less time checking spreadsheets, inboxes, and warehouse tabs',
-    'Clearer manager decisions on transfers, reorders, and slow movers',
+    'Fewer stockouts from products quietly running dry',
+    'Faster reorder calls because the numbers are already together',
+    'Less time hopping between spreadsheets, inboxes, and warehouse tabs',
+    'Clearer calls on transfers, reorders, and slow movers',
 ];
 
 const DemoPage = () => {
     useDocumentMeta(
         `NovaFit AI Inventory Hub | Multi-Location Stock Dashboard`,
-        'See how a multi-location business can track stock, reorder needs, and transfer approvals in one operations dashboard with alerts and decision views.'
+        'See how a made-up multi-location shop can track stock, reorders, and transfer approvals on one screen.'
     );
 
     return (
         <MainLayout>
             <Title
                 title={DEMO_DASHBOARD_NAME}
-                label={'Case study'}
-                subtitle={'Sample multi-location retail business. This is the kind of operations dashboard I build when stock visibility, reorders, and transfer approvals need to live in one place.'}
+                label={'A sample build'}
+                subtitle={'Made-up multi-location retailer, real dashboard. This is the kind of screen I build when stock, reorders, and transfer approvals are living in five places.'}
             />
             <DemoPageStyled>
                 <InnerLayout>
                     <section className="content-block problem">
-                        <p className="label">The problem</p>
-                        <h3>Multi-location businesses cannot quickly see stock, reorder needs, or transfer approvals.</h3>
+                        <p className="label">Why this exists</p>
+                        <h3>You can’t see stock, reorders, or transfers without opening five tabs.</h3>
                         <p>
-                            Inventory lives in spreadsheets, warehouse tabs, and email threads.
-                            By the time someone notices a low SKU or a stuck transfer, you have
-                            already lost sales, over-ordered the wrong item, or spent an hour
-                            reconciling numbers that should take seconds.
+                            Inventory lives in spreadsheets, warehouse software, and email.
+                            By the time someone notices a low SKU or a stuck transfer, you’ve
+                            already lost a sale, ordered the wrong thing, or spent an hour
+                            matching numbers that should take seconds.
                         </p>
                     </section>
 
                     <section className="content-block solution">
-                        <p className="label">The solution</p>
-                        <h3>An operations dashboard with alerts and decision views.</h3>
+                        <p className="label">What I built</p>
+                        <h3>One screen. Alerts when something’s off.</h3>
                         <p>
-                            {`${DEMO_DASHBOARD_NAME} pulls stock, transfers, and trends into one screen managers can scan in under a minute. Alerts surface what needs attention. Decision views show what to reorder, move, or investigate next, without decoding charts or building pivot tables.`}
+                            {`${DEMO_DASHBOARD_NAME} puts stock, transfers, and trends in one place a manager can scan in under a minute. Alerts flag what needs a look. You can see what to reorder, move, or check, without building a pivot table.`}
                         </p>
                     </section>
 
                     <section className="content-block">
-                        <p className="label">What you get</p>
-                        <h3>Features that save time and protect revenue</h3>
+                        <p className="label">On the screen</p>
+                        <h3>What’s in the dashboard</h3>
                         <div className="table-wrap">
                             <table>
                                 <thead>
@@ -98,8 +98,8 @@ const DemoPage = () => {
                     </section>
 
                     <section className="content-block">
-                        <p className="label">Business value</p>
-                        <h3>Less firefighting. More confident operations.</h3>
+                        <p className="label">Monday morning</p>
+                        <h3>If you had this open at 9am</h3>
                         <ul className="bullet-list">
                             {businessValue.map((item) => (
                                 <li key={item}>
@@ -113,19 +113,17 @@ const DemoPage = () => {
                     <section className="content-block live-note">
                         <p className="label">See it live</p>
                         <p>
-                            The live dashboard uses realistic sample data for three warehouse
-                            locations. Click through low-stock alerts, pending transfers, and
-                            trend views yourself. Your version would connect to your real sales
-                            or inventory systems instead of sample data.
+                            The live dashboard uses sample data for three warehouses. Click
+                            through the low-stock alerts and pending transfers. Your version
+                            would talk to your real sales or inventory systems instead.
                         </p>
                     </section>
 
                     <section className="closing-cta">
-                        <h3>Want this for your business?</h3>
+                        <h3>If stock is living in five places</h3>
                         <p>
-                            Start with the AI Tools Assessment. I will map where the hours leak
-                            down today and whether an operations dashboard like this is the
-                            right first step.
+                            Start with the assessment. I’ll tell you where the hours go, and
+                            whether a dashboard like this is even the right first step.
                         </p>
                         <div className="cta-row">
                             <AssessmentCTA />
@@ -139,7 +137,7 @@ const DemoPage = () => {
                                 <OpenInNewIcon />
                             </a>
                             <NavLink to="/implementation">
-                                <OutlineButton title={'View Implementation'} />
+                                <OutlineButton title={'See how it’s built'} />
                             </NavLink>
                         </div>
                     </section>

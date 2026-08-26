@@ -26,10 +26,9 @@ const DemoShowcase = ({ compact = false, embedded = false }) => {
                 <p className="eyebrow">Reference build</p>
                 <h3>{DEMO_DASHBOARD_NAME}</h3>
                 <p className="summary">
-                    NovaFit is a demo multi-location retailer. The dashboard consolidates
-                    stock levels, reorder needs, transfer approvals, and inventory value
-                    across locations onto a single screen, with alerts when something needs
-                    attention. It is working software you can click through, not a mockup.
+                    NovaFit is a made-up multi-location retailer. The dashboard puts
+                    stock, reorders, and transfer approvals on one screen, with alerts
+                    when something’s off. You can click through it. It isn’t a mockup.
                 </p>
                 {!compact && (
                     <ul className="highlights">
@@ -43,12 +42,12 @@ const DemoShowcase = ({ compact = false, embedded = false }) => {
                 )}
                 {compact ? (
                     <NavLink to="/proof" className="example-link">
-                        See problem, solution, and business value →
+                        See the write-up →
                     </NavLink>
                 ) : (
                     <div className="demo-actions">
                         <NavLink to="/proof">
-                            <OutlineButton title={'See Problem & Solution'} />
+                            <OutlineButton title={'See the write-up'} />
                         </NavLink>
                         <a
                             href={DEMO_DASHBOARD_URL}

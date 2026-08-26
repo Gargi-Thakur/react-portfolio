@@ -10,7 +10,7 @@ const BookingBlock = () => (
         {SITE_MODE === 'live' ? (
             <>
                 <h3>Book your 45-minute discovery call</h3>
-                <p>Pick a time that works — the assessment starts there.</p>
+                <p>Pick a time. That’s where the assessment starts.</p>
                 <a href={BOOKING_URL} target="_blank" rel="noreferrer">
                     <PrimaryButton title={'Pick a time'} />
                 </a>
@@ -18,7 +18,7 @@ const BookingBlock = () => (
         ) : (
             <>
                 <h3>{LAUNCH_NOTE}</h3>
-                <p>I take on a small number of assessment clients at a time. Leave your email and you'll be first to know when a spot opens.</p>
+                <p>I only take a few assessment clients at once. Drop your email and I’ll write when a slot opens.</p>
                 <WaitlistForm />
             </>
         )}

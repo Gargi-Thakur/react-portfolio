@@ -8,25 +8,22 @@ const InfoSection = () => {
     return (
         <InfoSectionStyled>
             <div className="content">
-                <h4>Hi, I am <span>Gargi</span></h4>
+                <h4>Hi, I’m <span>Gargi</span></h4>
                 <p className="paragraph">
-                    I help small businesses put AI to work on the manual tasks that slow
-                    them down. Everything starts with the AI Tools Assessment: in one
-                    week you get a custom report of the 3–7 AI tools that actually fit
-                    your business — and it finds you 5+ hours a week or you pay nothing. The assessment is
-                    the on-ramp. If you want the plan built for you, implementation is
-                    where we scale.
+                    I work with small businesses stuck in copy-paste, inbox chasing, and
+                    tools they bought and never opened. I start with an assessment so we
+                    know what would save time before anyone spends money building the
+                    wrong thing. One week, $999. If I don’t find 5+ hours a week, you get
+                    that back.
                 </p>
                 <p className="paragraph">
-                    I come at this as a full-stack software developer, which means I build the
-                    whole system, not just one piece of it. Your automations and
-                    custom tools integrate properly with the tools you already use and
-                    keep working as your business grows. My background in Life Sciences
-                    taught me to think in processes: before I automate anything, I map
-                    out how the work actually flows, then remove the bottlenecks.
+                    I’m a full-stack developer, so I can wire this into the software you
+                    already use. I used to work in life sciences, which is a polite way of
+                    saying I like mapping a messy process before I automate it.
                 </p>
                 <p className="paragraph">
-                    Based in Vancouver, BC, working with small businesses everywhere. If you're curious whether something in your day-to-day can be automated, the answer is probably yes. Let's talk.
+                    I’m based in Vancouver. If something in your week feels like it
+                    shouldn’t still be manual, write me.
                 </p>
                 <br />
                 <div className="buttons">

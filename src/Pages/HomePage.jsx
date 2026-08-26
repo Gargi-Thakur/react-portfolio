@@ -11,38 +11,38 @@ import FooterCTA from '../Components/FooterCTA';
 import useDocumentMeta from '../hooks/useDocumentMeta';
 
 const proofPoints = [
-    { value: '3–7', label: 'AI tools picked for your business' },
-    { value: '1 wk', label: 'From first call to finished report' },
-    { value: '5+ hrs', label: 'Found per week — or a full refund' },
+    { value: '3–7', label: 'tools, chosen for how you already work' },
+    { value: '1 wk', label: 'from the first call to a finished report' },
+    { value: '5+ hrs', label: 'a week, or you get the $999 back' },
 ];
 
 const howItWorks = [
     {
         step: '1',
         name: 'Discovery call',
-        text: '45 minutes. You walk me through a normal day — what you dread, where work piles up, what you’ve tried. I pull the problems. No pitch.',
+        text: '45 minutes. Walk me through a normal Tuesday: the tedious bits, the pile-ups, what you already tried.',
     },
     {
         step: '2',
         name: 'AI analysis',
-        text: 'I match your workflows to the tools that fit — then add picks from my own toolkit. You get 3 to 7 recommendations, not a generic list.',
+        text: 'I match that to tools that fit, including ones I use myself. You get a short list, not every AI product on the market.',
     },
     {
         step: '3',
         name: 'The report',
-        text: 'Top-3 summary, priority matrix, tool-by-tool recommendations, a 4-day quick-start, and the dollars each fix is worth.',
+        text: 'Your top 3, what to do first, a 4-day start plan, and a dollar figure for each fix.',
     },
     {
         step: '4',
         name: 'Review call',
-        text: '30 minutes. We walk every recommendation together, then decide what’s urgent, DIY or help, and your timeline.',
+        text: '30 minutes. We go through the list and decide what you’ll do yourself versus what you’d want help with.',
     },
 ];
 
 function HomePage() {
     useDocumentMeta(
         'AI Consultant Vancouver — 5+ Hours/Week or a Full Refund | Gargi Thakur',
-        'A custom report of the 3–7 AI tools your small business actually needs — in one week, for $999. If it doesn’t find you 5+ hours a week, you pay nothing.'
+        'A one-week report of the 3–7 AI tools that fit your small business, for $999. If it doesn’t find 5+ hours a week, you get the money back. Vancouver, BC.'
     );
     return (
         <HomePageStyled>
@@ -53,13 +53,14 @@ function HomePage() {
                 </p>
                 <div className="hero-copy">
                     <h1>
-                        {'The 3–7 AI tools your business actually needs. I find you '}
+                        {'I’ll pick the 3–7 AI tools worth using. I find you '}
                         <span className="gradient-text">5+ hours a week</span>
-                        {' — or you pay nothing.'}
+                        {', or you pay nothing.'}
                     </h1>
                     <p className="lead">
-                        The AI Tools Assessment is the on-ramp: a custom report in one
-                        week, for $999. Implementation is where we scale — only if you want help after.
+                        Start with the AI Tools Assessment: one week, $999, a report of what
+                        to use and what to skip. If you want me to build any of it, we talk
+                        about that after.
                     </p>
                     <div className="cta">
                         <AssessmentCTA />
@@ -90,7 +91,7 @@ function HomePage() {
                 <div className="hero-visual">
                     <div className="visual-glow" aria-hidden="true" />
                     <DashboardPreview />
-                    <p className="visual-caption">NovaFit AI Inventory Hub · built by me — I don’t just recommend, I build</p>
+                    <p className="visual-caption">NovaFit AI Inventory Hub · a dashboard I built, so you can click around</p>
                 </div>
             </section>
 
@@ -109,8 +110,8 @@ function HomePage() {
 
             <section className="objection-strip">
                 <p>
-                    You don’t need to be technical. You don’t need new software you’ll never open.
-                    Most of what I recommend works with the tools you already use.
+                    You don’t have to become technical for this. A lot of what I recommend
+                    plugs into software you already pay for.
                 </p>
             </section>
 

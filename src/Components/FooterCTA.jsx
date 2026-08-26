@@ -2,12 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import AssessmentCTA from './AssessmentCTA';
 import GuaranteeBadge from './GuaranteeBadge';
+import { ASSESSMENT_PRICE } from '../config';
 
 /** Same closing band on every page. */
 const FooterCTA = ({ headline = 'Start with the AI Tools Assessment' }) => (
     <FooterCTAStyled>
         <h2>{headline}</h2>
-        <p>One week. One report. The 3–7 AI tools your business actually needs — and 5+ hours a week found, or you pay nothing.</p>
+        <p>{`A week of work and a written report. 3–7 tools, 5+ hours a week found, or you get the ${ASSESSMENT_PRICE} back.`}</p>
         <div className="cta-row">
             <AssessmentCTA />
             <GuaranteeBadge />

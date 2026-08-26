@@ -6,25 +6,25 @@ const PHASES = [
         n: '01',
         name: 'Discovery call',
         time: '45 min',
-        text: 'You walk me through a normal day — what you dread, where work piles up, what you’ve tried. No pitch, just listening.',
+        text: 'Walk me through a normal day: what you dread, where work piles up, what you’ve already tried. I’ll listen. No pitch.',
     },
     {
         n: '02',
         name: 'AI analysis',
-        time: 'behind the scenes',
-        text: 'I analyze your workflows against hundreds of AI tools and pick the 3–7 that actually fit your business.',
+        time: 'on my side',
+        text: 'I match that to tools that fit, including ones I use myself, and cut it down to 3–7.',
     },
     {
         n: '03',
-        name: 'Your custom report',
+        name: 'Your report',
         time: 'within the week',
-        text: 'Executive summary, priority matrix, tool-by-tool recommendations, a 4-day quick-start plan, and the dollar impact of each fix.',
+        text: 'Top 3, what to do first, notes on each tool, a 4-day start plan, and a dollar figure for each fix.',
     },
     {
         n: '04',
         name: 'Review call',
         time: '30 min',
-        text: 'We walk through every recommendation together. Then we decide what’s urgent, DIY or help, and your timeline.',
+        text: 'We go through the list together and decide what you’ll try yourself versus what you’d want built.',
     },
 ];
 

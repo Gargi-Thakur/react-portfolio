@@ -14,33 +14,33 @@ const SkillsSection = () => {
             <SkillsSectionStyled>
                 <Title
                     as="h2"
-                    title={'What I Do'}
-                    subtitle={'The $999 assessment is the on-ramp. Implementation is where we scale.'}
+                    title={'The work'}
+                    subtitle={'The $999 assessment first. A build after, if you want one.'}
                 />
                 <div className="skills">
                     <SkillCard
                         icon={<InsightsIcon />}
                         title={'AI Tools Assessment'}
-                        paragraph={"The on-ramp. A 45-minute call, then a custom report of the 3–7 AI tools that fit your business: priority matrix, 4-day quick-start plan, and the dollar impact of each fix. It finds 5+ hours/week, or you pay nothing."}
+                        paragraph={"A 45-minute call, then a report of the 3–7 tools that fit: what to do first, a 4-day start plan, and what each fix is worth. 5+ hours/week, or you get the money back."}
                     />
                     <SkillCard
                         icon={<ManageSearchIcon />}
                         title={'Implementation'}
-                        paragraph={"After the assessment: automation builds, custom workflows, knowledge systems, and full AI implementation. Fixed price, scoped in writing, delivered in weeks."}
+                        paragraph={"After the report: automations, custom workflows, knowledge systems, or a fuller build. Fixed price, written scope, usually weeks not months."}
                     />
                     <SkillCard
                         icon={<AutorenewIcon />}
-                        title={'Proof, Not Promises'}
-                        paragraph={"I build my own systems first. The NovaFit AI Inventory Hub is working software you can open and click through — the same standard your build gets."}
+                        title={'A working example'}
+                        paragraph={"I built the NovaFit inventory dashboard so you can click around. Same bar your build has to clear: it has to work, not just look like a slide."}
                     />
                 </div>
                 <p className="stack-note">
                     <NavLink to="/proof" className="services-link">
                         See the NovaFit example
                     </NavLink>
-                    {' (multi-location inventory dashboard) or visit '}
+                    {' — fake retailer, real dashboard. Or see '}
                     <NavLink to="/implementation" className="services-link">Implementation</NavLink>
-                    {' for the expansion menu after the assessment.'}
+                    {' for what a build looks like after the assessment.'}
                 </p>
             </SkillsSectionStyled>
         </InnerLayout>
