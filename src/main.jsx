@@ -1,16 +1,23 @@
 import React from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { StyleSheetManager } from 'styled-components';
 import App from './App';
 import GlobalStyle from './styles/GlobalStyle';
+
+// The prerender script sets this flag so styled-components writes rules as real
+// text instead of through the CSSOM, which cannot be read back losslessly.
+const prerendering = typeof window !== 'undefined' && window.__PRERENDER_TEXT_STYLES__ === true;
 
 const container = document.getElementById('root');
 const app = (
     <React.StrictMode>
-        <GlobalStyle />
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
+        <StyleSheetManager disableCSSOMInjection={prerendering}>
+            <GlobalStyle />
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </StyleSheetManager>
     </React.StrictMode>
 );
 
