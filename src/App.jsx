@@ -11,6 +11,8 @@ import ContactPage from './Pages/ContactPage';
 import PrivacyPage from './Pages/PrivacyPage';
 import AiAutomationVancouverPage from './Pages/AiAutomationVancouverPage';
 import AssessmentPage from './Pages/AssessmentPage';
+import GuidesIndexPage from './Pages/GuidesIndexPage';
+import GuidePage from './Pages/GuidePage';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import {
   getInitialThemeState,
@@ -110,6 +112,11 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/ai-automation-vancouver" element={<AiAutomationVancouverPage />} />
           <Route path="/proof" element={<DemoPage />} />
+          <Route path="/guides" element={<GuidesIndexPage />} />
+          <Route path="/guides/ai-setup-for-a-trades-business" element={<Navigate to="/guides/ai-setup-for-a-small-business" replace />} />
+          <Route path="/guides/voice-memo-to-job-report" element={<Navigate to="/guides/monday-briefing-from-a-messy-spreadsheet" replace />} />
+          <Route path="/guides/write-a-job-post-that-filters" element={<Navigate to="/guides/do-you-need-ai-or-a-dashboard" replace />} />
+          <Route path="/guides/:slug" element={<GuidePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           {/* legacy URLs */}

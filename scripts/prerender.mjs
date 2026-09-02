@@ -46,6 +46,41 @@ const routes = [
         contains: 'multi-location',
     },
     {
+        path: '/guides',
+        title: 'Free AI Guides for Vancouver Small Business | Gargi Thakur',
+        contains: 'Free guides',
+    },
+    {
+        path: '/guides/ai-setup-for-a-small-business',
+        title: 'The 5-minute AI setup I wish every small business started with | Gargi Thakur',
+        contains: 'The 5-minute AI setup I wish every small business started with',
+    },
+    {
+        path: '/guides/do-you-need-ai-or-a-dashboard',
+        title: 'Do you need AI — or just a clearer view of your numbers? | Gargi Thakur',
+        contains: 'Do you need AI — or just a clearer view of your numbers?',
+    },
+    {
+        path: '/guides/monday-briefing-from-a-messy-spreadsheet',
+        title: 'Turn last week’s numbers into a Monday briefing in 5 minutes | Gargi Thakur',
+        contains: 'Turn last week’s numbers into a Monday briefing in 5 minutes',
+    },
+    {
+        path: '/guides/reply-to-google-reviews',
+        title: 'Reply to every Google review without the blank-box stare | Gargi Thakur',
+        contains: 'Reply to every Google review without the blank-box stare',
+    },
+    {
+        path: '/guides/write-a-quote-in-3-minutes',
+        title: 'Write a quote or proposal a client will actually read | Gargi Thakur',
+        contains: 'Write a quote or proposal a client will actually read',
+    },
+    {
+        path: '/guides/month-of-reminder-texts',
+        title: 'Draft a month of booking reminders in one sitting | Gargi Thakur',
+        contains: 'Draft a month of booking reminders in one sitting',
+    },
+    {
         path: '/contact',
         title: 'Contact | Gargi Thakur — AI for Small Business',
         contains: 'Get In Touch',
