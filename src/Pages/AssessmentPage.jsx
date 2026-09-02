@@ -52,8 +52,8 @@ const AssessmentPage = () => {
     }, [hash]);
 
     useDocumentMeta(
-        'AI Tools Assessment for Small Business | Gargi Thakur',
-        `A custom report of the 3–7 AI tools your business actually needs — in one week, for ${ASSESSMENT_PRICE}. If it doesn’t find you 5+ hours a week, you pay nothing.`
+        'AI Tools Assessment for Small Business in Vancouver | Gargi Thakur',
+        `AI automation for small businesses in Vancouver starts here: a custom report of the 3–7 AI tools you actually need — in one week, for ${ASSESSMENT_PRICE}. If it doesn’t find you 5+ hours a week, you pay nothing.`
     );
 
     return (

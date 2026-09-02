@@ -14,7 +14,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="footer-links">
-                    <NavLink to="/ai-automation-vancouver">AI Automation Vancouver</NavLink>
+                    <NavLink to="/ai-automation-vancouver">AI automation for small business</NavLink>
                     <NavLink to="/assessment">Assessment</NavLink>
                     <NavLink to="/implementation">Implementation</NavLink>
                     <NavLink to="/proof">Proof</NavLink>

@@ -5,15 +5,12 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://gargithakur.com/assessment</loc>
-  </url>
-  <url>
-    <loc>https://gargithakur.com/about</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://gargithakur.com/ai-automation-vancouver</loc>
-    <priority>0.95</priority>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://gargithakur.com/assessment</loc>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://gargithakur.com/implementation</loc>
@@ -22,6 +19,38 @@
   <url>
     <loc>https://gargithakur.com/proof</loc>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://gargithakur.com/guides</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://gargithakur.com/guides/ai-setup-for-a-small-business</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gargithakur.com/guides/do-you-need-ai-or-a-dashboard</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gargithakur.com/guides/monday-briefing-from-a-messy-spreadsheet</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gargithakur.com/guides/reply-to-google-reviews</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gargithakur.com/guides/write-a-quote-in-3-minutes</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gargithakur.com/guides/month-of-reminder-texts</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gargithakur.com/about</loc>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://gargithakur.com/contact</loc>

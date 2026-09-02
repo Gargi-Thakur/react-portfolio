@@ -16,7 +16,7 @@ const MIN_CRITICAL_CSS_CHARS = 2000;
 const routes = [
     {
         path: '/',
-        title: 'AI Consultant Vancouver — 5+ Hours/Week or a Full Refund | Gargi Thakur',
+        title: 'AI Automation for Small Business in Vancouver | Gargi Thakur',
         contains: 'hours a week',
     },
     {
@@ -26,13 +26,13 @@ const routes = [
     },
     {
         path: '/ai-automation-vancouver',
-        title: 'AI Automation Consultant in Vancouver | Gargi Thakur',
-        contains: 'AI Automation Consultant in Vancouver',
+        title: 'AI Automation for Small Business in Vancouver | Gargi Thakur',
+        contains: 'AI automation for small businesses in Vancouver',
         schemaTypes: ['Service', 'FAQPage'],
     },
     {
         path: '/assessment',
-        title: 'AI Tools Assessment for Small Business | Gargi Thakur',
+        title: 'AI Tools Assessment for Small Business in Vancouver | Gargi Thakur',
         contains: 'AI Tools Assessment',
     },
     {

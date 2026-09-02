@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components';
 
-const Title = ({ title, subtitle, as: Heading = 'h1', label }) => {
+const Title = ({ title, subtitle, as: Heading = 'h1', label, wide = false }) => {
     return (
-        <TitleStyled>
+        <TitleStyled $wide={wide}>
             {label && <p className="section-label">{label}</p>}
             <Heading>{title}</Heading>
             {subtitle && <p className="subtitle">{subtitle}</p>}
@@ -21,7 +21,7 @@ const TitleStyled = styled.div`
         line-height: 1.05;
         margin-bottom: .75rem;
         color: var(--heading-color);
-        max-width: 18ch;
+        max-width: ${({ $wide }) => ($wide ? '24ch' : '18ch')};
     }
     .section-label{
         display: inline-flex;
