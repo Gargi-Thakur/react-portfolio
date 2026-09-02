@@ -18,10 +18,10 @@ import { SITE_URL, DEMO_DASHBOARD_URL, DEMO_DASHBOARD_NAME, ASSESSMENT_PRICE, CO
 const PAGE_PATH = '/ai-automation-vancouver';
 const PAGE_URL = `${SITE_URL}${PAGE_PATH}`;
 
-const PAGE_TITLE = 'AI Automation Consultant in Vancouver | Gargi Thakur';
-const PAGE_DESCRIPTION = `Vancouver AI consultant for small businesses. The ${ASSESSMENT_PRICE} AI Tools Assessment finds the 3–7 tools you need — or you pay nothing.`;
+const PAGE_TITLE = 'AI Automation for Small Business in Vancouver | Gargi Thakur';
+const PAGE_DESCRIPTION = `AI automation for small businesses in Vancouver. The ${ASSESSMENT_PRICE} AI Tools Assessment finds the 3–7 tools that fit your week — 5+ hours back, or you pay nothing.`;
 
-const ANSWER = `I am Gargi Thakur, an AI consultant and full-stack developer based in Vancouver, BC. I help small businesses put AI to work on the manual tasks eating their week. The ${ASSESSMENT_PRICE} AI Tools Assessment is the on-ramp: a custom report of the 3–7 tools your business actually needs, and it identifies at least 5 hours a week of savings or you pay nothing. Implementation is where we scale.`;
+const ANSWER = `I am Gargi Thakur, a full-stack developer based in Vancouver, BC. I build AI automation for small businesses in Vancouver and Metro Vancouver — shops, studios, cafés, clinics, and operators whose week still lives in Shopify, Square, spreadsheets, and email. The ${ASSESSMENT_PRICE} AI Tools Assessment is the on-ramp: a custom report of the 3–7 tools your business actually needs, and it identifies at least 5 hours a week of savings or you pay nothing. Implementation is where we scale.`;
 
 const serviceAreas = [
     'Vancouver',
@@ -73,6 +73,10 @@ const process = [
 
 const faqs = [
     {
+        question: 'What is AI automation for small businesses in Vancouver?',
+        answer: `It is connecting the tools a shop, studio, café, or clinic already uses — Shopify, Square, spreadsheets, email — so restocks, reviews, quotes, and Monday numbers stop living in someone’s head. I am based in Vancouver, BC. Work starts with a ${ASSESSMENT_PRICE} assessment, not a custom AI science project.`,
+    },
+    {
         question: 'What does an AI automation consultant in Vancouver actually do?',
         answer: 'I find the repetitive work eating your week and map the 3–7 AI tools that actually fit — then I can build it with you if you want help. That might be automations, custom workflows, a knowledge system, or a full implementation. The assessment is the on-ramp; implementation is where we scale.',
     },
@@ -104,7 +108,7 @@ const structuredData = {
         {
             '@type': 'Service',
             '@id': `${PAGE_URL}#service`,
-            name: 'AI Automation Consulting in Vancouver',
+            name: 'AI automation for small businesses in Vancouver',
             serviceType: 'AI automation consulting',
             description: ANSWER,
             url: PAGE_URL,
@@ -114,14 +118,28 @@ const structuredData = {
             })),
             provider: {
                 '@type': 'ProfessionalService',
+                '@id': `${SITE_URL}#business`,
                 name: 'Gargi Thakur',
                 url: SITE_URL,
+                image: `${SITE_URL}/favicon.svg`,
+                description: PAGE_DESCRIPTION,
+                areaServed: [
+                    { '@type': 'City', name: 'Vancouver' },
+                    { '@type': 'AdministrativeArea', name: 'Metro Vancouver' },
+                    { '@type': 'AdministrativeArea', name: 'British Columbia' },
+                ],
                 address: {
                     '@type': 'PostalAddress',
                     addressLocality: 'Vancouver',
                     addressRegion: 'BC',
                     addressCountry: 'CA',
                 },
+                knowsAbout: [
+                    'AI automation for small businesses in Vancouver',
+                    'AI tools assessment',
+                    'Workflow automation',
+                    'Operations dashboards',
+                ],
                 founder: {
                     '@type': 'Person',
                     name: 'Gargi Thakur',
@@ -133,6 +151,24 @@ const structuredData = {
                     ],
                 },
             },
+        },
+        {
+            '@type': 'BreadcrumbList',
+            '@id': `${PAGE_URL}#breadcrumb`,
+            itemListElement: [
+                {
+                    '@type': 'ListItem',
+                    position: 1,
+                    name: 'Home',
+                    item: SITE_URL,
+                },
+                {
+                    '@type': 'ListItem',
+                    position: 2,
+                    name: 'AI automation for small businesses in Vancouver',
+                    item: PAGE_URL,
+                },
+            ],
         },
         {
             '@type': 'FAQPage',
@@ -159,8 +195,9 @@ const AiAutomationVancouverPage = () => {
         <MainLayout>
             <Title
                 label={'Vancouver, BC'}
-                title={'AI Automation Consultant in Vancouver'}
+                title={'AI automation for small businesses in Vancouver'}
                 subtitle={ANSWER}
+                wide
             />
             <PageStyled>
                 <InnerLayout>
@@ -182,6 +219,23 @@ const AiAutomationVancouverPage = () => {
                                 </li>
                             ))}
                         </ul>
+                    </section>
+
+                    <section className="block">
+                        <p className="label">What that looks like</p>
+                        <h2>The work, not a chatbot on your homepage</h2>
+                        <p>
+                            For a Vancouver shop, studio, or café, AI automation usually means
+                            the boring jobs: a Monday briefing from last week’s export, review
+                            replies that actually sound like you, quotes that go out the same
+                            night, booking reminders that stop no-shows. I start by mapping
+                            the week. If a plain dashboard would do, I will say so — see the{' '}
+                            <NavLink to="/guides/do-you-need-ai-or-a-dashboard" className="inline-link">
+                                free diagnostic
+                            </NavLink>
+                            {' '}and the{' '}
+                            <NavLink to="/guides" className="inline-link">copy-paste guides</NavLink>.
+                        </p>
                     </section>
 
                     <section className="block">
@@ -253,7 +307,7 @@ const AiAutomationVancouverPage = () => {
 
                     <section className="block">
                         <p className="label">Service area</p>
-                        <h2>Serving Metro Vancouver</h2>
+                        <h2>Serving Metro Vancouver small businesses</h2>
                         <ul className="area-list">
                             {serviceAreas.map((area) => (
                                 <li key={area}>{area}</li>

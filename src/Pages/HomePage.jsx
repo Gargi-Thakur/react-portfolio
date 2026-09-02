@@ -45,15 +45,15 @@ const howItWorks = [
 
 function HomePage() {
     useDocumentMeta(
-        'AI Consultant Vancouver — 5+ Hours/Week or a Full Refund | Gargi Thakur',
-        'A custom report of the 3–7 AI tools your small business actually needs — in one week, for $999. If it doesn’t find you 5+ hours a week, you pay nothing.'
+        'AI Automation for Small Business in Vancouver | Gargi Thakur',
+        'AI automation for small businesses in Vancouver. The $999 AI Tools Assessment finds the 3–7 tools your week actually needs — 5+ hours back, or you pay nothing.'
     );
     return (
         <HomePageStyled>
             <section className="hero">
                 <p className="eyebrow hero-eyebrow">
                     <span className="dot" aria-hidden="true" />
-                    Vancouver, BC · AI for Small Business
+                    Vancouver, BC · AI automation for small business
                 </p>
                 <div className="hero-copy">
                     <h1>
@@ -62,8 +62,9 @@ function HomePage() {
                         {' — or you pay nothing.'}
                     </h1>
                     <p className="lead">
-                        The AI Tools Assessment is the on-ramp: a custom report in one
-                        week, for $999. Implementation is where we scale — only if you want help after.
+                        I do AI automation for small businesses in Vancouver, starting with
+                        the AI Tools Assessment: a custom report in one week, for $999.
+                        Implementation is where we scale — only if you want help after.
                     </p>
                     <div className="cta">
                         <AssessmentCTA />
@@ -84,7 +85,7 @@ function HomePage() {
                     </div>
                     <div className="secondary-links">
                         <NavLink to="/guides"><TextLink title={'Free AI guides'} /></NavLink>
-                        <NavLink to="/ai-automation-vancouver"><TextLink title={'AI automation in Vancouver'} /></NavLink>
+                        <NavLink to="/ai-automation-vancouver"><TextLink title={'AI automation for small business'} /></NavLink>
                         <NavLink to="/implementation"><TextLink title={'Implementation services'} /></NavLink>
                         <a href="https://www.linkedin.com/in/gargithakur94/" target="_blank" rel="noreferrer" className="linkedin-link">
                             <LinkedinIcon />
