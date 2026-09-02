@@ -18,6 +18,7 @@ const navItems = [
     { to: '/assessment', label: 'Assessment' },
     { to: '/implementation', label: 'Implementation' },
     { to: '/proof', label: 'Proof' },
+    { to: '/guides', label: 'Guides' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
 ];

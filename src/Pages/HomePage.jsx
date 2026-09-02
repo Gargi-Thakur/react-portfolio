@@ -8,7 +8,11 @@ import DashboardPreview from '../Components/DashboardPreview';
 import AssessmentCTA from '../Components/AssessmentCTA';
 import GuaranteeBadge from '../Components/GuaranteeBadge';
 import FooterCTA from '../Components/FooterCTA';
+import GuideCard from '../Components/GuideCard';
 import useDocumentMeta from '../hooks/useDocumentMeta';
+import { GUIDES } from '../data/guides';
+
+const featuredGuides = GUIDES.slice(0, 3);
 
 const proofPoints = [
     { value: '3–7', label: 'AI tools picked for your business' },
@@ -79,6 +83,7 @@ function HomePage() {
                         ))}
                     </div>
                     <div className="secondary-links">
+                        <NavLink to="/guides"><TextLink title={'Free AI guides'} /></NavLink>
                         <NavLink to="/ai-automation-vancouver"><TextLink title={'AI automation in Vancouver'} /></NavLink>
                         <NavLink to="/implementation"><TextLink title={'Implementation services'} /></NavLink>
                         <a href="https://www.linkedin.com/in/gargithakur94/" target="_blank" rel="noreferrer" className="linkedin-link">
@@ -104,6 +109,38 @@ function HomePage() {
                             <p>{item.text}</p>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            <section className="guides-teaser">
+                <div className="guides-teaser-head">
+                    <p className="eyebrow">
+                        <span className="dot" aria-hidden="true" />
+                        Free, no email required
+                    </p>
+                    <h2>Copy-paste AI guides</h2>
+                    <p>
+                        The same busy-week problems I look at in an assessment — messy
+                        spreadsheets, reviews, quotes, and whether you even need AI.
+                    </p>
+                </div>
+                <div className="guides-teaser-grid">
+                    {featuredGuides.map((g) => (
+                        <GuideCard
+                            key={g.slug}
+                            slug={g.slug}
+                            topic={g.topic}
+                            tool={g.tool}
+                            title={g.title}
+                            description={g.description}
+                            readTime={g.readTime}
+                        />
+                    ))}
+                </div>
+                <div className="guides-teaser-cta">
+                    <NavLink to="/guides">
+                        <OutlineButton title={'Browse all free guides'} />
+                    </NavLink>
                 </div>
             </section>
 
@@ -364,6 +401,49 @@ const HomePageStyled = styled.div`
                 font-size: .92rem;
                 line-height: 1.65;
             }
+        }
+    }
+
+    .guides-teaser{
+        margin-top: 4.5rem;
+
+        .guides-teaser-head{
+            max-width: 38rem;
+            margin-bottom: 1.75rem;
+
+            h2{
+                font-family: 'Syne', sans-serif;
+                color: var(--heading-color);
+                font-size: clamp(1.5rem, 2.6vw, 2rem);
+                letter-spacing: -0.02em;
+                margin: .85rem 0 .5rem;
+            }
+
+            > p:last-child{
+                color: var(--text-muted);
+                font-size: 1.02rem;
+                line-height: 1.7;
+            }
+        }
+
+        .guides-teaser-grid{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            align-items: stretch;
+
+            @media screen and (max-width: 950px){
+                grid-template-columns: 1fr 1fr;
+            }
+            @media screen and (max-width: 650px){
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .guides-teaser-cta{
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
         }
     }
 

@@ -18,6 +18,7 @@ function Footer() {
                     <NavLink to="/assessment">Assessment</NavLink>
                     <NavLink to="/implementation">Implementation</NavLink>
                     <NavLink to="/proof">Proof</NavLink>
+                    <NavLink to="/guides">Guides</NavLink>
                     <NavLink to="/contact">Contact</NavLink>
                     <NavLink to="/privacy">Privacy</NavLink>
                 </div>
