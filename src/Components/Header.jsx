@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-import IconButton from '@mui/material/IconButton';
+import {
+    MenuIcon,
+    CloseIcon,
+    DarkModeOutlinedIcon,
+    LightModeOutlinedIcon,
+} from './Icons';
 import { SITE_MODE, BOOKING_URL } from '../config';
 
 const HEADER_CTA = {
@@ -23,7 +24,7 @@ const navItems = [
     { to: '/contact', label: 'Contact' },
 ];
 
-function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked, themePreference = 'auto' }) {
+function Header({ navOpen, setNavOpen, theme, onThemeToggle, themePreference = 'auto' }) {
     const isDark = theme === 'dark-theme';
     const headerCta = HEADER_CTA[SITE_MODE];
 
@@ -74,13 +75,14 @@ function Header({ navOpen, setNavOpen, theme, onThemeToggle, themeChecked, theme
                             {headerCta.label}
                         </NavLink>
                     )}
-                    <IconButton
+                    <button
+                        type="button"
                         className="menu-toggle"
                         onClick={() => setNavOpen(!navOpen)}
                         aria-label={navOpen ? 'Close menu' : 'Open menu'}
                     >
                         {navOpen ? <CloseIcon /> : <MenuIcon />}
-                    </IconButton>
+                    </button>
                 </div>
             </div>
             {navOpen && <div className="nav-backdrop" onClick={() => setNavOpen(false)} />}
@@ -227,7 +229,17 @@ const HeaderStyled = styled.header`
         }
         .menu-toggle{
             display: none;
+            align-items: center;
+            justify-content: center;
+            width: 2.35rem;
+            height: 2.35rem;
+            padding: 0;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            background: var(--surface-muted);
             color: var(--heading-color);
+            cursor: pointer;
+            svg{ font-size: 1.35rem; }
         }
     }
 

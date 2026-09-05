@@ -147,6 +147,10 @@ textarea::placeholder{
     opacity: 1;
 }
 
+.svg-icon{
+    font-size: 1.5rem;
+}
+
 a{
     font-family: inherit;
     color: inherit;

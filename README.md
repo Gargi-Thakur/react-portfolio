@@ -136,7 +136,7 @@ Netlify publishes dist/
 | UI | React 19 | `createRoot` in `src/main.jsx` |
 | Routing | React Router 7 | `BrowserRouter` |
 | CSS | styled-components 6 | Colocated styles; no CSS modules |
-| Icons | MUI Icons 9 | No MUI `ThemeProvider` |
+| Icons | Local SVG set (`src/Components/Icons.jsx`) | 24px `currentColor` icons; no icon library |
 | Prerender | Playwright Chromium | Invoked after `vite build` |
 | Node | 22 (`.nvmrc`, `engines`, Netlify `NODE_VERSION`) | |
 
