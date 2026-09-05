@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import CheckIcon from '@mui/icons-material/Check';
-import CloseIcon from '@mui/icons-material/Close';
-import InsightsIcon from '@mui/icons-material/Insights';
-import ManageSearchIcon from '@mui/icons-material/ManageSearch';
-import AutorenewIcon from '@mui/icons-material/Autorenew';
+import { CheckIcon, CloseIcon, InsightsIcon, ManageSearchIcon, AutorenewIcon } from '../Components/Icons';
 import { MainLayout, InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
 import PrimaryButton from '../Components/PrimaryButton';

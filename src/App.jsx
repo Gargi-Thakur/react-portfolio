@@ -32,14 +32,17 @@ function App() {
   const isAuto = themeState.mode === 'auto';
 
   useEffect(() => {
+    persistThemeState(themeState.mode, themeState.manualTheme);
+  }, [themeState]);
+
+  useEffect(() => {
     const root = document.documentElement;
     root.classList.remove('light-theme', 'dark-theme');
     root.classList.add(theme, 'is-hydrated');
-    persistThemeState(themeState.mode, themeState.manualTheme);
     document
       .querySelector('meta[name="theme-color"]')
       ?.setAttribute('content', isDark ? '#09090b' : '#f7f6f3');
-  }, [theme, themeState, isDark]);
+  }, [theme, isDark]);
 
   // The prerendered HTML inlines a snapshot of the styled-components output so
   // the page paints styled before JS loads. Once mounted, styled-components has
@@ -70,14 +73,7 @@ function App() {
 
     scheduleNextSwitch();
 
-    const intervalId = window.setInterval(() => {
-      setScheduleTick((tick) => tick + 1);
-    }, 60_000);
-
-    return () => {
-      window.clearTimeout(timeoutId);
-      window.clearInterval(intervalId);
-    };
+    return () => window.clearTimeout(timeoutId);
   }, [isAuto]);
 
   const themeToggler = () => {
@@ -101,7 +97,6 @@ function App() {
         setNavOpen={setNavOpen}
         theme={theme}
         onThemeToggle={themeToggler}
-        themeChecked={isDark}
         themePreference={isAuto ? 'auto' : themeState.manualTheme}
       />
       <MainContentStyled>
@@ -129,6 +124,21 @@ function App() {
   );
 }
 
+const ambientDriftOne = keyframes`
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-3%, 4%) scale(1.05); }
+`;
+
+const ambientDriftTwo = keyframes`
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(4%, -3%); }
+`;
+
+const ambientDriftThree = keyframes`
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-2%, 2%); }
+`;
+
 const AppStyled = styled.div`
   min-height: 100vh;
   display: flex;
@@ -153,10 +163,7 @@ const AppStyled = styled.div`
     top: -8%;
     right: -6%;
     background: var(--mesh-1);
-    animation: ${keyframes`
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-3%, 4%) scale(1.05); }
-    `} 18s ease-in-out infinite;
+    animation: ${ambientDriftOne} 18s ease-in-out infinite;
   }
 
   .ambient-two{
@@ -167,10 +174,7 @@ const AppStyled = styled.div`
     bottom: 10%;
     left: -8%;
     background: var(--mesh-2);
-    animation: ${keyframes`
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(4%, -3%); }
-    `} 22s ease-in-out infinite;
+    animation: ${ambientDriftTwo} 22s ease-in-out infinite;
   }
 
   .ambient-three{
@@ -181,10 +185,7 @@ const AppStyled = styled.div`
     top: 42%;
     left: 38%;
     background: var(--mesh-3);
-    animation: ${keyframes`
-      0%, 100% { transform: translate(0, 0); }
-      50% { transform: translate(-2%, 2%); }
-    `} 26s ease-in-out infinite;
+    animation: ${ambientDriftThree} 26s ease-in-out infinite;
   }
 
   .grid-overlay{

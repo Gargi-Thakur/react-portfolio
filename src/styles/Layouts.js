@@ -14,11 +14,3 @@ export const MainLayout = styled.div`
 export const InnerLayout = styled.div`
     padding: .5rem 0 1rem;
 `;
-
-export const GlassCard = styled.div`
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-xl);
-    backdrop-filter: blur(16px);
-    box-shadow: var(--shadow-lg);
-`;

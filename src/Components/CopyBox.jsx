@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
-import CheckIcon from '@mui/icons-material/Check';
+import { ContentCopyIcon, CheckIcon } from './Icons';
 
 /** A copy-paste prompt block used inside guide steps. */
 const CopyBox = ({ text }) => {
     const [copied, setCopied] = useState(false);
+    const copiedTimeout = useRef();
+
+    useEffect(() => () => window.clearTimeout(copiedTimeout.current), []);
 
     const handleCopy = async () => {
         try {
             await navigator.clipboard.writeText(text);
             setCopied(true);
-            window.setTimeout(() => setCopied(false), 2000);
+            window.clearTimeout(copiedTimeout.current);
+            copiedTimeout.current = window.setTimeout(() => setCopied(false), 2000);
         } catch {
             // Clipboard API can be unavailable (older browsers, insecure context) —
             // the text is still selectable/readable in the box, so fail quietly.

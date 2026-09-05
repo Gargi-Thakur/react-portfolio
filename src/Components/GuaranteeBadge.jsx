@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import VerifiedIcon from '@mui/icons-material/Verified';
+import { VerifiedIcon } from './Icons';
 import { GUARANTEE_TEXT } from '../config';
 
 /** The guarantee, rendered from ONE source so wording can never drift. */

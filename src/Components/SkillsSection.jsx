@@ -4,9 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
 import SkillCard from '../Components/SkillCard';
-import InsightsIcon from '@mui/icons-material/Insights';
-import ManageSearchIcon from '@mui/icons-material/ManageSearch';
-import AutorenewIcon from '@mui/icons-material/Autorenew';
+import { InsightsIcon, ManageSearchIcon, AutorenewIcon } from './Icons';
 
 const SkillsSection = () => {
     return (

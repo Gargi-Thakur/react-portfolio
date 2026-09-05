@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import CheckIcon from '@mui/icons-material/Check';
+import { OpenInNewIcon, CheckIcon } from './Icons';
 import PrimaryButton from './PrimaryButton';
 import OutlineButton from './OutlineButton';
 import { DEMO_DASHBOARD_URL, DEMO_DASHBOARD_NAME } from '../config';
@@ -14,14 +13,9 @@ const highlights = [
     'Reorder recommendations that cut guesswork and emergency buys',
 ];
 
-const DemoShowcase = ({ compact = false, embedded = false }) => {
-    const className = [
-        compact ? 'compact' : '',
-        embedded ? 'embedded' : '',
-    ].filter(Boolean).join(' ');
-
+const DemoShowcase = () => {
     return (
-        <DemoShowcaseStyled className={className}>
+        <DemoShowcaseStyled>
             <div className="demo-content">
                 <p className="eyebrow">Reference build</p>
                 <h3>{DEMO_DASHBOARD_NAME}</h3>
@@ -31,36 +25,28 @@ const DemoShowcase = ({ compact = false, embedded = false }) => {
                     across locations onto a single screen, with alerts when something needs
                     attention. It is working software you can click through, not a mockup.
                 </p>
-                {!compact && (
-                    <ul className="highlights">
-                        {highlights.map((item) => (
-                            <li key={item}>
-                                <CheckIcon />
-                                <span>{item}</span>
-                            </li>
-                        ))}
-                    </ul>
-                )}
-                {compact ? (
-                    <NavLink to="/proof" className="example-link">
-                        See problem, solution, and business value →
+                <ul className="highlights">
+                    {highlights.map((item) => (
+                        <li key={item}>
+                            <CheckIcon />
+                            <span>{item}</span>
+                        </li>
+                    ))}
+                </ul>
+                <div className="demo-actions">
+                    <NavLink to="/proof">
+                        <OutlineButton title={'See Problem & Solution'} />
                     </NavLink>
-                ) : (
-                    <div className="demo-actions">
-                        <NavLink to="/proof">
-                            <OutlineButton title={'See Problem & Solution'} />
-                        </NavLink>
-                        <a
-                            href={DEMO_DASHBOARD_URL}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="demo-link"
-                        >
-                            <PrimaryButton title={'Open Live Dashboard'} />
-                            <OpenInNewIcon className="external-icon" />
-                        </a>
-                    </div>
-                )}
+                    <a
+                        href={DEMO_DASHBOARD_URL}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="demo-link"
+                    >
+                        <PrimaryButton title={'Open Live Dashboard'} />
+                        <OpenInNewIcon className="external-icon" />
+                    </a>
+                </div>
             </div>
         </DemoShowcaseStyled>
     );
@@ -102,17 +88,6 @@ const DemoShowcaseStyled = styled.section`
         color: var(--text-muted);
     }
 
-    .example-link{
-        display: inline-block;
-        margin-top: 1rem;
-        font-size: .92rem;
-        font-weight: 700;
-        color: var(--primary-color);
-        &:hover{
-            text-decoration: underline;
-        }
-    }
-
     .highlights{
         margin-top: 1.25rem;
         li{
@@ -144,49 +119,6 @@ const DemoShowcaseStyled = styled.section`
         .external-icon{
             font-size: 1.1rem;
             color: var(--font-light-color);
-        }
-    }
-
-    &.compact{
-        margin-top: 1.5rem;
-        border-left-width: 3px;
-        box-shadow: none;
-        .demo-content{
-            padding: 1.25rem 1.5rem;
-        }
-        h3{
-            font-size: 1.25rem;
-        }
-        .summary{
-            font-size: .95rem;
-        }
-    }
-
-    &.embedded{
-        margin-top: 1.25rem;
-        margin-bottom: 0;
-        border: 1px solid var(--border-color);
-        border-radius: var(--radius-lg);
-        background: var(--surface-muted);
-        box-shadow: none;
-        backdrop-filter: none;
-
-        .demo-content{
-            padding: 1.15rem 1.25rem;
-        }
-
-        h3{
-            font-size: 1.15rem;
-            margin-bottom: .5rem;
-        }
-
-        .summary{
-            font-size: .92rem;
-        }
-
-        .example-link{
-            margin-top: .85rem;
-            margin-bottom: 0;
         }
     }
 `;

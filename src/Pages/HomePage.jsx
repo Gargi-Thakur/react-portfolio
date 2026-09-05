@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import LinkedinIcon from '@mui/icons-material/LinkedIn';
+import { LinkedinIcon } from '../Components/Icons';
 import OutlineButton from '../Components/OutlineButton';
 import TextLink from '../Components/TextLink';
 import DashboardPreview from '../Components/DashboardPreview';

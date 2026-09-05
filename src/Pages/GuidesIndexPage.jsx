@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import styled from 'styled-components';
-import SearchIcon from '@mui/icons-material/Search';
+import { SearchIcon } from '../Components/Icons';
 import { MainLayout, InnerLayout } from '../styles/Layouts';
 import GuideCard from '../Components/GuideCard';
 import FooterCTA from '../Components/FooterCTA';

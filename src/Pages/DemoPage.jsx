@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import CheckIcon from '@mui/icons-material/Check';
+import { OpenInNewIcon, CheckIcon } from '../Components/Icons';
 import { MainLayout, InnerLayout } from '../styles/Layouts';
 import Title from '../Components/Title';
 import OutlineButton from '../Components/OutlineButton';

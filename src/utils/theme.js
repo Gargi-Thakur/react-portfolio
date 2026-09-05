@@ -79,20 +79,3 @@ export function persistThemeState(mode, manualTheme) {
   }
   localStorage.removeItem(THEME_STORAGE_KEY);
 }
-
-/** Used by index.html inline script before React loads */
-export function getThemeForInitialPaint() {
-  const mode = localStorage.getItem(THEME_MODE_KEY);
-  const manualTheme = localStorage.getItem(THEME_MANUAL_KEY);
-  const legacy = localStorage.getItem(THEME_STORAGE_KEY);
-
-  if (mode === 'manual' && (manualTheme === 'light-theme' || manualTheme === 'dark-theme')) {
-    return manualTheme;
-  }
-
-  if (mode === 'auto' || legacy === 'auto' || legacy === 'light-theme' || legacy === 'dark-theme') {
-    return getThemeForTimeOfDay();
-  }
-
-  return getThemeForTimeOfDay();
-}

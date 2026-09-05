@@ -107,8 +107,8 @@ const extractTitle = (html) => {
     return match ? match[1] : '';
 };
 
-// The runtime style tags are re-populated by styled-components and emotion as
-// soon as the bundle boots, so the snapshot keeps a single removable copy.
+// styled-components inserts rules through the CSSOM in production, so those
+// <style> tags serialize as empty. Keep a single removable copy in the snapshot.
 const blankRuntimeStyleTags = (html) => html.replace(
     /(<style[^>]*data-(?:styled|emotion)[^>]*>)[\s\S]*?(<\/style>)/g,
     (_match, open, close) => `${open}${close}`,
@@ -126,25 +126,62 @@ const injectCriticalCss = (html, css) => html.replace(
     () => `<style id="${CRITICAL_STYLE_ID}">${css}</style></head>`,
 );
 
-const previewServer = await preview({
-    configFile: path.join(root, 'vite.config.js'),
-    preview: {
-        host: '127.0.0.1',
-        port: PREVIEW_PORT,
-        strictPort: true,
-    },
+const PRERENDER_CONCURRENCY = 4;
+
+const runPool = async (items, limit, worker) => {
+    const results = new Array(items.length);
+    let next = 0;
+
+    const run = async () => {
+        while (next < items.length) {
+            const index = next;
+            next += 1;
+            results[index] = await worker(items[index]);
+        }
+    };
+
+    await Promise.all(
+        Array.from({ length: Math.min(limit, items.length) }, () => run()),
+    );
+    return results;
+};
+
+const collectSnapshot = () => ({
+    // styled-components inserts rules through the CSSOM in production, so
+    // <style> tags serialize as empty and the snapshot would paint unstyled
+    // markup until the JS bundle boots.
+    criticalCss: [...document.styleSheets]
+        .filter((sheet) => sheet.ownerNode instanceof HTMLStyleElement
+            && sheet.ownerNode.id !== 'prerender-critical-css')
+        .map((sheet) => {
+            // Serializing cssRules drops shorthands that use CSS
+            // variables, so prefer the tag's own text when present.
+            const text = sheet.ownerNode.textContent?.trim();
+            if (text) {
+                return text;
+            }
+            try {
+                return [...sheet.cssRules].map((rule) => rule.cssText).join('\n');
+            } catch {
+                return '';
+            }
+        })
+        .filter(Boolean)
+        .join('\n'),
+    title: document.title,
+    canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href') ?? '',
+    rootText: document.querySelector('#root')?.innerText?.trim() ?? '',
+    routeSchema: document.getElementById('route-structured-data')?.textContent ?? '',
 });
 
-const browser = await chromium.launch();
-const errors = [];
-
-try {
+const prerenderRoute = async (browser, route) => {
     const page = await browser.newPage();
-    await page.addInitScript(() => {
-        window.__PRERENDER_TEXT_STYLES__ = true;
-    });
+    const errors = [];
 
-    for (const route of routes) {
+    try {
+        await page.addInitScript(() => {
+            window.__PRERENDER_TEXT_STYLES__ = true;
+        });
         await page.goto(`${PREVIEW_ORIGIN}${route.path}`, { waitUntil: 'load' });
         await page.waitForSelector('html[data-prerender-ready="true"]', { timeout: 15_000 });
         await page.evaluate(() => {
@@ -152,33 +189,7 @@ try {
             document.documentElement.classList.remove('is-hydrated');
         });
 
-        const snapshot = await page.evaluate(() => ({
-            // styled-components and emotion insert rules through the CSSOM in
-            // production, so their <style> tags serialize as empty and the
-            // snapshot would paint unstyled markup until the JS bundle boots.
-            criticalCss: [...document.styleSheets]
-                .filter((sheet) => sheet.ownerNode instanceof HTMLStyleElement
-                    && sheet.ownerNode.id !== 'prerender-critical-css')
-                .map((sheet) => {
-                    // Serializing cssRules drops shorthands that use CSS
-                    // variables, so prefer the tag's own text when present.
-                    const text = sheet.ownerNode.textContent?.trim();
-                    if (text) {
-                        return text;
-                    }
-                    try {
-                        return [...sheet.cssRules].map((rule) => rule.cssText).join('\n');
-                    } catch {
-                        return '';
-                    }
-                })
-                .filter(Boolean)
-                .join('\n'),
-            title: document.title,
-            canonical: document.querySelector('link[rel="canonical"]')?.getAttribute('href') ?? '',
-            rootText: document.querySelector('#root')?.innerText?.trim() ?? '',
-            routeSchema: document.getElementById('route-structured-data')?.textContent ?? '',
-        }));
+        const snapshot = await page.evaluate(collectSnapshot);
 
         const expectedCanonical = `${SITE_ORIGIN}${route.path}`;
         if (snapshot.title !== route.title) {
@@ -215,7 +226,37 @@ try {
 
         const writtenTitle = extractTitle(html);
         const cssKb = (snapshot.criticalCss.length / 1024).toFixed(1);
-        console.log(`prerendered ${route.path} -> ${path.relative(root, file)} (${writtenTitle}) [${cssKb} kB css]`);
+        return {
+            errors,
+            log: `prerendered ${route.path} -> ${path.relative(root, file)} (${writtenTitle}) [${cssKb} kB css]`,
+        };
+    } finally {
+        await page.close();
+    }
+};
+
+const previewServer = await preview({
+    configFile: path.join(root, 'vite.config.js'),
+    preview: {
+        host: '127.0.0.1',
+        port: PREVIEW_PORT,
+        strictPort: true,
+    },
+});
+
+const browser = await chromium.launch();
+const errors = [];
+
+try {
+    const results = await runPool(
+        routes,
+        PRERENDER_CONCURRENCY,
+        (route) => prerenderRoute(browser, route),
+    );
+
+    for (const result of results) {
+        errors.push(...result.errors);
+        console.log(result.log);
     }
 } finally {
     await browser.close();
